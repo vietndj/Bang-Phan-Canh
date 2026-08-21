@@ -1060,7 +1060,8 @@ Tiêu đề: {title}
 """
         for b_idx, b in enumerate(sc["beats"], 1):
             badge_class = "badge-in" if b_idx == 1 else ("badge-main" if b_idx == 2 else "badge-out")
-            img_url = f"{R2_MEDIA_BASE}/assets/frames/scene{s_id}_beat{b_idx}.jpg"
+            r2_media = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/{slug}"
+            img_url = f"{r2_media}/assets/frames/scene{s_id}_beat{b_idx}.jpg"
             html += f"""
         <div class="beat-card">
           <div class="beat-img-container" onclick="openLightbox('{img_url}', 'Khung Hình {b['id']}: {b['shot']}', '{b['note']}')">
@@ -1093,7 +1094,8 @@ Tiêu đề: {title}
 """
     for sc in scenes:
         for b_idx, b in enumerate(sc["beats"], 1):
-            img_url = f"{R2_MEDIA_BASE}/assets/frames/scene{sc['scene_id']}_beat{b_idx}.jpg"
+            r2_media = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/{slug}"
+            img_url = f"{r2_media}/assets/frames/scene{sc['scene_id']}_beat{b_idx}.jpg"
             html += f"""
         <div class="strip-frame" onclick="openLightbox('{img_url}', 'Cảnh {b['id']} ({b['ts']})', '{b['note']}')">
           <img class="strip-frame-img" src="{img_url}" alt="{b['id']}">

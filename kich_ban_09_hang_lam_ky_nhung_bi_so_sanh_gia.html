@@ -8,19 +8,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-
     :root {
       --bg-main: #0a0e17;
       --bg-surface: #111827;
-      --bg-card: #162032;
-      --bg-card-hover: #1c2a42;
+      --bg-card: #172033;
+      --bg-card-hover: #1e2a44;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(56, 189, 248, 0.35);
+      --border-accent: #ec489988;
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.15);
+      --accent: #ec4899;
+      --accent-glow: #ec489925;
       --cyan: #38bdf8;
       --cyan-glow: rgba(56, 189, 248, 0.15);
       --amber: #f59e0b;
@@ -38,12 +37,9 @@
       line-height: 1.6;
       padding-bottom: 80px;
     }
-    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
-    
-    /* Top Sticky Header */
     .top-header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(10, 14, 23, 0.94);
+      background: rgba(10, 14, 23, 0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       padding: 12px 24px;
@@ -51,45 +47,26 @@
     }
     .brand-group { display: flex; align-items: center; gap: 10px; }
     .brand-badge {
-      background: linear-gradient(135deg, #0284c7, #2563eb);
+      background: linear-gradient(135deg, #ec4899, #2563eb);
       color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
     }
     .header-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
     .header-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    
-    /* Prominent Back to Home Button */
-    .home-btn {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(37, 99, 235, 0.25));
-      border: 1px solid var(--cyan);
-      color: #fff !important;
-      font-weight: 700 !important;
-      font-size: 12px;
-      padding: 7px 14px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
-    }
-    .home-btn:hover {
-      background: var(--cyan);
-      color: #000 !important;
-      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
-      transform: translateY(-1px);
-    }
-    
     .nav-btn {
       background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
       font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.2s;
     }
-    .nav-btn:hover { background: var(--cyan); color: #000; font-weight: 700; }
+    .nav-btn:hover { background: var(--accent); color: #000; font-weight: 700; }
     .action-btn {
-      background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-weight: 700; border: none;
-      padding: 6px 14px; border-radius: var(--radius-sm); cursor: pointer; font-size: 12px; transition: all 0.2s;
+      background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 700; border: none;
+      padding: 6px 14px; border-radius: var(--radius-sm); cursor: pointer; font-size: 12px;
     }
-    .action-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hub-link {
+      background: rgba(56, 189, 248, 0.15); border: 1px solid var(--cyan); color: var(--cyan);
+      font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: var(--radius-sm); text-decoration: none;
+    }
+    .hub-link:hover { background: var(--cyan); color: #000; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
     
     /* Original Message Box */
     .original-message-box {
@@ -97,38 +74,21 @@
       border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;
     }
     .orig-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .orig-title, .orig-title-group { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .orig-badge { background: var(--cyan-glow); color: var(--cyan); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--cyan); }
-    .orig-meta { font-size: 12px; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; }
-    .orig-content-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+    .orig-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .orig-badge { background: var(--accent-glow); color: var(--accent); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--accent); }
+    .orig-content-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
     @media (max-width: 900px) { .orig-content-grid { grid-template-columns: 1fr; } }
     .raw-text-panel {
       background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);
       padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #e2e8f0; white-space: pre-wrap; line-height: 1.6; max-height: 320px; overflow-y: auto;
     }
-    
-    /* Reference Gallery - Flexible and Uncropped */
-    .ref-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: all 0.2s ease; }
-    .ref-item:hover { border-color: var(--cyan); transform: translateY(-2px); }
-    .ref-thumb-box { position: relative; width: 100%; aspect-ratio: 16 / 10; min-height: 150px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .ref-thumb-box img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
-    .ref-label-badge { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.75); color: var(--cyan); border: 1px solid var(--cyan); font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; z-index: 2; }
-    .ref-caption { padding: 10px 12px; font-size: 11.5px; }
-    .ref-caption strong { color: #fff; display: block; margin-bottom: 3px; font-size: 12px; }
-    .ref-caption span { color: var(--text-muted); font-size: 11px; line-height: 1.4; display: block; }
-    
-    /* 3 Tiers Box */
-    .tiers-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 20px; }
-    .tier-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 18px; }
-    .tier-card.t1 { border-left: 4px solid #ef4444; }
-    .tier-card.t2 { border-left: 4px solid #f59e0b; }
-    .tier-card.t3 { border-left: 4px solid #10b981; }
-    .tier-badge-label, .tier-card-head { font-size: 10.5px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; display: inline-block; }
-    .tier-card.t1 .tier-badge-label, .tier-card.t1 .tier-card-head { color: #f87171; }
-    .tier-card.t2 .tier-badge-label, .tier-card.t2 .tier-card-head { color: #fbbf24; }
-    .tier-card.t3 .tier-badge-label, .tier-card.t3 .tier-card-head { color: #34d399; }
-    .tier-text, .tier-card-content { font-size: 13px; color: #e2e8f0; line-height: 1.5; font-style: italic; }
+    .ref-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md); overflow: hidden; }
+    .ref-thumb-box { height: 180px; background: #000; }
+    .ref-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+    .ref-caption { padding: 8px 10px; font-size: 11px; }
+    .ref-caption strong { color: #fff; display: block; margin-bottom: 2px; }
+    .ref-caption span { color: var(--text-muted); font-size: 10px; }
     
     /* Hero */
     .hero { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; }
@@ -137,63 +97,60 @@
     .tag-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
     .tag-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
     .tag-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tag-accent { background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent); }
     .hero h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; color: #fff; line-height: 1.3; }
-    .hero-desc { color: var(--text-secondary); font-size: 13.5px; line-height: 1.6; }
+    .metrics-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 12px 16px; margin-top: 14px; }
+    .metric-label { font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+    .metric-value { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+    
+    /* 3 Tiers Box */
+    .tiers-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 28px; }
+    .tier-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 18px; }
+    .tier-card.t1 { border-left: 4px solid #ef4444; }
+    .tier-card.t2 { border-left: 4px solid #f59e0b; }
+    .tier-card.t3 { border-left: 4px solid #10b981; }
+    .tier-card-head { font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
+    .tier-card.t1 .tier-card-head { color: #f87171; }
+    .tier-card.t2 .tier-card-head { color: #fbbf24; }
+    .tier-card.t3 .tier-card-head { color: #34d399; }
+    .tier-card-content { font-size: 13px; color: #e2e8f0; line-height: 1.5; }
     
     /* Scene Block */
-    .scene-section, .scene-block { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 30px; scroll-margin-top: 75px; }
+    .scene-block { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 30px; scroll-margin-top: 70px; }
     .scene-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px; flex-wrap: wrap; }
-    .scene-header-left, .scene-title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .scene-number, .scene-num-badge { background: linear-gradient(135deg, var(--cyan), #2563eb); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; }
-    .scene-title, .scene-main-title { font-size: 17px; font-weight: 800; color: #fff; }
-    .scene-sub, .scene-intent-box { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
-    .scene-meta-badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .badge-time, .scene-time-badge { background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; }
-    .badge-shot { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
-    
-    /* Audio / Voiceover Box */
-    .voiceover-box, .audio-box { background: linear-gradient(90deg, rgba(56, 189, 248, 0.08) 0%, rgba(24, 34, 52, 0.4) 100%); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .scene-title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .scene-num-badge { background: linear-gradient(135deg, var(--accent), #2563eb); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+    .scene-main-title { font-size: 17px; font-weight: 800; color: #fff; }
+    .scene-time-badge { background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; }
+    .scene-intent-box { background: rgba(0, 0, 0, 0.25); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+    .audio-box { background: linear-gradient(90deg, rgba(56, 189, 248, 0.08) 0%, rgba(24, 34, 52, 0.4) 100%); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .voice-content { display: flex; align-items: center; gap: 10px; flex: 1; }
     .voice-icon { font-size: 18px; background: var(--cyan-glow); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .voiceover-title { font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase; margin-bottom: 3px; }
-    .voiceover-text, .voice-text { font-size: 13.5px; font-weight: 600; color: #fff; font-style: italic; }
+    .voice-text { font-size: 13.5px; font-weight: 600; color: #fff; font-style: italic; }
     
     /* 3 Beats Grid */
     .beats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     @media (max-width: 960px) { .beats-grid { grid-template-columns: 1fr; } }
-    .beat-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: all 0.2s ease; }
-    .beat-card:hover { border-color: var(--cyan); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transform: translateY(-2px); }
-    
-    .beat-img-container, .beat-media-box { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .beat-img-container img, .beat-media-box img, .beat-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease; display: block; }
-    .beat-card:hover .beat-img-container img,
-    .beat-card:hover .beat-media-box img,
-    .beat-card:hover .beat-img { transform: scale(1.03); }
-    
-    .beat-badge-top, .beat-badge-tag { position: absolute; top: 8px; left: 8px; z-index: 2; font-size: 9.5px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
-    .badge-in, .badge-inpoint { background: rgba(16, 185, 129, 0.95); color: #fff; }
-    .badge-main, .badge-mainaction { background: rgba(245, 158, 11, 0.95); color: #000; font-weight: 800; }
-    .badge-out, .badge-outpoint { background: rgba(56, 189, 248, 0.95); color: #000; font-weight: 800; }
-    .beat-time-tag, .beat-ts { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
-    
-    .beat-content, .beat-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .beat-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .beat-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; }
+    .beat-card:hover { border-color: var(--border-accent); }
+    .beat-img-container { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; overflow: hidden; cursor: pointer; }
+    .beat-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .beat-img-container:hover img { transform: scale(1.03); }
+    .beat-badge-top { position: absolute; top: 8px; left: 8px; z-index: 2; font-size: 9.5px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; }
+    .badge-in { background: rgba(16, 185, 129, 0.9); color: #fff; }
+    .badge-main { background: rgba(245, 158, 11, 0.9); color: #000; }
+    .badge-out { background: rgba(56, 189, 248, 0.9); color: #000; }
+    .beat-time-tag { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.75); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+    .beat-content { padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .beat-header { display: flex; justify-content: space-between; align-items: center; }
     .beat-id-title { font-size: 13px; font-weight: 800; color: var(--text-primary); }
-    
     .specs-table { width: 100%; font-size: 11px; border-collapse: collapse; background: rgba(0, 0, 0, 0.2); border-radius: 6px; overflow: hidden; }
     .specs-table tr { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
     .specs-table tr:last-child { border-bottom: none; }
-    .specs-table td { padding: 6px 8px; }
+    .specs-table td { padding: 5px 8px; }
     .specs-table td.spec-name { color: var(--text-muted); font-weight: 600; width: 36%; }
     .specs-table td.spec-val { color: var(--text-primary); font-weight: 500; }
-    
-    .meta-row { display: flex; align-items: baseline; gap: 8px; font-size: 11.5px; line-height: 1.5; border-bottom: 1px solid rgba(255, 255, 255, 0.04); padding-bottom: 5px; }
-    .meta-row:last-of-type { border-bottom: none; padding-bottom: 0; }
-    .meta-label { color: var(--text-muted); font-weight: 600; min-width: 80px; flex-shrink: 0; font-size: 11px; }
-    .meta-val { color: var(--text-primary); font-weight: 500; flex: 1; }
-    .meta-val.highlight { color: var(--cyan); font-weight: 700; }
-    
-    .director-note-box, .director-note { background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.35); padding: 9px 12px; border-radius: 6px; font-size: 11px; color: #fde68a; line-height: 1.4; margin-top: auto; }
+    .director-note-box { background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.3); padding: 8px 10px; border-radius: 6px; font-size: 11px; color: #fde68a; line-height: 1.4; margin-top: auto; }
     
     /* Timeline Filmstrip */
     .timeline-wrapper { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px 20px; margin-bottom: 28px; }
@@ -205,24 +162,21 @@
     .strip-title { font-weight: 700; color: #fff; }
     .strip-ts { color: var(--cyan); font-family: 'JetBrains Mono', monospace; }
     
-    /* Lightbox Modal - 100% UNCLIPPED */
+    /* Lightbox Modal */
     .lightbox {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+      background: rgba(0, 0, 0, 0.88); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
     }
     .lightbox.active { display: flex; }
     .lightbox-content {
-      background: var(--bg-card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: var(--radius-lg);
-      max-width: 860px; width: 100%; max-height: 92vh; overflow: hidden; display: flex; gap: 22px; padding: 22px; position: relative;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+      max-width: 800px; width: 100%; max-height: 90vh; overflow: hidden; display: flex; gap: 20px; padding: 20px; position: relative;
     }
-    @media (max-width: 700px) { .lightbox-content { flex-direction: column; overflow-y: auto; } }
-    .lightbox-img-box { flex: 1; max-width: 350px; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .lightbox-img-box img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
-    .lightbox-details { flex: 1.2; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
-    .lightbox-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 20px; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; }
-    .lightbox-close:hover { background: #ef4444; border-color: #ef4444; }
-
+    @media (max-width: 650px) { .lightbox-content { flex-direction: column; overflow-y: auto; } }
+    .lightbox-img-box { flex: 1; max-width: 320px; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; overflow: hidden; }
+    .lightbox-img-box img { width: 100%; height: 100%; object-fit: cover; }
+    .lightbox-details { flex: 1.2; display: flex; flex-direction: column; gap: 12px; }
+    .lightbox-close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 24px; color: #fff; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -232,7 +186,7 @@
       <div class="header-title">🎬 Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá (30s)</div>
     </div>
     <div class="header-controls">
-      <a href="index.html" class="home-btn">🏠 Master Hub</a>
+      <a href="index.html" class="hub-link">🏛️ Master Hub</a>
       <a href="#orig-msg" class="nav-btn">📩 Tin Nhắn Gốc</a>
       <a href="#scene-1" class="nav-btn">Cảnh 1</a>
       <a href="#scene-2" class="nav-btn">Cảnh 2</a>
@@ -356,10 +310,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg', 'Khung Hình 1.1: Cận cảnh hộp sản phẩm mẫu (Product Close-Up)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg', 'Khung Hình 1.1: Cận cảnh hộp sản phẩm mẫu (Product Close-Up)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">0.0s - 1.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="1.1">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -376,10 +330,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg', 'Khung Hình 1.2: Đặc tả xoay nhẹ góc sản phẩm (Product ECU)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg', 'Khung Hình 1.2: Đặc tả xoay nhẹ góc sản phẩm (Product ECU)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">1.0s - 2.2s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg" alt="1.2">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -396,10 +350,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg', 'Khung Hình 1.3: Cận cảnh đặt sản phẩm xuống bàn (Desk Rest)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg', 'Khung Hình 1.3: Cận cảnh đặt sản phẩm xuống bàn (Desk Rest)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">2.2s - 3.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg" alt="1.3">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -441,10 +395,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg', 'Khung Hình 2.1: Trung cảnh (Medium Shot)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg', 'Khung Hình 2.1: Trung cảnh (Medium Shot)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">3.0s - 4.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg" alt="2.1">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -461,10 +415,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg', 'Khung Hình 2.2: Trung cận qua vai (Over-the-Shoulder)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg', 'Khung Hình 2.2: Trung cận qua vai (Over-the-Shoulder)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">4.5s - 6.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg" alt="2.2">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -481,10 +435,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg', 'Khung Hình 2.3: Cận cảnh ngón tay lướt màn hình chat', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg', 'Khung Hình 2.3: Cận cảnh ngón tay lướt màn hình chat', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">6.0s - 7.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg" alt="2.3">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -526,10 +480,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg', 'Khung Hình 3.1: Đặc tả màn hình chat khách im lặng (UI POV)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg', 'Khung Hình 3.1: Đặc tả màn hình chat khách im lặng (UI POV)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">7.0s - 9.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg" alt="3.1">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -546,10 +500,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg', 'Khung Hình 3.2: Cận cảnh chân dung giằng xé nội tâm (Facial ECU)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg', 'Khung Hình 3.2: Cận cảnh chân dung giằng xé nội tâm (Facial ECU)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">9.5s - 12.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg" alt="3.2">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -566,10 +520,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg', 'Khung Hình 3.3: Trung cận ngẩng đầu nhìn bài giảng', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg', 'Khung Hình 3.3: Trung cận ngẩng đầu nhìn bài giảng', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">12.5s - 15.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg" alt="3.3">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -611,10 +565,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg', 'Khung Hình 4.1: Cận góc nghiêng bài giảng quy trình (Side Profile)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg', 'Khung Hình 4.1: Cận góc nghiêng bài giảng quy trình (Side Profile)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">15.0s - 18.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg" alt="4.1">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -631,10 +585,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg', 'Khung Hình 4.2: Cận cảnh ánh mắt thấu suốt (Insight Close-Up)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg', 'Khung Hình 4.2: Cận cảnh ánh mắt thấu suốt (Insight Close-Up)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">18.0s - 22.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg" alt="4.2">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -651,10 +605,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg', 'Khung Hình 4.3: Trung cảnh nhấc sản phẩm lên (Product Lift)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg', 'Khung Hình 4.3: Trung cảnh nhấc sản phẩm lên (Product Lift)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">22.0s - 25.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg" alt="4.3">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -696,10 +650,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg', 'Khung Hình 5.1: Cận trực diện (Frontal Close-Up)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg', 'Khung Hình 5.1: Cận trực diện (Frontal Close-Up)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">25.0s - 26.8s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="5.1">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -716,10 +670,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg', 'Khung Hình 5.2: Cận cảnh truyền cảm hứng (Conviction Shot)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg', 'Khung Hình 5.2: Cận cảnh truyền cảm hứng (Conviction Shot)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">26.8s - 28.8s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg" alt="5.2">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -736,10 +690,10 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg', 'Khung Hình 5.3: Trung cận kết thúc (Outro Frame)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg', 'Khung Hình 5.3: Trung cận kết thúc (Outro Frame)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">28.8s - 30.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg" alt="5.3">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -762,78 +716,78 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
       <h2 style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #fff;">🎞️ Dải Timeline Phân Cảnh (15 Khung Hình Liên Tiếp • 0s ➔ 30s)</h2>
       <div class="filmstrip">
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg', 'Cảnh 1.1 (0.0s - 1.0s)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg', 'Cảnh 1.1 (0.0s - 1.0s)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="1.1">
           <div class="strip-meta"><div class="strip-title">Cảnh 1.1</div><div class="strip-ts">0.0s - 1.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg', 'Cảnh 1.2 (1.0s - 2.2s)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg', 'Cảnh 1.2 (1.0s - 2.2s)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg" alt="1.2">
           <div class="strip-meta"><div class="strip-title">Cảnh 1.2</div><div class="strip-ts">1.0s - 2.2s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg', 'Cảnh 1.3 (2.2s - 3.0s)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg', 'Cảnh 1.3 (2.2s - 3.0s)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg" alt="1.3">
           <div class="strip-meta"><div class="strip-title">Cảnh 1.3</div><div class="strip-ts">2.2s - 3.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg', 'Cảnh 2.1 (3.0s - 4.5s)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg', 'Cảnh 2.1 (3.0s - 4.5s)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg" alt="2.1">
           <div class="strip-meta"><div class="strip-title">Cảnh 2.1</div><div class="strip-ts">3.0s - 4.5s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg', 'Cảnh 2.2 (4.5s - 6.0s)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg', 'Cảnh 2.2 (4.5s - 6.0s)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg" alt="2.2">
           <div class="strip-meta"><div class="strip-title">Cảnh 2.2</div><div class="strip-ts">4.5s - 6.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg', 'Cảnh 2.3 (6.0s - 7.0s)', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg', 'Cảnh 2.3 (6.0s - 7.0s)', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg" alt="2.3">
           <div class="strip-meta"><div class="strip-title">Cảnh 2.3</div><div class="strip-ts">6.0s - 7.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg', 'Cảnh 3.1 (7.0s - 9.5s)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg', 'Cảnh 3.1 (7.0s - 9.5s)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg" alt="3.1">
           <div class="strip-meta"><div class="strip-title">Cảnh 3.1</div><div class="strip-ts">7.0s - 9.5s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg', 'Cảnh 3.2 (9.5s - 12.5s)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg', 'Cảnh 3.2 (9.5s - 12.5s)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg" alt="3.2">
           <div class="strip-meta"><div class="strip-title">Cảnh 3.2</div><div class="strip-ts">9.5s - 12.5s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg', 'Cảnh 3.3 (12.5s - 15.0s)', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg', 'Cảnh 3.3 (12.5s - 15.0s)', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg" alt="3.3">
           <div class="strip-meta"><div class="strip-title">Cảnh 3.3</div><div class="strip-ts">12.5s - 15.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg', 'Cảnh 4.1 (15.0s - 18.0s)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg', 'Cảnh 4.1 (15.0s - 18.0s)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg" alt="4.1">
           <div class="strip-meta"><div class="strip-title">Cảnh 4.1</div><div class="strip-ts">15.0s - 18.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg', 'Cảnh 4.2 (18.0s - 22.0s)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg', 'Cảnh 4.2 (18.0s - 22.0s)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg" alt="4.2">
           <div class="strip-meta"><div class="strip-title">Cảnh 4.2</div><div class="strip-ts">18.0s - 22.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg', 'Cảnh 4.3 (22.0s - 25.0s)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg', 'Cảnh 4.3 (22.0s - 25.0s)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg" alt="4.3">
           <div class="strip-meta"><div class="strip-title">Cảnh 4.3</div><div class="strip-ts">22.0s - 25.0s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg', 'Cảnh 5.1 (25.0s - 26.8s)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg', 'Cảnh 5.1 (25.0s - 26.8s)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="5.1">
           <div class="strip-meta"><div class="strip-title">Cảnh 5.1</div><div class="strip-ts">25.0s - 26.8s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg', 'Cảnh 5.2 (26.8s - 28.8s)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg', 'Cảnh 5.2 (26.8s - 28.8s)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg" alt="5.2">
           <div class="strip-meta"><div class="strip-title">Cảnh 5.2</div><div class="strip-ts">26.8s - 28.8s</div></div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg', 'Cảnh 5.3 (28.8s - 30.0s)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg', 'Cảnh 5.3 (28.8s - 30.0s)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg" alt="5.3">
           <div class="strip-meta"><div class="strip-title">Cảnh 5.3</div><div class="strip-ts">28.8s - 30.0s</div></div>
         </div>
 

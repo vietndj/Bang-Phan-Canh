@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kho Quản Trị Bảng Phân Cảnh Điện Ảnh 9:16 & Kịch Bản Thực Chiến | Master Hub</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Kho Quản Trị Bảng Phân Cảnh & Kịch Bản Thực Chiến | Storyboard Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #0a0e17;
-      --bg-surface: #111827;
-      --bg-card: #162032;
-      --bg-card-hover: #1c2a42;
+      --bg-main: #060911;
+      --bg-surface: #0c121e;
+      --bg-card: #111a2b;
+      --bg-card-hover: #17243c;
       --border-subtle: rgba(255, 255, 255, 0.08);
       --border-accent: rgba(56, 189, 248, 0.35);
       --text-primary: #f8fafc;
@@ -21,9 +24,9 @@
       --cyan: #38bdf8;
       --cyan-glow: rgba(56, 189, 248, 0.15);
       --amber: #f59e0b;
-      --amber-glow: rgba(245, 158, 11, 0.15);
       --emerald: #10b981;
       --rose: #f43f5e;
+      --indigo: #818cf8;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -36,12 +39,12 @@
       line-height: 1.6;
       padding-bottom: 80px;
     }
-    .container { max-width: 1360px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1380px; margin: 0 auto; padding: 0 20px; }
     
     /* Top Header */
     .top-header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(10, 14, 23, 0.94);
+      background: rgba(6, 9, 17, 0.94);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
       padding: 14px 24px;
@@ -58,138 +61,104 @@
       background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
       font-size: 12px; font-weight: 600; padding: 7px 14px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.2s;
     }
-    .header-link:hover { background: var(--cyan); color: #000; border-color: var(--cyan); font-weight: 700; }
+    .header-link:hover { background: var(--cyan); color: #000; border-color: var(--cyan); }
     
-    /* Hero Section */
+    /* Hero */
     .hero {
-      background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
+      background: linear-gradient(180deg, #0f172a 0%, #090e1a 100%);
       border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: var(--radius-lg);
       padding: 36px 32px;
-      margin: 30px auto;
+      margin: 28px 0 36px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 300px; background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 4px 14px; border-radius: 9999px; font-size: 11.5px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 9999px; font-size: 12px; font-weight: 700; margin-bottom: 12px;
     }
     .hero h1 {
-      font-size: 30px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.3;
+      font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.3;
       background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .hero-desc {
-      max-width: 820px; margin: 0 auto 24px auto; color: var(--text-secondary); font-size: 14px; line-height: 1.7;
-    }
+    .hero-desc { color: var(--text-secondary); font-size: 15px; max-width: 820px; margin: 0 auto 24px; }
     
-    /* Stats Bar */
     .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-      max-width: 960px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px;
+      background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 20px;
     }
-    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-    .stat-item {
-      background: rgba(0, 0, 0, 0.35); border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm); padding: 14px 16px;
-    }
-    .stat-num { font-size: 24px; font-weight: 800; color: var(--cyan); font-family: 'JetBrains Mono', monospace; }
-    .stat-label { font-size: 11.5px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 2px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 24px; font-weight: 800; color: var(--text-primary); font-family: 'JetBrains Mono', monospace; }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
     
-    /* Filter Bar */
-    .filter-bar {
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
-      background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
-      padding: 12px 18px; margin-bottom: 30px;
-    }
-    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-    .filter-tab {
-      background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
-      font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s;
-    }
-    .filter-tab:hover, .filter-tab.active {
-      background: var(--cyan); color: #000; border-color: var(--cyan); font-weight: 700;
-    }
-    .search-box {
-      background: #090e17; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);
-      padding: 6px 12px; color: #fff; font-size: 12.5px; outline: none; min-width: 240px;
-    }
-    .search-box:focus { border-color: var(--cyan); }
-    
-    /* Section Headers */
+    /* Section Headings */
     .section-header {
       display: flex; justify-content: space-between; align-items: flex-end;
-      margin: 40px 0 20px 0; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);
     }
-    .section-title { font-size: 20px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
-    .section-sub { font-size: 13px; color: var(--text-muted); }
+    .section-title { font-size: 20px; font-weight: 800; color: #fff; }
+    .section-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
     
-    /* Storyboard Grid */
+    /* Boards Grid */
     .boards-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 24px;
     }
-    @media (max-width: 850px) { .boards-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .boards-grid { grid-template-columns: 1fr; } }
     
     .board-card {
-      background: var(--bg-surface); border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg); overflow: hidden;
-      display: flex; flex-direction: column; transition: all 0.25s ease;
+      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+      padding: 20px; display: flex; flex-direction: column; transition: all 0.25s ease;
     }
     .board-card:hover {
-      transform: translateY(-4px); border-color: var(--border-accent);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      border-color: var(--border-accent); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45); transform: translateY(-3px);
     }
     
-    .card-media {
-      position: relative; height: 260px; background: #000; overflow: hidden;
+    .card-header { display: flex; gap: 16px; margin-bottom: 16px; }
+    .thumb-box {
+      flex: 0 0 110px; aspect-ratio: 9 / 16; border-radius: var(--radius-sm); overflow: hidden;
+      background: #000; position: relative; border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .card-thumb {
-      width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease;
-    }
-    .board-card:hover .card-thumb { transform: scale(1.04); }
-    
-    .card-badge {
-      position: absolute; top: 12px; left: 12px;
-      font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 6px;
-      text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .card-duration {
-      position: absolute; bottom: 12px; right: 12px;
-      background: rgba(0, 0, 0, 0.8); color: var(--cyan);
-      font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
-      backdrop-filter: blur(4px); font-family: 'JetBrains Mono', monospace;
+    .thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+    .thumb-badge {
+      position: absolute; bottom: 6px; right: 6px; background: rgba(0, 0, 0, 0.8);
+      font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; color: #fff;
     }
     
-    .card-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-    .card-title { font-size: 17px; font-weight: 800; line-height: 1.4; margin-bottom: 8px; }
-    .card-title a { color: #fff; text-decoration: none; transition: color 0.2s; }
+    .card-header-info { flex: 1; display: flex; flex-direction: column; }
+    .category-pill {
+      display: inline-block; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;
+      border: 1px solid; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px; width: fit-content;
+    }
+    .card-title { font-size: 16px; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
+    .card-title a { color: #fff; text-decoration: none; }
     .card-title a:hover { color: var(--cyan); }
+    .card-target { font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px; }
+    .card-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+    .chip {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary); font-size: 10.5px; font-weight: 600; padding: 2px 6px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
     
-    .card-target { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
-    .card-target b { color: var(--text-secondary); }
-    
-    .card-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    .card-body { display: flex; flex-direction: column; flex: 1; gap: 12px; margin-bottom: 16px; }
+    .card-summary { font-size: 12.5px; color: #cbd5e1; line-height: 1.5; }
     
     .quote-box {
-      background: #090e17; border-left: 3px solid var(--cyan); border-radius: 4px;
-      padding: 10px 12px; margin-bottom: 16px;
+      background: rgba(0, 0, 0, 0.3); border-left: 3px solid var(--cyan); padding: 8px 12px; border-radius: 0 6px 6px 0;
     }
-    .quote-label { font-size: 10px; font-weight: 800; color: var(--cyan); text-transform: uppercase; margin-bottom: 2px; }
-    .quote-text { font-size: 12px; color: #cbd5e1; font-style: italic; }
+    .quote-label { font-size: 10px; font-weight: 700; color: var(--cyan); text-transform: uppercase; margin-bottom: 2px; }
+    .quote-text { font-size: 12px; color: #fff; font-style: italic; font-weight: 600; }
     
-    .filmstrip-preview { margin-bottom: 20px; }
-    .filmstrip-title { font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; }
-    .filmstrip-imgs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-    .filmstrip-imgs img {
-      width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.1); background: #000;
+    .strip-box {}
+    .strip-label { font-size: 10.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+    .strip-frames { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
+    .strip-thumb {
+      flex: 0 0 54px; aspect-ratio: 9 / 16; border-radius: 4px; overflow: hidden; background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.08); flex-shrink: 0;
     }
+    .strip-thumb img { width: 100%; height: 100%; object-fit: cover; }
     
     .card-footer {
       display: flex; justify-content: space-between; align-items: center;
@@ -205,7 +174,7 @@
       transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
     }
     
-    /* Text Documents Cards (No Thumbnails) */
+    /* Text Documents Cards */
     .docs-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 24px;
     }
@@ -292,7 +261,7 @@
       <h1>Kho Bảng Phân Cảnh & Kịch Bản Thực Chiến</h1>
       <p class="hero-desc">
         Hệ thống Storyboard Studio chuẩn điện ảnh 9:16 ứng dụng công thức băm nhỏ <b>3 Micro-Beats</b> (Đầu cảnh • Cao trào • Mồi chuyển) cho từng cảnh quay 30 giây.
-        Đầy đủ các bản thiết kế visual storyboard và toàn bộ tài liệu kịch bản gốc.
+        Đầy đủ 100% hình ảnh độc lập, chân thực cho từng dự án.
       </p>
       
       <div class="stats-grid">
@@ -319,362 +288,502 @@
     <div class="section-header" id="storyboards-sec">
       <div>
         <h2 class="section-title">🎬 Bảng Phân Cảnh Điện Ảnh 9:16 (10 Kịch Bản)</h2>
-        <div class="section-sub">Bảng phân cảnh chi tiết 3 nhịp Micro-Beats, thông số góc máy, động tác, bố cục và lời thoại</div>
+        <div class="section-sub">Bảng phân cảnh chi tiết 3 nhịp Micro-Beats, thông số góc máy, động tác, bố cục và hình ảnh độc lập cho từng kịch bản</div>
       </div>
     </div>
 
     <div class="boards-grid">
       
-      <article class="board-card" data-category="Kinh Doanh & Quảng Cáo Online">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 01: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #38bdf8; color: #000;">Kinh Doanh & Quảng Cáo Online</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+    <article class="board-card" data-category="Kinh Doanh & Quảng Cáo Online">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Kịch Bản Gốc: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #38bdf820; color: #38bdf8; border-color: #38bdf840;">
+            Kinh Doanh & Quảng Cáo Online
+          </span>
+          <h3 class="card-title"><a href="tu_dot_tien_den_tu_tin_xuat_hien.html">Kịch Bản Gốc: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện</a></h3>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Chủ shop, người bán hàng online phụ thuộc chạy Ads</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Nỗi đau chi phí quảng cáo tăng gấp đôi, tiền nạp ăn hết lãi. Chuyển dịch tư duy từ 'đốt tiền mua Ads' sang tự quay video xuất hiện để xây dựng niềm tin thật với khách hàng.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
         </div>
         
-        <div class="card-body">
-          <h3 class="card-title"><a href="tu_dot_tien_den_tu_tin_xuat_hien.html">Kịch Bản 01: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Chủ shop, người bán hàng online phụ thuộc chạy Ads</b></div>
-          <p class="card-summary">Nỗi đau chi phí quảng cáo tăng gấp đôi, tiền nạp ăn hết lãi. Chuyển dịch tư duy từ 'đốt tiền mua Ads' sang tự quay video xuất hiện để xây dựng niềm tin thật với khách hàng.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 Kịch Bản Thực Chiến 01</span>
-            </div>
-            <a href="tu_dot_tien_den_tu_tin_xuat_hien.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Chủ Shop & Mở Tiệm Kinh Doanh">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 02: Tiền Mặt Bằng & Cửa Hàng Vắng Khách" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #f43f5e; color: #000;">Chủ Shop & Mở Tiệm Kinh Doanh</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 Kịch Bản Thực Chiến Demo Gốc</span>
         </div>
-        
-        <div class="card-body">
-          <h3 class="card-title"><a href="tien_mat_bang_va_cua_hang_vang_khach.html">Kịch Bản 02: Tiền Mặt Bằng & Cửa Hàng Vắng Khách</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Chủ shop offline, chủ tiệm gánh áp lực mặt bằng và nhân sự</b></div>
-          <p class="card-summary">Áp lực sinh tồn khi tiền mặt bằng 20 triệu đến hạn, cửa hàng vắng khách. Tự làm thuê cho chính mình 16h/ngày và quyết tâm học lại mọi thứ để duy trì cửa hàng.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb02)</span>
-            </div>
-            <a href="tien_mat_bang_va_cua_hang_vang_khach.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
-          </div>
+        <a href="tu_dot_tien_den_tu_tin_xuat_hien.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Tâm Lý & Áp Lực Kiệt Sức">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 01: Ngồi Cà Phê 10h Tối" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Tâm Lý & Áp Lực Kiệt Sức">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 01: Ngồi Cà Phê 10h Tối" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #818cf8; color: #000;">Tâm Lý & Áp Lực Kiệt Sức</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
-        </div>
-        
-        <div class="card-body">
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #818cf820; color: #818cf8; border-color: #818cf840;">
+            Tâm Lý & Áp Lực Kiệt Sức
+          </span>
           <h3 class="card-title"><a href="kich_ban_01_ngoi_ca_phe_10h_toi.html">Kịch Bản 01: Ngồi Cà Phê 10h Tối</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Người trẻ làm nghề, freelancer cày đêm vì bất an</b></div>
-          <p class="card-summary">Bóc trần thói quen 'cố tỏ ra bận rộn' để xoa dịu nỗi sợ tụt hậu. Cày đêm không phải vì đam mê mà là liều thuốc an thần cho sự bất an của chính mình.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"10h tối, ngồi ở góc quán này không phải vì chăm chỉ..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb01)</span>
-            </div>
-            <a href="kich_ban_01_ngoi_ca_phe_10h_toi.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Người trẻ làm nghề, freelancer cày đêm vì bất an</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Phát Triển Bản Thân & Nghề Nghiệp">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="Kịch Bản 03: Chững Lại Sau Tuổi 30" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #f59e0b; color: #000;">Phát Triển Bản Thân & Nghề Nghiệp</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Bóc trần thói quen 'cố tỏ ra bận rộn' để xoa dịu nỗi sợ tụt hậu. Cày đêm không phải vì đam mê mà là liều thuốc an thần cho sự bất an của chính mình.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"10h tối, ngồi ở góc quán này không phải vì chăm chỉ..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb01)</span>
+        </div>
+        <a href="kich_ban_01_ngoi_ca_phe_10h_toi.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Chủ Shop & Mở Tiệm Kinh Doanh">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 02: Tiền Mặt Bằng & Cửa Hàng Vắng Khách" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #f43f5e20; color: #f43f5e; border-color: #f43f5e40;">
+            Chủ Shop & Mở Tiệm Kinh Doanh
+          </span>
+          <h3 class="card-title"><a href="kich_ban_02_tien_mat_bang_va_cua_hang_vang_khach.html">Kịch Bản 02: Tiền Mặt Bằng & Cửa Hàng Vắng Khách</a></h3>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Chủ shop offline, chủ tiệm gánh áp lực mặt bằng và nhân sự</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Áp lực sinh tồn khi tiền mặt bằng 20 triệu đến hạn, cửa hàng vắng khách. Tự làm thuê cho chính mình 16h/ngày và quyết tâm học lại mọi thứ để duy trì cửa hàng.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi..."</div>
+        </div>
+        
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb02)</span>
+        </div>
+        <a href="kich_ban_02_tien_mat_bang_va_cua_hang_vang_khach.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Phát Triển Bản Thân & Nghề Nghiệp">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 03: Chững Lại Sau Tuổi 30" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #f59e0b20; color: #f59e0b; border-color: #f59e0b40;">
+            Phát Triển Bản Thân & Nghề Nghiệp
+          </span>
           <h3 class="card-title"><a href="kich_ban_03_chung_lai_sau_tuoi_30.html">Kịch Bản 03: Chững Lại Sau Tuổi 30</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Người làm văn phòng 30+, người sợ tụt hậu công nghệ</b></div>
-          <p class="card-summary">Khủng hoảng tuổi 30 của người làm văn phòng khi thu nhập đứng yên mà chi phí tăng. Nỗi sợ bị bỏ lại phía sau trước làn sóng công nghệ mới và quyết tâm học lại từ đầu.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb03)</span>
-            </div>
-            <a href="kich_ban_03_chung_lai_sau_tuoi_30.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Người làm văn phòng 30+, người sợ tụt hậu công nghệ</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Bán Hàng Online & Chạy Ads">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 04: Tiền Quảng Cáo Ăn Hết Tiền Lãi" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #ec4899; color: #000;">Bán Hàng Online & Chạy Ads</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Khủng hoảng tuổi 30 của người làm văn phòng khi thu nhập đứng yên mà chi phí tăng. Nỗi sợ bị bỏ lại phía sau trước làn sóng công nghệ mới và quyết tâm học lại từ đầu.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_03_chung_lai_sau_tuoi_30/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb03)</span>
+        </div>
+        <a href="kich_ban_03_chung_lai_sau_tuoi_30.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Bán Hàng Online & Chạy Ads">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 04: Tiền Quảng Cáo Ăn Hết Tiền Lãi" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #ec489920; color: #ec4899; border-color: #ec489940;">
+            Bán Hàng Online & Chạy Ads
+          </span>
           <h3 class="card-title"><a href="kich_ban_04_tien_quang_cao_an_het_tien_lai.html">Kịch Bản 04: Tiền Quảng Cáo Ăn Hết Tiền Lãi</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Người kinh doanh online phụ thuộc hoàn toàn vào Facebook/TikTok Ads</b></div>
-          <p class="card-summary">Bế tắc vì chi phí quảng cáo tăng phi mã nhưng không dám tắt ads. Lựa chọn dũng cảm: Thay vì đổ tiền nuôi nền tảng thì tự học cách xuất hiện để kéo khách tự nhiên.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb04)</span>
-            </div>
-            <a href="kich_ban_04_tien_quang_cao_an_het_tien_lai.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Người kinh doanh online phụ thuộc hoàn toàn vào Facebook/TikTok Ads</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Mối Quan Hệ & Bán Hàng">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="Kịch Bản 05: Hết Khách Từ Mối Quan Hệ Quen" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #a855f7; color: #000;">Mối Quan Hệ & Bán Hàng</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Bế tắc vì chi phí quảng cáo tăng phi mã nhưng không dám tắt ads. Lựa chọn dũng cảm: Thay vì đổ tiền nuôi nền tảng thì tự học cách xuất hiện để kéo khách tự nhiên.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_04_tien_quang_cao_an_het_tien_lai/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb04)</span>
+        </div>
+        <a href="kich_ban_04_tien_quang_cao_an_het_tien_lai.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Mối Quan Hệ & Bán Hàng">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 05: Hết Khách Từ Mối Quan Hệ Quen" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #a855f720; color: #a855f7; border-color: #a855f740;">
+            Mối Quan Hệ & Bán Hàng
+          </span>
           <h3 class="card-title"><a href="kich_ban_05_het_khach_tu_moi_quan_he_quen.html">Kịch Bản 05: Hết Khách Từ Mối Quan Hệ Quen</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Người làm dịch vụ, tư vấn, bảo hiểm, bất động sản</b></div>
-          <p class="card-summary">Nỗi ngại ngùng khi chào mời người quen ủng hộ đã đến giới hạn. Nhận ra giá trị của việc làm nội dung để người lạ tự tìm đến và đặt niềm tin.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Lướt danh bạ điện thoại từ trên xuống dưới mà không biết nhắn cho ai..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb05)</span>
-            </div>
-            <a href="kich_ban_05_het_khach_tu_moi_quan_he_quen.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Người làm dịch vụ, tư vấn, bảo hiểm, bất động sản</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Kỹ Năng Nghề & Xây Uy Tín">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="Kịch Bản 06: Tay Nghề Tốt Nhưng Vẫn Vắng Khách" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #14b8a6; color: #000;">Kỹ Năng Nghề & Xây Uy Tín</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Nỗi ngại ngùng khi chào mời người quen ủng hộ đã đến giới hạn. Nhận ra giá trị của việc làm nội dung để người lạ tự tìm đến và đặt niềm tin.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Lướt danh bạ điện thoại từ trên xuống dưới mà không biết nhắn cho ai..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_05_het_khach_tu_moi_quan_he_quen/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb05)</span>
+        </div>
+        <a href="kich_ban_05_het_khach_tu_moi_quan_he_quen.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Kỹ Năng Nghề & Xây Uy Tín">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 06: Tay Nghề Tốt Nhưng Vẫn Vắng Khách" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #14b8a620; color: #14b8a6; border-color: #14b8a640;">
+            Kỹ Năng Nghề & Xây Uy Tín
+          </span>
           <h3 class="card-title"><a href="kich_ban_06_tay_nghe_tot_nhung_van_vang_khach.html">Kịch Bản 06: Tay Nghề Tốt Nhưng Vẫn Vắng Khách</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Thợ thủ công, kỹ thuật viên, chuyên gia chuyên môn giỏi nhưng thiếu truyền thông</b></div>
-          <p class="card-summary">Nghịch lý 'hữu xạ tự nhiên hương' không còn đúng trong thời đại số. Giỏi nghề thôi chưa đủ, phải biết cách cho khách hàng thấy sự tâm huyết và kỹ lưỡng của mình.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Làm nghề mười mấy năm, đồ mình làm ra tự tin không thua ai..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb06)</span>
-            </div>
-            <a href="kich_ban_06_tay_nghe_tot_nhung_van_vang_khach.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Thợ thủ công, kỹ thuật viên, chuyên gia chuyên môn giỏi nhưng thiếu truyền thông</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Cạnh Tranh Giá & Xây Khách Quen">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="Kịch Bản 07: Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #06b6d4; color: #000;">Cạnh Tranh Giá & Xây Khách Quen</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Nghịch lý 'hữu xạ tự nhiên hương' không còn đúng trong thời đại số. Giỏi nghề thôi chưa đủ, phải biết cách cho khách hàng thấy sự tâm huyết và kỹ lưỡng của mình.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Làm nghề mười mấy năm, đồ mình làm ra tự tin không thua ai..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb06)</span>
+        </div>
+        <a href="kich_ban_06_tay_nghe_tot_nhung_van_vang_khach.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Cạnh Tranh Giá & Xây Khách Quen">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 07: Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #06b6d420; color: #06b6d4; border-color: #06b6d440;">
+            Cạnh Tranh Giá & Xây Khách Quen
+          </span>
           <h3 class="card-title"><a href="kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc.html">Kịch Bản 07: Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Cửa hàng bán lẻ, đại lý phân phối truyền thống</b></div>
-          <p class="card-summary">Không thể đua giá rẻ với các tổng kho và sàn thương mại điện tử. Con đường sống sót duy nhất là bán trải nghiệm, dịch vụ tận tâm và sự đồng hành của người bán.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Khách cầm điện thoại vào hỏi: 'Sao bên kia bán rẻ hơn anh mấy chục ngàn?'..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb07)</span>
-            </div>
-            <a href="kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Cửa hàng bán lẻ, đại lý phân phối truyền thống</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Khởi Nghiệp Lại & Vượt Khủng Hoảng">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="Kịch Bản 08: Bắt Đầu Lại Từ Con Số 0" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #10b981; color: #000;">Khởi Nghiệp Lại & Vượt Khủng Hoảng</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Không thể đua giá rẻ với các tổng kho và sàn thương mại điện tử. Con đường sống sót duy nhất là bán trải nghiệm, dịch vụ tận tâm và sự đồng hành của người bán.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Khách cầm điện thoại vào hỏi: 'Sao bên kia bán rẻ hơn anh mấy chục ngàn?'..."</div>
         </div>
         
-        <div class="card-body">
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb07)</span>
+        </div>
+        <a href="kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Khởi Nghiệp Lại & Vượt Khủng Hoảng">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 08: Bắt Đầu Lại Từ Con Số 0" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #10b98120; color: #10b981; border-color: #10b98140;">
+            Khởi Nghiệp Lại & Vượt Khủng Hoảng
+          </span>
           <h3 class="card-title"><a href="kich_ban_08_bat_dau_lai_tu_con_so_0.html">Kịch Bản 08: Bắt Đầu Lại Từ Con Số 0</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Người từng thất bại, chuyển đổi mô hình kinh doanh mới</b></div>
-          <p class="card-summary">Tâm thế làm lại từ đầu sau cú vấp ngã. Không còn ảo tưởng về vốn lớn, tập trung vào mô hình tinh gọn, chi phí thấp và tự làm chủ truyền thông.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Đóng cửa cửa hàng cũ, trong tay gần như về lại số 0..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb08)</span>
-            </div>
-            <a href="kich_ban_08_bat_dau_lai_tu_con_so_0.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Người từng thất bại, chuyển đổi mô hình kinh doanh mới</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
           </div>
         </div>
-      </article>
-    
-      <article class="board-card" data-category="Chất Lượng vs Giá Rẻ">
-        <div class="card-media">
-          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá" class="card-thumb" loading="lazy">
-          <div class="card-badge" style="background: #eab308; color: #000;">Chất Lượng vs Giá Rẻ</div>
-          <div class="card-duration">⏱️ 30 Giây • 5 Cảnh</div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Tâm thế làm lại từ đầu sau cú vấp ngã. Không còn ảo tưởng về vốn lớn, tập trung vào mô hình tinh gọn, chi phí thấp và tự làm chủ truyền thông.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Đóng cửa cửa hàng cũ, trong tay gần như về lại số 0..."</div>
         </div>
         
-        <div class="card-body">
-          <h3 class="card-title"><a href="kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html">Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá</a></h3>
-          <div class="card-target">🎯 Đối tượng: <b>Nhà sản xuất, thợ lành nghề, thương hiệu tập trung chất lượng</b></div>
-          <p class="card-summary">Nỗi uất ức khi sản phẩm làm bằng cái tâm bị đem ra so kè với hàng chợ kém chất lượng. Giải pháp: Quay cận cảnh quy trình để người xem tự nhìn thấy sự khác biệt.</p>
-          
-          <div class="quote-box">
-            <div class="quote-label">🎙️ Hook Mở Màn:</div>
-            <div class="quote-text">"Nhập từng con ốc, chọn từng miếng gỗ tốt nhất nhưng khách chỉ hỏi: 'Sao đắt thế?'..."</div>
-          </div>
-          
-          <div class="filmstrip-preview">
-            <div class="filmstrip-title">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
-            <div class="filmstrip-imgs">
-              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="beat frame" loading="lazy"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="beat frame" loading="lazy">
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <div class="card-meta">
-              <span>📅 21/08/2026</span>
-              <span>•</span>
-              <span>📱 9 Kịch Bản Thực Chiến (#kb09)</span>
-            </div>
-            <a href="kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html" class="open-btn">Xem Phân Cảnh Chi Tiết →</a>
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_08_bat_dau_lai_tu_con_so_0/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
           </div>
         </div>
-      </article>
-    
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb08)</span>
+        </div>
+        <a href="kich_ban_08_bat_dau_lai_tu_con_so_0.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
+    <article class="board-card" data-category="Chất Lượng & Định Vị Cao Cấp">
+      <div class="card-header">
+        <div class="thumb-box">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá" loading="lazy">
+          <span class="thumb-badge">30 Giây</span>
+        </div>
+        <div class="card-header-info">
+          <span class="category-pill" style="background: #f9731620; color: #f97316; border-color: #f9731640;">
+            Chất Lượng & Định Vị Cao Cấp
+          </span>
+          <h3 class="card-title"><a href="kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html">Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá</a></h3>
+          <div class="card-target">🎯 <b>Đối tượng:</b> Chủ xưởng sản xuất, người làm hàng thủ công / kỹ nghệ tâm huyết</div>
+          <div class="card-chips">
+            <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
+            <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <p class="card-summary">Nỗi đau hàng làm kỹ, nguyên liệu xịn nhưng bị khách ép giá với hàng chợ giá rẻ. Chiến lược quay lại quy trình chế tác công phu để chứng minh giá trị thực.</p>
+        <div class="quote-box">
+          <div class="quote-label">🎙️ Hook Mở Màn:</div>
+          <div class="quote-text">"Nhập nguyên liệu xịn, làm từng chi tiết cẩn thận... nhưng khách chỉ hỏi 'Sao đắt thế?'..."</div>
+        </div>
+        
+        <div class="strip-box">
+          <div class="strip-label">🎞️ 5 Phân Cảnh Trọng Tâm (3-Beat Rhythm):</div>
+          <div class="strip-frames">
+            <div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg" alt="frame" loading="lazy"></div>
+<div class="strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="frame" loading="lazy"></div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="card-meta">
+          <span>📅 21/08/2026</span>
+          <span>•</span>
+          <span>📑 9 Kịch Bản Thực Chiến (#kb09)</span>
+        </div>
+        <a href="kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html" class="open-btn">Xem Phân Cảnh Chi Tiết ➔</a>
+      </div>
+    </article>
+
     </div>
 
     <!-- SECTION 2: TEXT DOCUMENTS & RAW SCRIPTS -->
@@ -687,68 +796,76 @@
 
     <div class="docs-grid">
       
-      <article class="doc-card" data-category="Tài Liệu Kịch Bản & Voice-Over">
-        <div class="doc-header">
-          <div class="doc-icon-badge">📑</div>
-          <div class="doc-title-group">
-            <div class="doc-badge" style="border-color: #38bdf8; color: #38bdf8;">Tài Liệu Tổng Hợp</div>
-            <h3 class="doc-title"><a href="9_kich_ban_thuc_chien.html">📑 9 Mẫu Kịch Bản 3 Tầng Sự Thật (Bản Tài Liệu Gốc - Lớp Học Offline)</a></h3>
-          </div>
+    <article class="doc-card">
+      <div class="doc-header">
+        <div class="doc-icon-badge">📑</div>
+        <div class="doc-title-group">
+          <span class="doc-badge" style="background: #38bdf820; color: #38bdf8; border-color: #38bdf850;">
+            KHO KỊCH BẢN GỐC
+          </span>
+          <h3 class="doc-title"><a href="9_kich_ban_thuc_chien.html">9 Kịch Bản Thực Chiến 3 Tầng Sự Thật (Toàn Tập)</a></h3>
+        </div>
+      </div>
+      
+      <div class="doc-body">
+        <div class="doc-meta-bar">
+          <div>🎯 <b>Đối tượng:</b> Chủ doanh nghiệp, Content Creator, Chuyên gia</div>
+          <div>📄 <b>Định dạng:</b> Interactive HTML Table • 9 Kịch Bản • 3 Tầng Sự Thật</div>
         </div>
         
-        <div class="doc-body">
-          <div class="doc-meta-bar">
-            <span>🎯 <b>Đối tượng:</b> Học viên, chủ doanh nghiệp, người sáng tạo nội dung thực chiến</span>
-            <span>📐 <b>Định dạng:</b> 9 Kịch Bản Hoàn Chỉnh • Bảng Biểu Phân Cảnh • Lời Thoại • Bóc 3 Tầng Sự Thật</span>
-          </div>
-          
-          <p class="doc-summary">Tài liệu master tổng hợp toàn bộ 9 kịch bản thực chiến được thiết kế theo cấu trúc 3 Tầng Sự Thật (Đãi bôi ➔ Cảm giác thật ➔ Ngượng miệng). Tích hợp thanh điều hướng nhanh, bảng thông số cỡ cảnh, thời gian và nút copy kịch bản tiện lợi.</p>
-          
-          <div class="doc-highlights-box">
-            <div class="doc-hl-title">⚡ Điểm Nổi Bật & Cấu Trúc:</div>
-            <ul class="doc-hl-list">
-              <li>✓ Bản đồ tư duy 3 Tầng Bóc Sự Thật</li><li>✓ Bảng phân cảnh chi tiết từng giây (0 - 30s)</li><li>✓ Đầy đủ 9 kịch bản từ Cafe Đêm đến Hàng Làm Kỹ</li><li>✓ Nút Copy 1-Click cho từng kịch bản</li>
-            </ul>
-          </div>
-          
-          <div class="doc-footer">
-            <div class="doc-date">📅 Cập nhật: 21/08/2026</div>
-            <a href="9_kich_ban_thuc_chien.html" class="doc-open-btn">Mở Tài Liệu Gốc (9_kich_ban_thuc_chien.html) →</a>
-          </div>
+        <p class="doc-summary">Bộ tài liệu tổng hợp 9 kịch bản short-form 30s bóc tách 3 tầng tâm lý (Đãi bôi ➔ Cảm giác thật ➔ Ngượng miệng). Kèm lời thoại phân cảnh mẫu và bối cảnh quay thực tế.</p>
+        
+        <div class="doc-highlights-box">
+          <div class="doc-hl-title">⚡ Nội Dung Nổi Bật:</div>
+          <ul class="doc-hl-list">
+            <li>✓ Bóc tách 3 tầng sự thật</li><li>✓ Trọn bộ 9 kịch bản mẫu 30s</li><li>✓ Bảng phân tích lời thoại chi tiết</li><li>✓ Ánh xạ bối cảnh quay thực tế</li>
+          </ul>
         </div>
-      </article>
-    
-      <article class="doc-card" data-category="Kịch Bản Review & Du Lịch">
-        <div class="doc-header">
-          <div class="doc-icon-badge">🎙️</div>
-          <div class="doc-title-group">
-            <div class="doc-badge" style="border-color: #10b981; color: #10b981;">Kịch Bản Voice-Over</div>
-            <h3 class="doc-title"><a href="kich_ban_phong_nha.html">🎙️ Kịch Bản Voice-Over Thực Chiến: Phong Nha (Góc Phòng & Ban Công)</a></h3>
-          </div>
+      </div>
+      
+      <div class="doc-footer">
+        <span class="doc-date">📅 Cập nhật: 21/08/2026</span>
+        <a href="9_kich_ban_thuc_chien.html" class="doc-open-btn">
+          Mở Tài Liệu Toàn Văn ➔
+        </a>
+      </div>
+    </article>
+
+    <article class="doc-card">
+      <div class="doc-header">
+        <div class="doc-icon-badge">🎙️</div>
+        <div class="doc-title-group">
+          <span class="doc-badge" style="background: #10b98120; color: #10b981; border-color: #10b98150;">
+            KỊCH BẢN VOICE-OVER
+          </span>
+          <h3 class="doc-title"><a href="kich_ban_phong_nha.html">Bảng Kịch Bản Voice-Over Thực Chiến - Góc Phòng & Ban Công</a></h3>
+        </div>
+      </div>
+      
+      <div class="doc-body">
+        <div class="doc-meta-bar">
+          <div>🎯 <b>Đối tượng:</b> Người tự quay tại nhà, Bối cảnh ban công & Phòng làm việc</div>
+          <div>📄 <b>Định dạng:</b> Phân cảnh Voice-Over & Visual Map</div>
         </div>
         
-        <div class="doc-body">
-          <div class="doc-meta-bar">
-            <span>🎯 <b>Đối tượng:</b> Người làm video du lịch, review trải nghiệm, phong cách kể chuyện chân thực</span>
-            <span>📐 <b>Định dạng:</b> Bảng Phân Đoạn Voice-Over • Thời Gian • Cỡ Cảnh • Lời Thoại</span>
-          </div>
-          
-          <p class="doc-summary">Mẫu kịch bản Voice-Over phong cách tự nhiên, ghi lại cảm xúc và câu chuyện du lịch Phong Nha với bối cảnh thu âm/quay tại góc phòng và ban công thực tế.</p>
-          
-          <div class="doc-highlights-box">
-            <div class="doc-hl-title">⚡ Điểm Nổi Bật & Cấu Trúc:</div>
-            <ul class="doc-hl-list">
-              <li>✓ Cấu trúc Voice-Over phân đoạn từng 3 - 5s</li><li>✓ Chuyển đổi nhịp cảm xúc giữa không gian phòng & ban công</li><li>✓ Bảng thông số đạo diễn chi tiết</li>
-            </ul>
-          </div>
-          
-          <div class="doc-footer">
-            <div class="doc-date">📅 Cập nhật: 21/08/2026</div>
-            <a href="kich_ban_phong_nha.html" class="doc-open-btn">Mở Tài Liệu Gốc (kich_ban_phong_nha.html) →</a>
-          </div>
+        <p class="doc-summary">Kịch bản mẫu khai thác không gian thực tế tại nhà (Góc phòng làm việc, bàn gỗ, ban công chung cư) kết hợp kỹ thuật thu âm giọng đọc và băm nhịp hình ảnh.</p>
+        
+        <div class="doc-highlights-box">
+          <div class="doc-hl-title">⚡ Nội Dung Nổi Bật:</div>
+          <ul class="doc-hl-list">
+            <li>✓ Bối cảnh nhà ở & ban công</li><li>✓ Phân đoạn voice-over chi tiết</li><li>✓ Kỹ thuật thu âm thực chiến</li><li>✓ Góc máy tối giản 1 người quay</li>
+          </ul>
         </div>
-      </article>
-    
+      </div>
+      
+      <div class="doc-footer">
+        <span class="doc-date">📅 Cập nhật: 21/08/2026</span>
+        <a href="kich_ban_phong_nha.html" class="doc-open-btn">
+          Mở Tài Liệu Toàn Văn ➔
+        </a>
+      </div>
+    </article>
+
     </div>
 
     <footer>
