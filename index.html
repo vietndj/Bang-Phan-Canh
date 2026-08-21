@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bảng Phân Cảnh Storyboard: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện | Bảng Phân Cảnh AI</title>
+  <title>Bảng Phân Cảnh Storyboard: Tiền Mặt Bằng & Cửa Hàng Vắng Khách (Kịch Bản 02) | AI Storyboard Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -282,6 +282,50 @@
       font-size: 10px;
     }
 
+    /* 3 Tiers Box */
+    .tiers-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .tiers-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tier-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      border-left: 3px solid var(--cyan);
+    }
+
+    .tier-card.t1 { border-left-color: var(--rose); }
+    .tier-card.t2 { border-left-color: var(--amber); }
+    .tier-card.t3 { border-left-color: var(--emerald); }
+
+    .tier-badge-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .tier-card.t1 .tier-badge-label { color: var(--rose); }
+    .tier-card.t2 .tier-badge-label { color: var(--amber); }
+    .tier-card.t3 .tier-badge-label { color: var(--emerald); }
+
+    .tier-text {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
     /* Hero Overview */
     .hero {
       background: var(--bg-surface);
@@ -308,6 +352,7 @@
     .tag-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
     .tag-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
     .tag-emerald { background: var(--emerald-glow); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tag-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.3); }
 
     .hero h1 {
       font-size: 22px;
@@ -716,10 +761,10 @@
   <header class="top-header">
     <div class="brand-group">
       <span class="brand-badge">Bảng Phân Cảnh AI</span>
-      <div class="header-title">🎬 Kịch Bản 30s • 5 Cảnh & 15 Nhịp Đạo Diễn</div>
+      <div class="header-title">🎬 Kịch Bản 02 • Tiền Mặt Bằng & Cửa Hàng Vắng Khách</div>
     </div>
     <div class="header-controls">
-      <a href="#orig-msg" class="nav-btn">📩 Tin Nhắn Gốc</a>
+      <a href="#orig-msg" class="nav-btn">📩 Kịch Bản Gốc</a>
       <a href="#scene-1" class="nav-btn">Cảnh 1</a>
       <a href="#scene-2" class="nav-btn">Cảnh 2</a>
       <a href="#scene-3" class="nav-btn">Cảnh 3</a>
@@ -736,12 +781,12 @@
     <section class="original-message-box" id="orig-msg">
       <div class="orig-header">
         <div class="orig-title-group">
-          <h2 class="orig-title">📩 Tin Nhắn & Yêu Cầu Gốc Đầu Vào</h2>
-          <span class="orig-badge">Input Context</span>
+          <h2 class="orig-title">📩 Kịch Bản Gốc & Bối Cảnh Thực Chiến</h2>
+          <span class="orig-badge">Kịch Bản Số 02</span>
         </div>
         <div class="orig-meta">
-          <span>📱 Nguồn: <b>Telegram @nova0410_bot & Antigravity IDE</b></span>
-          <span>⏱️ Lúc: <b>21/08/2026 08:50:54</b></span>
+          <span>📱 Nguồn: <b>9 Kịch Bản Thực Chiến 3 Tầng Sự Thật</b></span>
+          <span>⏱️ Lúc: <b>21/08/2026 10:10:00</b></span>
         </div>
       </div>
 
@@ -750,52 +795,84 @@
           <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
             💬 Kịch bản gốc & Lời thoại nhận được:
           </div>
-          <div class="raw-text-panel">Cảnh 1 (0-3s) • [Đặc tả]: Ngón tay bấm sáng màn hình điện thoại rồi lại tắt đi trên mặt bàn học.
-🎙️ Lời thoại: "Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."
+          <div class="raw-text-panel">KỊCH BẢN 02 • CHỦ SHOP & MỞ TIỆM
+Tiêu đề: Tiền Mặt Bằng & Cửa Hàng Vắng Khách
+Bối cảnh: Phòng học / Bàn làm việc • Chạm vào: Áp lực chi phí mặt bằng & vắng khách
 
-Cảnh 2 (3-7s) • [Trung cảnh]: Ngồi ở góc bàn lớp học, cầm điện thoại lướt xem số liệu.
-🎙️ Lời thoại: "...Người ngoài nhìn vào tưởng mình bận rộn chốt đơn trả lời khách."
+3 TẦNG SỰ THẬT:
+• Tầng 1 (Đãi bôi): "Tôi đi học để cập nhật thêm cách tiếp cận khách hàng mới cho cửa hàng."
+• Tầng 2 (Cảm giác thật): "Tháng vừa rồi khách vắng hẳn, ngồi ở cửa hàng thấy sốt ruột như lửa đốt."
+• Tầng 3 (Ngượng miệng): "Cuối tháng tiền mặt bằng 20 triệu đến hạn. Bỏ việc văn phòng ra làm chủ tưởng tự do, ai ngờ tự làm thuê cho mình 16h/ngày."
 
-Cảnh 3 (7-15s) • [Cận cảnh]: Màn hình điện thoại hiển thị ứng dụng quản lý hoặc bảng chi phí quảng cáo.
-🎙️ Lời thoại: "Nhưng thật ra là đang sốt ruột. Mấy tháng nay tiền quảng cáo tăng gấp đôi, tiền nạp vào ăn gần hết tiền lãi."
+5 PHÂN CẢNH QUAY CHI TIẾT (30 GIÂY):
+- Cảnh 1 (00:00 - 00:03, 3s) • [Cận cảnh]: Tay cầm bút gạch mạnh một con số trên sổ bài tập.
+  🎙️ Lời thoại: "Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi..."
+- Cảnh 2 (00:03 - 00:07, 4s) • [Toàn cảnh]: Quay từ sau lưng, thấy bóng mình ngồi giữa lớp.
+  🎙️ Lời thoại: "...Người ngoài nhìn vào tưởng mình chăm chỉ đi học thêm cái mới."
+- Cảnh 3 (00:07 - 00:15, 8s) • [Đặc tả]: Màn hình điện thoại mở bảng doanh thu hoặc tin nhắn.
+  🎙️ Lời thoại: "Nhưng thật ra tháng vừa rồi cửa hàng vắng khách quá, ngồi ở tiệm mà ruột gan như lửa đốt."
+- Cảnh 4 (00:15 - 00:25, 10s) • [Góc nghiêng]: Nhìn ra cửa sổ phòng học đầy suy tư.
+  🎙️ Lời thoại: "Sợ nhất là cuối tháng tiền mặt bằng 20 triệu đến hạn. Bỏ công việc văn phòng ra mở riêng tưởng nhẹ đầu, ai ngờ cày từ sáng đến đêm mà không dám nghỉ ngày nào."
+- Cảnh 5 (00:25 - 00:30, 5s) • [Trực diện]: Nhìn thẳng camera nói điềm đạm.
+  🎙️ Lời thoại: "Đến lúc này thì cái gì giúp mình duy trì được cửa hàng thì phải bắt tay vào học thôi."
 
-Cảnh 4 (15-25s) • [Góc nghiêng]: Quay góc nghiêng mặt mình nhìn lên bảng giảng bài, vẻ mặt đăm chiêu.
-🎙️ Lời thoại: "Trước đây cứ nghĩ chỉ cần nạp tiền chạy ads là xong việc. Giờ mới thấm: nếu không tự biết cách làm video để người ta tin, thì có bao nhiêu tiền vốn cũng không bù nổi chi phí."
-
-Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt khoát vào camera.
-🎙️ Lời thoại: "Không thể dựa mãi vào việc đi mua quảng cáo, phải tự học cách xuất hiện trước khách hàng thôi." </div>
+💡 ĐIỂM MẤU CHỐT:
+Hình ảnh phòng học thể hiện sự tập trung — Lời thoại mang sức nặng sinh tồn cơm áo gạo tiền.</div>
         </div>
 
         <div>
           <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
-            🖼️ Ảnh bối cảnh gốc đính kèm (Cloudflare R2):
+            🖼️ Bối cảnh tham chiếu (Cloudflare R2):
           </div>
           <div class="ref-gallery">
 
-            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg', 'Ảnh Bối Cảnh Lớp Học Gốc', 'Bàn gỗ tự nhiên, sổ tay, bút, ánh sáng xiên cửa lớp học.')">
+            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/reference/ref_01_classroom.jpg', 'Ảnh Bối Cảnh Lớp Học & Bàn Gỗ', 'Bàn gỗ tự nhiên, sổ tay ghi chép, bút máy, ánh sáng xiên cửa sổ phòng học.')">
               <div class="ref-thumb-box">
-                <span class="ref-label-badge">📍 Gốc #1</span>
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg" alt="Ảnh Bối Cảnh Lớp Học Gốc" loading="lazy">
+                <span class="ref-label-badge">📍 Tham Chiếu</span>
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/reference/ref_01_classroom.jpg" alt="Ảnh Bối Cảnh Lớp Học & Bàn Gỗ" loading="lazy">
               </div>
               <div class="ref-caption">
-                <strong>Ảnh Bối Cảnh Lớp Học Gốc</strong>
-                <span>Bàn gỗ tự nhiên, sổ tay, bút, ánh sáng xiên cửa lớp học.</span>
+                <strong>Ảnh Bối Cảnh Lớp Học & Bàn Gỗ</strong>
+                <span>Bàn gỗ tự nhiên, sổ tay ghi chép, bút máy, ánh sáng xiên cửa sổ phòng học.</span>
               </div>
             </div>
 
-            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg', 'Ảnh Nhân Vật Tham Chiếu Gốc', 'Nam chủ shop 30 tuổi, áo sơ mi xanh navy tối giản, phong thái suy tư.')">
+            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/reference/ref_02_character.jpg', 'Ảnh Nhân Vật Tham Chiếu (Chủ Tiệm)', 'Nam chủ tiệm/chủ shop ngoài 30 tuổi, áo sơ mi tối giản, nét mặt sâu sắc và từng trải.')">
               <div class="ref-thumb-box">
-                <span class="ref-label-badge">📍 Gốc #1</span>
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg" alt="Ảnh Nhân Vật Tham Chiếu Gốc" loading="lazy">
+                <span class="ref-label-badge">📍 Tham Chiếu</span>
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/reference/ref_02_character.jpg" alt="Ảnh Nhân Vật Tham Chiếu (Chủ Tiệm)" loading="lazy">
               </div>
               <div class="ref-caption">
-                <strong>Ảnh Nhân Vật Tham Chiếu Gốc</strong>
-                <span>Nam chủ shop 30 tuổi, áo sơ mi xanh navy tối giản, phong thái suy tư.</span>
+                <strong>Ảnh Nhân Vật Tham Chiếu (Chủ Tiệm)</strong>
+                <span>Nam chủ tiệm/chủ shop ngoài 30 tuổi, áo sơ mi tối giản, nét mặt sâu sắc và từng trải.</span>
               </div>
             </div>
 
           </div>
         </div>
+      </div>
+
+      <!-- 3 Tầng Sự Thật -->
+      <div class="tiers-box">
+
+        <div class="tier-card t1">
+          <span class="tier-badge-label">Lý do xã giao</span>
+          <strong style="color: #fff; font-size: 12.5px; display: block; margin-bottom: 4px;">Tầng 1: Đãi bôi (Lý do bề nổi)</strong>
+          <p class="tier-text">"Tôi đi học để cập nhật thêm cách tiếp cận khách hàng mới cho cửa hàng."</p>
+        </div>
+
+        <div class="tier-card t2">
+          <span class="tier-badge-label">Cảm giác thật</span>
+          <strong style="color: #fff; font-size: 12.5px; display: block; margin-bottom: 4px;">Tầng 2: Cảm giác thật (Nỗi đau nội tâm)</strong>
+          <p class="tier-text">"Tháng vừa rồi khách vắng hẳn, ngồi ở cửa hàng thấy sốt ruột như lửa đốt."</p>
+        </div>
+
+        <div class="tier-card t3">
+          <span class="tier-badge-label">Sự thật sống còn</span>
+          <strong style="color: #fff; font-size: 12.5px; display: block; margin-bottom: 4px;">Tầng 3: Ngượng miệng (Sự thật trần trụi)</strong>
+          <p class="tier-text">"Cuối tháng tiền mặt bằng 20 triệu đến hạn. Bỏ việc văn phòng ra làm chủ tưởng tự do, ai ngờ tự làm thuê cho mình 16h/ngày."</p>
+        </div>
+
       </div>
     </section>
 
@@ -806,10 +883,10 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
         <span class="tag tag-amber">🎯 15 Micro-Beats Đạo Diễn</span>
         <span class="tag tag-emerald">🔄 J-Cut -0.4s Sync</span>
       </div>
-      <h1>Bảng Phân Cảnh Storyboard: Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện</h1>
+      <h1>Bảng Phân Cảnh Storyboard: Tiền Mặt Bằng & Cửa Hàng Vắng Khách (Kịch Bản 02)</h1>
       <p class="hero-desc">
-        Hệ thống phân cảnh điện ảnh được băm nhỏ thành 15 khung hình chi tiết (Đầu cảnh, Cao trào chi tiết, Mồi chuyển cảnh). 
-        Được lưu trữ vĩnh viễn trên Cloudflare R2 CDN và đồng bộ trực tiếp lên GitHub Pages.
+        Bảng phân cảnh điện ảnh 9:16 chuyên sâu bóc tách từ Kịch Bản 02. Mỗi cảnh được băm nhỏ thành 3 nhịp thị giác (Đầu cảnh, Cao trào chi tiết, Mồi chuyển cảnh). 
+        Toàn bộ khung hình được lưu trữ trên Cloudflare R2 CDN và đồng bộ trực tuyến lên GitHub Pages.
       </p>
 
       <div class="metrics-bar">
@@ -831,7 +908,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
         </div>
         <div class="metric-item">
           <span class="metric-label">Nhịp Cắt Trung Bình</span>
-          <span class="metric-value">1.5s / Beat</span>
+          <span class="metric-value">1.5s - 2.0s / Beat</span>
         </div>
       </div>
     </section>
@@ -840,14 +917,14 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 1</span>
-          <h3 class="scene-main-title">Bật / Tắt Màn Hình Điện Thoại Liên Tục</h3>
-          <span class="tag tag-amber">Đặc tả (Extreme Close-Up / Close-Up)</span>
+          <h3 class="scene-main-title">Gạch Bút Lên Sổ Bài Tập • Phủ Nhận Sự Rảnh Rỗi</h3>
+          <span class="tag tag-amber">Cận cảnh (Close-Up / High-Angle Desk)</span>
         </div>
-        <span class="scene-time-badge">⏱️ 0 - 3s (3s)</span>
+        <span class="scene-time-badge">⏱️ 00:00 - 00:03 (3s)</span>
       </div>
 
       <div class="scene-intent-box">
-        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Thiết lập trạng thái tâm lý bồn chồn, FOMO, thói quen kiểm tra thông báo vô thức của người kinh doanh đang gặp áp lực.
+        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Tạo móc câu (Hook) gây bất ngờ ngay 3 giây đầu: Phá vỡ định kiến đi học vì rảnh rỗi bằng hành động gạch số dứt khoát.
       </div>
 
       <div class="audio-box">
@@ -855,7 +932,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
           <div class="voice-icon">🎙️</div>
           <div>
             <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
+            <div class="voice-text">"Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi..."</div>
           </div>
         </div>
         <div class="voice-meta">
@@ -868,43 +945,43 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 1', 'Ngón tay vươn ra chạm vào màn hình tối đen. Tạo sự tò mò ngay giây đầu tiên.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 1', 'Thiết lập bối cảnh lớp học sáng Chủ Nhật, tay đặt bút sẵn sàng viết.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">0.0s - 1.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="1.1" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 1.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh (Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh bàn học (Close-Up Desk)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc nghiêng 45° từ trên xuống (High-Angle Desk)</td>
+                <td class="spec-val">Góc nghiêng 45° từ trên xuống</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Tĩnh (Static), bắt nét sắc độ sâu vào cạnh điện thoại</td>
+                <td class="spec-val">Tĩnh (Static), bắt nét sâu vào ngòi bút máy</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Quy tắc 1/3 bên phải, hậu cảnh mờ nhẹ không gian lớp học</td>
+                <td class="spec-val">Bàn tay cầm bút ở 1/3 dưới, sổ tay mở rộng, hậu cảnh lớp học mờ ấm</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Ngón tay vươn ra chạm vào màn hình tối đen. Tạo sự tò mò ngay giây đầu tiên.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Thiết lập bối cảnh lớp học sáng Chủ Nhật, tay đặt bút sẵn sàng viết.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 1', 'Màn hình bừng sáng với đồng hồ và thông báo rỗng. Khắc họa sự sốt ruột và mong chờ mỏi mòn.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 1', 'Cú gạch bút mạnh mẽ khớp với từ 'không phải vì rảnh rỗi', tạo lực nhấn thị giác.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">1.0s - 2.2s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat2.jpg" alt="1.2" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -915,53 +992,53 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc nhìn từ trên xuống 60° (Top-Down Flat Lay)</td>
+                <td class="spec-val">Góc nhìn từ trên xuống 60° (Top-Down Focus)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Push-in chậm (Slow Zoom-In)</td>
+                <td class="spec-val">Push-in chậm dồn vào ngòi bút</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Màn hình khóa nằm ngay tâm điểm thị giác, vệt sáng phản chiếu đầu ngón tay</td>
+                <td class="spec-val">Ngòi bút gạch một đường dứt khoát đè lên con số trên trang sổ</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Màn hình bừng sáng với đồng hồ và thông báo rỗng. Khắc họa sự sốt ruột và mong chờ mỏi mòn.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Cú gạch bút mạnh mẽ khớp với từ 'không phải vì rảnh rỗi', tạo lực nhấn thị giác.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 1', 'Màn hình vụt tắt tối om. Tạo nhịp ngắt thị giác (Visual Cut) chuẩn bị nhảy sang toàn cảnh Cảnh 2.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 1', 'Động tác dừng bút làm nhịp ngắt mượt mà để cắt sang toàn cảnh Cảnh 2.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">2.2s - 3.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat3.jpg" alt="1.3" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 1.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh (Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh ngắt nhịp (Close-Up Lift)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc ngang mặt bàn (Low Eye-Level Desk Surface)</td>
+                <td class="spec-val">Góc ngang mặt bàn (Eye-Level Desk)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Tilt-up nhẹ + Rút tay (Micro Tilt-up)</td>
+                <td class="spec-val">Tilt-up nhẹ + Tay giữ chắc thân bút</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Màn hình đen phản chiếu bóng người, ngón tay rụt lại vào khoảng mờ</td>
+                <td class="spec-val">Ngòi bút nhấc lên khỏi mặt giấy, ánh sáng xiên rọi rõ vân gỗ</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Màn hình vụt tắt tối om. Tạo nhịp ngắt thị giác (Visual Cut) chuẩn bị nhảy sang toàn cảnh Cảnh 2.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Động tác dừng bút làm nhịp ngắt mượt mà để cắt sang toàn cảnh Cảnh 2.
             </div>
           </div>
         </div>
@@ -973,14 +1050,14 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 2</span>
-          <h3 class="scene-main-title">Ngồi Góc Lớp Lướt Xem Số Liệu</h3>
-          <span class="tag tag-cyan">Trung cảnh (Medium Shot / Over-the-Shoulder)</span>
+          <h3 class="scene-main-title">Bóng Mình Giữa Lớp Học • Vỏ Bọc Chăm Chỉ</h3>
+          <span class="tag tag-cyan">Toàn cảnh qua vai (Wide Over-The-Shoulder)</span>
         </div>
-        <span class="scene-time-badge">⏱️ 3 - 7s (4s)</span>
+        <span class="scene-time-badge">⏱️ 00:03 - 00:07 (4s)</span>
       </div>
 
       <div class="scene-intent-box">
-        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Vạch ra sự tương phản giữa vẻ ngoài 'doanh nhân bận rộn' và thực tế tâm trạng bất an bên trong.
+        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Vạch ra sự tương phản giữa góc nhìn của người ngoài ('chăm chỉ cập nhật kiến thức') và sự ngột ngạt nội tâm.
       </div>
 
       <div class="audio-box">
@@ -988,7 +1065,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
           <div class="voice-icon">🎙️</div>
           <div>
             <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"...Người ngoài nhìn vào tưởng mình bận rộn chốt đơn trả lời khách."</div>
+            <div class="voice-text">"...Người ngoài nhìn vào tưởng mình chăm chỉ đi học thêm cái mới."</div>
           </div>
         </div>
         <div class="voice-meta">
@@ -1001,54 +1078,54 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 2', 'Tư thế ngồi nghiêm túc cầm điện thoại, tạo vỏ bọc người bận rộn làm việc.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 2', 'Bức tranh toàn cảnh một buổi học nghiêm túc, tạo vẻ ngoài chuẩn mực của một chủ shop chăm chỉ.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">3.0s - 4.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg" alt="2.1" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 2.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh (Medium Shot)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Toàn cảnh sau lưng (Wide Over-Shoulder)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Ngang tầm mắt (Eye Level)</td>
+                <td class="spec-val">Góc cao sau lưng bao quát lớp học</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Trôi nhẹ ngang (Subtle lateral drift / Pan)</td>
+                <td class="spec-val">Trôi nhẹ ngang (Subtle lateral drift)</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Nhân vật ngồi ở 1/3 bên trái bàn học, hậu cảnh các học viên khác đang lắng nghe</td>
+                <td class="spec-val">Nhân vật áo xanh navy ngồi trung tâm, các học viên xung quanh đang chăm chú nghe giảng</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Tư thế ngồi nghiêm túc cầm điện thoại, tạo vỏ bọc người bận rộn làm việc.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Bức tranh toàn cảnh một buổi học nghiêm túc, tạo vẻ ngoài chuẩn mực của một chủ shop chăm chỉ.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 2', 'Ngón tay lướt nhanh qua các bảng biểu tài chính, tạo cảm giác dồn dập và áp lực.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 2', 'Hành vi cầm điện thoại hé lộ sự phân tâm và lo âu ngấm ngầm giữa không khí lớp học.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">4.5s - 6.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat2.jpg" alt="2.2" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 2.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận qua vai (Over-the-Shoulder)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận qua vai (Over-the-Shoulder Medium)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc qua vai trái (Over Left Shoulder 30°)</td>
+                <td class="spec-val">Góc qua vai trái 30°</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
@@ -1056,45 +1133,45 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Bờ vai và gáy chiếm góc trái, màn hình biểu đồ số liệu rực sáng trung tâm</td>
+                <td class="spec-val">Bờ vai trái chiếm 1/3 góc nhìn, tay vừa cầm sổ bài tập vừa kín đáo cầm smartphone</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Ngón tay lướt nhanh qua các bảng biểu tài chính, tạo cảm giác dồn dập và áp lực.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Hành vi cầm điện thoại hé lộ sự phân tâm và lo âu ngấm ngầm giữa không khí lớp học.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 2', 'Ngón tay dừng lại đột ngột khi nhìn thấy chi phí ads. Mồi cho cảnh phóng to giao diện chi phí ở Cảnh 3.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 2', 'Động tác cầm điện thoại lên làm mồi nối thẳng sang giao diện màn hình Cảnh 3.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">6.0s - 7.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat3.jpg" alt="2.3" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 2.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh bàn tay (Tight Close-Up on Screen & Hands)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh tay & điện thoại (Tight Desk Shot)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc hếch nhẹ từ dưới lên (Low-Angle Close-Up)</td>
+                <td class="spec-val">Góc hếch nhẹ từ dưới lên (Low-Angle Desk Level)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Push-in dồn vào màn hình (Fast Push-in)</td>
+                <td class="spec-val">Push-in dồn vào màn hình điện thoại</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Hai bàn tay giữ chặt viền máy, ngón tay khựng lại ngay trên điểm cảnh báo</td>
+                <td class="spec-val">Bàn tay nhấc điện thoại lên khỏi mặt bàn cạnh cuốn sổ ghi chép</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Ngón tay dừng lại đột ngột khi nhìn thấy chi phí ads. Mồi cho cảnh phóng to giao diện chi phí ở Cảnh 3.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Động tác cầm điện thoại lên làm mồi nối thẳng sang giao diện màn hình Cảnh 3.
             </div>
           </div>
         </div>
@@ -1106,14 +1183,14 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 3</span>
-          <h3 class="scene-main-title">Bảng Chi Phí Quảng Cáo Tăng Gấp Đôi & Sốt Ruột</h3>
-          <span class="tag tag-cyan">Cận cảnh (POV Screen & Facial Close-Up)</span>
+          <h3 class="scene-main-title">Màn Hình Doanh Thu Lao Dốc • Ruột Gan Như Lửa Đốt</h3>
+          <span class="tag tag-rose">Đặc tả POV (Screen POV & Tension Close-Up)</span>
         </div>
-        <span class="scene-time-badge">⏱️ 7 - 15s (8s)</span>
+        <span class="scene-time-badge">⏱️ 00:07 - 00:15 (8s)</span>
       </div>
 
       <div class="scene-intent-box">
-        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Khắc họa cú đòn trực diện vào tâm lý kinh doanh: chi phí quảng cáo tăng phi mã làm bốc hơi toàn bộ lợi nhuận.
+        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Bóc trần Tầng 2 Sự Thật: Doanh thu cửa hàng lao dốc, nỗi sợ vắng khách và cảm giác bất an ăn mòn tâm trí.
       </div>
 
       <div class="audio-box">
@@ -1121,7 +1198,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
           <div class="voice-icon">🎙️</div>
           <div>
             <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Nhưng thật ra là đang sốt ruột. Mấy tháng nay tiền quảng cáo tăng gấp đôi, tiền nạp vào ăn gần hết tiền lãi."</div>
+            <div class="voice-text">"Nhưng thật ra tháng vừa rồi cửa hàng vắng khách quá, ngồi ở tiệm mà ruột gan như lửa đốt."</div>
           </div>
         </div>
         <div class="voice-meta">
@@ -1134,21 +1211,21 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 3', 'Bằng chứng thị giác rõ ràng không thể chối cãi về nỗi đau chi phí tăng gấp đôi.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 3', 'Bằng chứng số liệu trực quan gây sốc: Cửa hàng hoàn toàn vắng bóng khách mới.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">7.0s - 9.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg" alt="3.1" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 3.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả màn hình (Direct UI Close-Up / POV)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh màn hình POV (Direct UI Close-Up)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Trực diện 90° vào màn hình điện thoại (Flat POV)</td>
+                <td class="spec-val">Trực diện 90° vào màn hình điện thoại</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
@@ -1156,78 +1233,78 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Biểu đồ đường đỏ (Ad Spend +100%) dốc ngược lên, đường xanh lợi nhuận rơi tự do (-65%)</td>
+                <td class="spec-val">Bảng Sales Dashboard với biểu đồ đỏ cắm dốc (-94%), New Customers: 0</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Bằng chứng thị giác rõ ràng không thể chối cãi về nỗi đau chi phí tăng gấp đôi.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Bằng chứng số liệu trực quan gây sốc: Cửa hàng hoàn toàn vắng bóng khách mới.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 3', 'Biểu cảm lo âu cực độ, chân mày nhíu chặt, đôi mắt nặng trĩu nhìn vào màn hình.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 3', 'Khắc họa cảm giác 'ruột gan như lửa đốt' khi nhìn vào doanh thu thực tế.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">9.5s - 12.5s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat2.jpg" alt="3.2" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 3.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh chân dung (Facial Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả cực cận UI & Ngón tay (Extreme Close-Up UI)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc trực diện hơi thấp (Low-Angle Direct Face)</td>
+                <td class="spec-val">Góc nghiêng 45° vào màn hình</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Máy tĩnh giữ khung hình ngột ngạt (Tense Static Frame)</td>
+                <td class="spec-val">Máy tĩnh bắt trọn từng con số đỏ rực (-45% Revenue, No new orders)</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Khuôn mặt chiếm trọn khung hình, ánh sáng xanh-đỏ từ màn hình hắt lên trán và mắt</td>
+                <td class="spec-val">Ngón tay cái lướt chậm trong bất lực trên dòng thông báo rỗng</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Biểu cảm lo âu cực độ, chân mày nhíu chặt, đôi mắt nặng trĩu nhìn vào màn hình.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Khắc họa cảm giác 'ruột gan như lửa đốt' khi nhìn vào doanh thu thực tế.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 3', 'Hành động úp điện thoại thể hiện quyết định ngừng phụ thuộc. Mồi cho cảnh góc nghiêng ngẫm nghĩ Cảnh 4.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 3', 'Nắm đấm siết chặt thể hiện sự dồn nén cảm xúc, chuẩn bị hướng mắt ra cửa sổ Cảnh 4.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">12.5s - 15.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat3.jpg" alt="3.3" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 3.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận nghiêng (Medium Close-Up Profile)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận căng thẳng (Medium Close-Up Tension)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc nghiêng cạnh bàn (Side Profile Level)</td>
+                <td class="spec-val">Góc trực diện ngang tầm mắt (Eye Level)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Pan êm từ tay đặt điện thoại lên hướng mắt nhìn lên (Smooth Pan Upward)</td>
+                <td class="spec-val">Máy tĩnh giữ khung hình ngột ngạt</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Tay hạ điện thoại nằm úp trên bàn, đầu ngẩng cao nhìn về phía bục giảng</td>
+                <td class="spec-val">Bàn tay siết chặt thành nắm đấm trên mặt bàn gỗ, tay kia úp điện thoại, nét mặt nhíu chặt</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Hành động úp điện thoại thể hiện quyết định ngừng phụ thuộc. Mồi cho cảnh góc nghiêng ngẫm nghĩ Cảnh 4.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Nắm đấm siết chặt thể hiện sự dồn nén cảm xúc, chuẩn bị hướng mắt ra cửa sổ Cảnh 4.
             </div>
           </div>
         </div>
@@ -1239,14 +1316,14 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 4</span>
-          <h3 class="scene-main-title">Góc Nghiêng Nhìn Lên Bảng - Thấu Suốt Bài Học</h3>
-          <span class="tag tag-cyan">Góc nghiêng (Side Profile / Insight Close-Up)</span>
+          <h3 class="scene-main-title">Nhìn Ra Cửa Sổ Phòng Học • Áp Lực Tiền Mặt Bằng 20 Triệu</h3>
+          <span class="tag tag-cyan">Góc nghiêng (Side Profile / Window Insight)</span>
         </div>
-        <span class="scene-time-badge">⏱️ 15 - 25s (10s)</span>
+        <span class="scene-time-badge">⏱️ 00:15 - 00:25 (10s)</span>
       </div>
 
       <div class="scene-intent-box">
-        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Khắc họa khoảnh khắc 'Eureka' / Giác ngộ: Bản chất bán hàng online không phải là mua quảng cáo mà là tạo niềm tin qua video chân thực.
+        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Chạm sâu vào Tầng 3 Sự Thật: Áp lực tiền thuê mặt bằng cố định hàng tháng và nghịch lý khởi nghiệp làm chủ nhưng lại làm thuê 16h/ngày cho chính mình.
       </div>
 
       <div class="audio-box">
@@ -1254,7 +1331,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
           <div class="voice-icon">🎙️</div>
           <div>
             <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Trước đây cứ nghĩ chỉ cần nạp tiền chạy ads là xong việc. Giờ mới thấm: nếu không tự biết cách làm video để người ta tin, thì có bao nhiêu tiền vốn cũng không bù nổi chi phí."</div>
+            <div class="voice-text">"Sợ nhất là cuối tháng tiền mặt bằng 20 triệu đến hạn. Bỏ công việc văn phòng ra mở riêng tưởng nhẹ đầu, ai ngờ cày từ sáng đến đêm mà không dám nghỉ ngày nào."</div>
           </div>
         </div>
         <div class="voice-meta">
@@ -1267,100 +1344,100 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 4', 'Ánh sáng tự nhiên làm nổi bật sống mũi và khóe mắt đăm chiêu suy ngẫm.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 4', 'Khung cảnh lắng đọng, người xem cảm nhận trọn vẹn gánh nặng chi phí cố định 20 triệu/tháng.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">15.0s - 18.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg" alt="4.1" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 4.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận góc nghiêng (Tight Side Profile Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận góc nghiêng cửa sổ (Side Profile Close-Up)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc nghiêng 90° nhìn hướng lên (Side Profile Looking Up)</td>
+                <td class="spec-val">Góc nghiêng 90° đón ánh nắng cửa sổ kính</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Arc shot xoay nhẹ góc nhìn (Slow Subtle Arc)</td>
+                <td class="spec-val">Arc shot xoay nhẹ góc nhìn</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Gương mặt hướng về 1/3 bên phải, hậu cảnh là bảng bài giảng xóa phông</td>
+                <td class="spec-val">Nhân vật ngồi tựa cằm nhìn ra cửa sổ lớn, vệt nắng xiên làm nổi bật đường nét suy tư</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Ánh sáng tự nhiên làm nổi bật sống mũi và khóe mắt đăm chiêu suy ngẫm.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Khung cảnh lắng đọng, người xem cảm nhận trọn vẹn gánh nặng chi phí cố định 20 triệu/tháng.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 4', 'Ánh mắt chuyển từ hoang mang sang kiên định, đầu gật nhẹ thấm thía bài học.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 4', 'Sức nặng cảm xúc đạt đỉnh: Bỏ việc văn phòng tưởng tự do nhưng thực tế bị giam cầm trong áp lực sinh tồn.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">18.0s - 22.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat2.jpg" alt="4.2" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 4.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh ánh mắt thấu suốt (Eye Level Insight Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả cận ánh mắt (Insight Eye Close-Up)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc trực diện 3/4 (3/4 Profile)</td>
+                <td class="spec-val">Cận cảnh 3/4 trực diện (Tight 3/4 Face)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Push-in chậm nhấn mạnh quyết tâm (Slow Push-In)</td>
+                <td class="spec-val">Push-in chậm vào đôi mắt trĩu nặng âu lo</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Đôi mắt nằm ở đường 1/3 trên, ánh sáng rực lên thể hiện sự sáng tỏ</td>
+                <td class="spec-val">Đôi mắt và vầng trán nhăn lại, ánh nhìn xa xăm chứa đựng sự mệt mỏi sau chuỗi ngày cày cuốc không nghỉ</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Ánh mắt chuyển từ hoang mang sang kiên định, đầu gật nhẹ thấm thía bài học.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Sức nặng cảm xúc đạt đỉnh: Bỏ việc văn phòng tưởng tự do nhưng thực tế bị giam cầm trong áp lực sinh tồn.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 4', 'Động tác dứt khoát cầm điện thoại lên quay chính mình, nối thẳng sang Cảnh 5 Talking Head.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 4', 'Chuyển biến tâm lý: Từ trầm tư bế tắc sang quyết định hành động dứt khoát, mồi cho Cảnh 5.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
             <span class="beat-time-tag">22.0s - 25.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat3.jpg" alt="4.3" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 4.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh chuẩn bị quay (Medium Setup Shot)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh quay người (Medium Turnaround)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Góc ngang tầm mắt (Eye Level)</td>
+                <td class="spec-val">Góc ngang tầm mắt 3/4</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Cầm máy giơ lên trước mặt (Raising Camera Gesture)</td>
+                <td class="spec-val">Pan theo động tác quay đầu dứt khoát</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Nhân vật cầm điện thoại giơ cao ngang tầm mắt, màn hình selfie hiển thị chính mình</td>
+                <td class="spec-val">Nhân vật quay đầu lại từ khung cửa sổ, ngồi thẳng lưng nhìn về phía bảng giảng bài</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Động tác dứt khoát cầm điện thoại lên quay chính mình, nối thẳng sang Cảnh 5 Talking Head.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Chuyển biến tâm lý: Từ trầm tư bế tắc sang quyết định hành động dứt khoát, mồi cho Cảnh 5.
             </div>
           </div>
         </div>
@@ -1372,14 +1449,14 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 5</span>
-          <h3 class="scene-main-title">Trực Diện Camera - Tuyên Bố Hành Động & Kêu Gọi</h3>
-          <span class="tag tag-emerald">Trực diện (Frontal Talking Head / Eye-Level CTA)</span>
+          <h3 class="scene-main-title">Trực Diện Camera Điềm Đạm • Bắt Tay Vào Học Để Sống Còn</h3>
+          <span class="tag tag-emerald">Trực diện (Frontal Talking Head / Eye-Level Resolution)</span>
         </div>
-        <span class="scene-time-badge">⏱️ 25 - 30s (5s)</span>
+        <span class="scene-time-badge">⏱️ 00:25 - 00:30 (5s)</span>
       </div>
 
       <div class="scene-intent-box">
-        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Kêu gọi hành động (CTA) dứt khoát: Đập tan tư duy phụ thuộc vào ads, kích hoạt năng lực tự xuất hiện làm video trao giá trị.
+        <strong>🎯 Ý Đồ Đạo Diễn:</strong> Kết bài mạnh mẽ, thực tế: Học không phải vì mốt hay phong trào, mà học là vũ khí duy nhất để cứu sống và phát triển cửa hàng.
       </div>
 
       <div class="audio-box">
@@ -1387,7 +1464,7 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
           <div class="voice-icon">🎙️</div>
           <div>
             <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Không thể dựa mãi vào việc đi mua quảng cáo, phải tự học cách xuất hiện trước khách hàng thôi."</div>
+            <div class="voice-text">"Đến lúc này thì cái gì giúp mình duy trì được cửa hàng thì phải bắt tay vào học thôi."</div>
           </div>
         </div>
         <div class="voice-meta">
@@ -1400,21 +1477,21 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
       <div class="beats-grid">
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 5', 'Tạo kết nối thị giác 1-to-1 trực tiếp với người xem ngay từ mili-giây đầu tiên của câu thoại.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 5', 'Tạo kết nối thị giác 1-to-1 chân thành, phong thái người làm chủ điềm tĩnh sau khi đã thấu suốt.')">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
             <span class="beat-time-tag">25.0s - 27.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg" alt="5.1" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 5.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận trực diện (Frontal Close-Up Talking Head)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận trực diện (Frontal Medium Close-Up)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Trực diện ngang tầm mắt (Eye-Level Direct Frontal)</td>
+                <td class="spec-val">Trực diện ngang tầm mắt (Eye-Level Center Framing)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
@@ -1422,54 +1499,54 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Gương mặt nằm chính giữa trung tâm khung hình (Center Framing), ánh mắt khóa thẳng vào ống kính</td>
+                <td class="spec-val">Gương mặt nằm chính giữa trung tâm khung hình, ánh mắt chân thành khóa thẳng ống kính</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Tạo kết nối thị giác 1-to-1 trực tiếp với người xem ngay từ mili-giây đầu tiên của câu thoại.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Tạo kết nối thị giác 1-to-1 chân thành, phong thái người làm chủ điềm tĩnh sau khi đã thấu suốt.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 5', 'Khẩu khí mạnh mẽ: 'Phải tự học cách xuất hiện trước khách hàng thôi!'. Điểm chạm cao trào của toàn bộ video.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 5', 'Câu chốt mang tính thức tỉnh: 'Cái gì giúp mình duy trì được cửa hàng thì phải bắt tay vào học thôi!'.')">
             <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
             <span class="beat-time-tag">27.0s - 29.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat2.jpg" alt="5.2" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
               <span class="beat-id-title">Khung Hình 5.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh truyền lửa (Passionate Conviction Close-Up)</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận trực diện truyền cảm hứng (Passionate Conviction Close-Up)</span>
             </div>
 
             <table class="specs-table">
               <tr>
                 <td class="spec-name">Góc Máy</td>
-                <td class="spec-val">Trực diện hơi hất nhẹ 5° (Empowering Frontal)</td>
+                <td class="spec-val">Trực diện hất nhẹ 5° (Direct Frontal)</td>
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Punch-in nhẹ 10% (Subtle J-Cut Punch-In)</td>
+                <td class="spec-val">Punch-in nhẹ 10% theo nhịp câu nói</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Khuôn mặt đầy năng lượng, tay giơ nhẹ nhấn mạnh nhịp nói</td>
+                <td class="spec-val">Cận cảnh biểu cảm kiên định, lời nói phát ra dứt khoát và tràn đầy năng lượng thực chiến</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Khẩu khí mạnh mẽ: 'Phải tự học cách xuất hiện trước khách hàng thôi!'. Điểm chạm cao trào của toàn bộ video.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Câu chốt mang tính thức tỉnh: 'Cái gì giúp mình duy trì được cửa hàng thì phải bắt tay vào học thôi!'.
             </div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg', '🔄 Cuối cảnh / Kết thúc (Outro CTA / Hold) - Cảnh 5', 'Nụ cười chân thành, ánh nhìn tin cậy. Dừng hình 0.5s cho Brand Tag và Call-to-Action xuất hiện.')">
+          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat3.jpg', '🔄 Cuối cảnh / Kết thúc (Outro CTA / Hold) - Cảnh 5', 'Nụ cười chân thực gieo niềm tin trọn vẹn. Dừng hình 0.5s để người xem tiếp nhận thông điệp.')">
             <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Kết thúc (Outro CTA / Hold)</span>
             <span class="beat-time-tag">29.0s - 30.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3" loading="lazy">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat3.jpg" alt="5.3" loading="lazy">
           </div>
           <div class="beat-content">
             <div class="beat-header">
@@ -1484,16 +1561,16 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
               </tr>
               <tr>
                 <td class="spec-name">Động Tác</td>
-                <td class="spec-val">Tĩnh giữ frame (Static Hold)</td>
+                <td class="spec-val">Tĩnh giữ khung hình (Static Hold 0.5s)</td>
               </tr>
               <tr>
                 <td class="spec-name">Bố Cục</td>
-                <td class="spec-val">Nhân vật mỉm cười gật đầu, 1/3 phía dưới để trống cho Subtitle / Brand Tag / Hotline</td>
+                <td class="spec-val">Nhân vật mỉm cười nhẹ tự tin, khoảng trống 1/3 bên dưới dành cho Brand Tag / CTA</td>
               </tr>
             </table>
 
             <div class="director-note-box">
-              <strong>💡 Ghi Chú Đạo Diễn:</strong> Nụ cười chân thành, ánh nhìn tin cậy. Dừng hình 0.5s cho Brand Tag và Call-to-Action xuất hiện.
+              <strong>💡 Ghi Chú Đạo Diễn:</strong> Nụ cười chân thực gieo niềm tin trọn vẹn. Dừng hình 0.5s để người xem tiếp nhận thông điệp.
             </div>
           </div>
         </div>
@@ -1505,124 +1582,124 @@ Cảnh 5 (25-30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói dứt 
     <section class="timeline-wrapper" id="filmstrip-view">
       <h2 class="section-title" style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #fff;">🎞️ Dải Timeline Phân Cảnh (15 Khung Hình Liên Tiếp • 0s ➔ 30s)</h2>
       <p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 14px;">
-        Cuộn ngang để kiểm tra nhịp điệu thị giác (Visual Rhythm) và các điểm chuyển cảnh (Match Cuts) giữa các phân cảnh:
+        Cuộn ngang để kiểm tra nhịp điệu thị giác (Visual Rhythm) và các điểm chuyển cảnh (Match Cuts) giữa 5 phân cảnh:
       </p>
       <div class="filmstrip">
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 1', 'Ngón tay vươn ra chạm vào màn hình tối đen. Tạo sự tò mò ngay giây đầu tiên.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 1', 'Thiết lập bối cảnh lớp học sáng Chủ Nhật, tay đặt bút sẵn sàng viết.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat1.jpg" alt="1.1">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 1.1</div>
             <div class="strip-ts">0.0s - 1.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 1', 'Màn hình bừng sáng với đồng hồ và thông báo rỗng. Khắc họa sự sốt ruột và mong chờ mỏi mòn.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 1', 'Cú gạch bút mạnh mẽ khớp với từ 'không phải vì rảnh rỗi', tạo lực nhấn thị giác.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat2.jpg" alt="1.2">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 1.2</div>
             <div class="strip-ts">1.0s - 2.2s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 1', 'Màn hình vụt tắt tối om. Tạo nhịp ngắt thị giác (Visual Cut) chuẩn bị nhảy sang toàn cảnh Cảnh 2.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 1', 'Động tác dừng bút làm nhịp ngắt mượt mà để cắt sang toàn cảnh Cảnh 2.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene1_beat3.jpg" alt="1.3">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 1.3</div>
             <div class="strip-ts">2.2s - 3.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 2', 'Tư thế ngồi nghiêm túc cầm điện thoại, tạo vỏ bọc người bận rộn làm việc.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 2', 'Bức tranh toàn cảnh một buổi học nghiêm túc, tạo vẻ ngoài chuẩn mực của một chủ shop chăm chỉ.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat1.jpg" alt="2.1">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 2.1</div>
             <div class="strip-ts">3.0s - 4.5s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 2', 'Ngón tay lướt nhanh qua các bảng biểu tài chính, tạo cảm giác dồn dập và áp lực.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 2', 'Hành vi cầm điện thoại hé lộ sự phân tâm và lo âu ngấm ngầm giữa không khí lớp học.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat2.jpg" alt="2.2">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 2.2</div>
             <div class="strip-ts">4.5s - 6.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 2', 'Ngón tay dừng lại đột ngột khi nhìn thấy chi phí ads. Mồi cho cảnh phóng to giao diện chi phí ở Cảnh 3.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 2', 'Động tác cầm điện thoại lên làm mồi nối thẳng sang giao diện màn hình Cảnh 3.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene2_beat3.jpg" alt="2.3">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 2.3</div>
             <div class="strip-ts">6.0s - 7.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 3', 'Bằng chứng thị giác rõ ràng không thể chối cãi về nỗi đau chi phí tăng gấp đôi.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 3', 'Bằng chứng số liệu trực quan gây sốc: Cửa hàng hoàn toàn vắng bóng khách mới.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat1.jpg" alt="3.1">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 3.1</div>
             <div class="strip-ts">7.0s - 9.5s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 3', 'Biểu cảm lo âu cực độ, chân mày nhíu chặt, đôi mắt nặng trĩu nhìn vào màn hình.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 3', 'Khắc họa cảm giác 'ruột gan như lửa đốt' khi nhìn vào doanh thu thực tế.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat2.jpg" alt="3.2">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 3.2</div>
             <div class="strip-ts">9.5s - 12.5s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 3', 'Hành động úp điện thoại thể hiện quyết định ngừng phụ thuộc. Mồi cho cảnh góc nghiêng ngẫm nghĩ Cảnh 4.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 3', 'Nắm đấm siết chặt thể hiện sự dồn nén cảm xúc, chuẩn bị hướng mắt ra cửa sổ Cảnh 4.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene3_beat3.jpg" alt="3.3">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 3.3</div>
             <div class="strip-ts">12.5s - 15.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 4', 'Ánh sáng tự nhiên làm nổi bật sống mũi và khóe mắt đăm chiêu suy ngẫm.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 4', 'Khung cảnh lắng đọng, người xem cảm nhận trọn vẹn gánh nặng chi phí cố định 20 triệu/tháng.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat1.jpg" alt="4.1">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 4.1</div>
             <div class="strip-ts">15.0s - 18.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 4', 'Ánh mắt chuyển từ hoang mang sang kiên định, đầu gật nhẹ thấm thía bài học.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 4', 'Sức nặng cảm xúc đạt đỉnh: Bỏ việc văn phòng tưởng tự do nhưng thực tế bị giam cầm trong áp lực sinh tồn.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat2.jpg" alt="4.2">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 4.2</div>
             <div class="strip-ts">18.0s - 22.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 4', 'Động tác dứt khoát cầm điện thoại lên quay chính mình, nối thẳng sang Cảnh 5 Talking Head.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat3.jpg', '🔄 Cuối cảnh / Mồi chuyển (Out-point Lead) - Cảnh 4', 'Chuyển biến tâm lý: Từ trầm tư bế tắc sang quyết định hành động dứt khoát, mồi cho Cảnh 5.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene4_beat3.jpg" alt="4.3">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 4.3</div>
             <div class="strip-ts">22.0s - 25.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 5', 'Tạo kết nối thị giác 1-to-1 trực tiếp với người xem ngay từ mili-giây đầu tiên của câu thoại.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg', '🔰 Đầu cảnh (In-point) - Cảnh 5', 'Tạo kết nối thị giác 1-to-1 chân thành, phong thái người làm chủ điềm tĩnh sau khi đã thấu suốt.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat1.jpg" alt="5.1">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 5.1</div>
             <div class="strip-ts">25.0s - 27.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 5', 'Khẩu khí mạnh mẽ: 'Phải tự học cách xuất hiện trước khách hàng thôi!'. Điểm chạm cao trào của toàn bộ video.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat2.jpg', '🔥 Chi tiết / Cao trào (Main Action) - Cảnh 5', 'Câu chốt mang tính thức tỉnh: 'Cái gì giúp mình duy trì được cửa hàng thì phải bắt tay vào học thôi!'.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat2.jpg" alt="5.2">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 5.2</div>
             <div class="strip-ts">27.0s - 29.0s</div>
           </div>
         </div>
 
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg', '🔄 Cuối cảnh / Kết thúc (Outro CTA / Hold) - Cảnh 5', 'Nụ cười chân thành, ánh nhìn tin cậy. Dừng hình 0.5s cho Brand Tag và Call-to-Action xuất hiện.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3">
+        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat3.jpg', '🔄 Cuối cảnh / Kết thúc (Outro CTA / Hold) - Cảnh 5', 'Nụ cười chân thực gieo niềm tin trọn vẹn. Dừng hình 0.5s để người xem tiếp nhận thông điệp.')">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tien_mat_bang_va_cua_hang_vang_khach/assets/frames/scene5_beat3.jpg" alt="5.3">
           <div class="strip-meta">
             <div class="strip-title">Cảnh 5.3</div>
             <div class="strip-ts">29.0s - 30.0s</div>
