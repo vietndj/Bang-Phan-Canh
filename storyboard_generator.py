@@ -256,7 +256,7 @@ def process_storyboard(raw_script: str, input_photos: list = None, project_title
                 })
                 
     if not ref_images:
-        # Default AI Reference Images
+        # Default AI Reference Images (Default Character: Anh Việt)
         ref_images = [
             {
                 "title": "Ảnh Bối Cảnh Lớp Học Gốc",
@@ -264,9 +264,9 @@ def process_storyboard(raw_script: str, input_photos: list = None, project_title
                 "desc": "Bàn gỗ mộc, sổ tay, ánh sáng xiên cửa sổ lớp học."
             },
             {
-                "title": "Ảnh Nhân Vật Tham Chiếu Gốc",
-                "url": f"{r2_project_url}/assets/reference/ref_02_character.jpg",
-                "desc": "Nam chủ shop 30 tuổi, áo sơ mi xanh navy tối giản, nét mặt suy tư."
+                "title": "Ảnh Nhân Vật Mặc Định: Anh Việt",
+                "url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg",
+                "desc": "Anh Việt - Diễn giả/Đạo diễn công nghệ 30s, dáng runner thể thao, áo blazer đen/áo đũi, biểu cảm tự tin."
             }
         ]
         

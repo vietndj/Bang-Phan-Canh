@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kho Bảng Phân Cảnh Điện Ảnh 9:16 | Storyboard Hub</title>
+  <title>Kho Bảng Phân Cảnh Điện Ảnh 9:16 | Master Storyboard Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
@@ -70,11 +70,6 @@
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 300px; background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3);
@@ -85,7 +80,7 @@
       background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .hero-desc {
-      color: var(--text-secondary); font-size: 15px; max-width: 780px; margin: 0 auto 24px;
+      color: var(--text-secondary); font-size: 15px; max-width: 820px; margin: 0 auto 24px;
     }
     
     /* Stats Bar */
@@ -97,13 +92,11 @@
     .stat-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
     .stat-val { font-size: 22px; font-weight: 800; color: var(--text-primary); }
     
-    /* Search & Filter Bar */
+    /* Filter Bar */
     .filter-bar {
       display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 32px 0 20px; flex-wrap: wrap;
     }
-    .search-box {
-      position: relative; flex: 1; min-width: 260px; max-width: 400px;
-    }
+    .search-box { position: relative; flex: 1; min-width: 260px; max-width: 400px; }
     .search-input {
       width: 100%; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);
       padding: 10px 14px 10px 36px; color: #fff; font-size: 13px; outline: none; transition: border-color 0.2s;
@@ -135,295 +128,518 @@
     @media (max-width: 500px) { .card-top { flex-direction: column; } }
     
     .card-thumb-wrap {
-      flex: 0 0 130px; height: 180px; border-radius: var(--radius-md); overflow: hidden; position: relative; background: #000;
+      flex: 0 0 140px; aspect-ratio: 9 / 16; background: #000; border-radius: var(--radius-sm);
+      overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); position: relative;
     }
     .card-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .card-thumb-badge {
-      position: absolute; top: 6px; left: 6px; background: rgba(0, 0, 0, 0.75); color: #fff;
-      font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;
+    .card-badge-tag {
+      position: absolute; top: 6px; left: 6px; font-size: 9px; font-weight: 800;
+      padding: 2px 6px; border-radius: 4px; text-transform: uppercase; background: rgba(0, 0, 0, 0.75); color: #fff;
     }
     
-    .card-info { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .card-category-badge {
-      display: inline-block; font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-bottom: 6px;
-      text-transform: uppercase; letter-spacing: 0.5px;
-    }
+    .card-info { flex: 1; display: flex; flex-direction: column; }
+    .card-meta-row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+    .pill { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
     .card-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; line-height: 1.3; }
-    .card-target { font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px; }
-    .card-meta-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
-    .chip {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-secondary);
-      font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;
+    .card-summary { font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; }
+    .card-quote {
+      background: rgba(0, 0, 0, 0.25); border-left: 3px solid var(--cyan); padding: 6px 10px;
+      border-radius: 0 4px 4px 0; font-size: 11.5px; color: #cbd5e1; font-style: italic; margin-top: auto;
     }
     
-    .card-body { padding: 18px 22px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
-    .summary-text { font-size: 13px; color: #cbd5e1; line-height: 1.5; }
+    .card-bottom {
+      padding: 16px 22px; background: rgba(0, 0, 0, 0.2); display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .card-metrics-mini { display: flex; gap: 14px; font-size: 11.5px; color: var(--text-muted); }
+    .card-metrics-mini span b { color: var(--text-primary); }
+    .view-btn {
+      background: linear-gradient(135deg, var(--cyan), #2563eb); color: #000; font-weight: 800;
+      font-size: 12px; padding: 8px 18px; border-radius: var(--radius-sm); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+    }
+    .view-btn:hover { opacity: 0.9; }
     
-    .hook-quote-box {
-      background: rgba(0, 0, 0, 0.25); border-left: 3px solid var(--cyan); padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 12px;
+    /* Filmstrip Mini */
+    .card-strip {
+      display: flex; gap: 6px; padding: 12px 22px; background: rgba(0, 0, 0, 0.35); overflow-x: auto; border-bottom: 1px solid var(--border-subtle);
     }
-    .hook-quote-label { font-size: 10px; font-weight: 700; color: var(--cyan); text-transform: uppercase; margin-bottom: 2px; }
-    .hook-quote-text { color: #fff; font-style: italic; font-weight: 600; }
-    
-    .mini-filmstrip-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-    .mini-filmstrip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
-    .mini-frame-thumb { flex: 0 0 60px; height: 80px; border-radius: 4px; overflow: hidden; background: #000; border: 1px solid var(--border-subtle); }
-    .mini-frame-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    
-    .card-footer {
-      padding: 14px 22px; background: rgba(0, 0, 0, 0.2); border-top: 1px solid var(--border-subtle);
-      display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+    .card-strip-thumb {
+      flex: 0 0 54px; aspect-ratio: 9 / 16; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .btn-view-primary {
-      background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-size: 12.5px; font-weight: 700;
-      padding: 8px 18px; border-radius: var(--radius-sm); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-      transition: all 0.2s;
-    }
-    .btn-view-primary:hover { background: linear-gradient(135deg, #38bdf8, #0284c7); color: #000; }
-    
-    .btn-sub-link {
-      color: var(--text-secondary); font-size: 12px; font-weight: 600; text-decoration: none; padding: 6px 10px; border-radius: 4px;
-      transition: color 0.2s;
-    }
-    .btn-sub-link:hover { color: var(--cyan); }
-    
-    /* Guide Section */
-    .guide-box {
-      background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
-      padding: 28px; margin-top: 40px;
-    }
-    .guide-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .guide-card {
-      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px;
-    }
-    .guide-card-title { font-size: 13px; font-weight: 700; color: var(--cyan); margin-bottom: 6px; }
-    .guide-card-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
-    .guide-code { background: #000; color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 8px; border-radius: 4px; display: block; margin-top: 6px; }
+    .card-strip-thumb img { width: 100%; height: 100%; object-fit: cover; }
   </style>
 </head>
 <body>
-
-  <!-- Top Header -->
   <header class="top-header">
     <div class="brand-group">
-      <span class="brand-badge">Master Hub</span>
-      <div class="header-title">🎬 Bảng Phân Cảnh AI Studio (vietndj/Bang-Phan-Canh)</div>
+      <span class="brand-badge">Bảng Phân Cảnh Master</span>
+      <div class="header-title">🎬 AI Storyboard Studio 9:16</div>
     </div>
     <div class="header-controls">
-      <a href="https://github.com/vietndj/Bang-Phan-Canh" target="_blank" class="header-link">🐙 GitHub Repo</a>
-      <a href="https://fedu.vn/Bang-Phan-Canh/" class="header-link">🌐 Cổng fedu.vn</a>
+      <a href="https://fedu.vn/Bang-Phan-Canh/" class="header-link" target="_blank">🌐 Cổng fedu.vn</a>
+      <a href="https://github.com/vietndj/Bang-Phan-Canh" class="header-link" target="_blank">🐙 GitHub Repo</a>
+      <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/9_kich_ban_thuc_chien.html" class="header-link" target="_blank">📋 9 Kịch Bản Gốc</a>
     </div>
   </header>
 
   <div class="container">
-    
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-badge">⚡ Automated 9:16 Vertical Storyboard Engine</div>
-      <h1>Kho Bảng Phân Cảnh Điện Ảnh 9:16 Tự Động</h1>
+      <div class="hero-badge">⚡ Kho Bảng Phân Cảnh Điện Ảnh 9:16 Chuẩn Quốc Tế</div>
+      <h1>Bộ 9 Kịch Bản Thực Chiến 3 Tầng Sự Thật</h1>
       <p class="hero-desc">
-        Hệ thống tự động hóa chuyển đổi kịch bản nói và ảnh bối cảnh thành bảng phân cảnh 3 nhịp (In-point, Main action, Out-point), đồng bộ lưu trữ Cloudflare R2 CDN và xuất bản trực tuyến.
+        Hệ thống băm nhỏ kịch bản thoại thành 15 micro-beats đạo diễn chuẩn xác từng giây (In-point, Main Action, Out-point Lead).
+        Nhân diện chuẩn Anh Việt, tối ưu chuyển thể cho định dạng video ngắn TikTok, Reels và YouTube Shorts.
       </p>
-      
       <div class="stats-bar">
-        <div class="stat-item">
-          <div class="stat-label">Tổng Kịch Bản</div>
-          <div class="stat-val">2 Dự Án</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Tổng Phân Cảnh</div>
-          <div class="stat-val">10 Cảnh Chính</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Khung Hình Chi Tiết</div>
-          <div class="stat-val">30 Micro-Beats</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-label">Lưu Trữ Media</div>
-          <div class="stat-val" style="color: var(--cyan);">Cloudflare R2</div>
-        </div>
+        <div class="stat-item"><div class="stat-label">Tổng Kịch Bản</div><div class="stat-val">9 Kịch Bản</div></div>
+        <div class="stat-item"><div class="stat-label">Tổng Phân Cảnh</div><div class="stat-val">45 Cảnh Quay</div></div>
+        <div class="stat-item"><div class="stat-label">Vi Phân Cảnh (Beats)</div><div class="stat-val">135 Micro-Beats</div></div>
+        <div class="stat-item"><div class="stat-label">Thời Lượng Chuẩn</div><div class="stat-val">30s / Video</div></div>
+        <div class="stat-item"><div class="stat-label">Tỷ Lệ Khung Hình</div><div class="stat-val">9:16 Vertical</div></div>
       </div>
     </section>
 
-    <!-- Search & Filter -->
+    <!-- SEARCH & FILTER -->
     <div class="filter-bar">
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm kịch bản, lời thoại, chủ đề..." onkeyup="filterCards()">
+        <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm kịch bản, lời thoại, nỗi đau..." onkeyup="filterCards()">
       </div>
       <div class="filter-tags">
-        <span class="filter-tag active" onclick="filterCategory('all', this)">Tất cả (2)</span>
-        <span class="filter-tag" onclick="filterCategory('Kinh Doanh', this)">Kinh Doanh & Bán Hàng</span>
-        <span class="filter-tag" onclick="filterCategory('Phát Triển', this)">Phát Triển Bản Thân</span>
+        <button class="filter-tag active" onclick="setFilter('all', this)">Tất cả (9)</button>
+        <button class="filter-tag" onclick="setFilter('Bán Hàng', this)">Bán Hàng</button>
+        <button class="filter-tag" onclick="setFilter('Văn Phòng', this)">Văn Phòng</button>
+        <button class="filter-tag" onclick="setFilter('Tự Do', this)">Tự Do & Tư Vấn</button>
+        <button class="filter-tag" onclick="setFilter('Kỹ Thuật', this)">Kỹ Thuật</button>
+        <button class="filter-tag" onclick="setFilter('Đại Lý', this)">Đại Lý</button>
+        <button class="filter-tag" onclick="setFilter('Chuyển Nghề', this)">Chuyển Nghề</button>
       </div>
     </div>
 
-    <!-- Storyboards Grid -->
-    <div class="storyboards-grid" id="storyboardList">
+    <!-- CARDS GRID -->
+    <div class="storyboards-grid" id="sbGrid">
 
-      <article class="sb-card" data-category="Kinh Doanh & Bán Hàng" data-title="từ đốt tiền quảng cáo đến tự tin xuất hiện" data-summary="nỗi đau chi phí quảng cáo tăng gấp đôi, tiền nạp ăn hết lãi. chuyển dịch tư duy từ 'đốt tiền mua ads' sang tự quay video xuất hiện để xây dựng niềm tin thật với khách hàng.">
+      <div class="sb-card" data-category="Tâm Lý & Áp Lực Kiệt Sức LÀM VIỆC ĐÊM & BẾ TẮC Ngồi Cà Phê 10h Tối 10h tối, ngồi ở góc quán này không phải vì chăm chỉ...">
         <div class="card-top">
           <div class="card-thumb-wrap">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện">
-            <span class="card-thumb-badge">30 Giây</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Ngồi Cà Phê 10h Tối">
+            <span class="card-badge-tag">KB 01</span>
           </div>
           <div class="card-info">
-            <div>
-              <span class="card-category-badge" style="background: #38bdf820; color: #38bdf8; border: 1px solid #38bdf840;">
-                Kinh Doanh & Bán Hàng
-              </span>
-              <h2 class="card-title">Từ Đốt Tiền Quảng Cáo Đến Tự Tin Xuất Hiện</h2>
-              <div class="card-target">🎯 <b>Đối tượng:</b> Chủ shop, người bán hàng online phụ thuộc chạy Ads</div>
+            <div class="card-meta-row">
+              <span class="pill" style="background: #6366f122; color: #6366f1; border: 1px solid #6366f155;">LÀM VIỆC ĐÊM & BẾ TẮC</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
             </div>
-            <div class="card-meta-chips">
-              <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
-              <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
-              <span class="chip">📅 21/08/2026</span>
-            </div>
+            <h2 class="card-title">Kịch Bản 01: Ngồi Cà Phê 10h Tối</h2>
+            <p class="card-summary">Bối cảnh: Góc bàn cafe / Bàn học đêm • Chạm vào: Áp lực FOMO & Kiệt sức</p>
+            <div class="card-quote">🎙️ "10h tối, ngồi ở góc quán này không phải vì chăm chỉ..."</div>
           </div>
         </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
 
-        <div class="card-body">
-          <p class="summary-text">Nỗi đau chi phí quảng cáo tăng gấp đôi, tiền nạp ăn hết lãi. Chuyển dịch tư duy từ 'đốt tiền mua Ads' sang tự quay video xuất hiện để xây dựng niềm tin thật với khách hàng.</p>
-          
-          <div class="hook-quote-box">
-            <div class="hook-quote-label">🎙️ Câu Mở Đầu (Hook):</div>
-            <div class="hook-quote-text">"Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
-          </div>
-
-          <div>
-            <div class="mini-filmstrip-label" style="margin-bottom: 6px;">🎞️ Preview 5 Cảnh Chính:</div>
-            <div class="mini-filmstrip">
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="frame"></div>
-            </div>
-          </div>
         </div>
-
-        <div class="card-footer">
-          <a href="tu_dot_tien_den_tu_tin_xuat_hien.html" class="btn-view-primary">
-            📱 Xem Bảng Phân Cảnh Đầy Đủ ➔
-          </a>
-          <div style="display: flex; gap: 4px;">
-            <a href="https://fedu.vn/Bang-Phan-Canh/tu_dot_tien_den_tu_tin_xuat_hien.html" class="btn-sub-link">🌐 Cổng fedu.vn</a>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Người trẻ làm nghề, freelancer cày đêm vì bất an</b></span>
           </div>
-        </div>
-      </article>
-
-      <article class="sb-card" data-category="Phát Triển Bản Thân & Nghề Nghiệp" data-title="kịch bản 03: chững lại sau tuổi 30" data-summary="khủng hoảng tuổi 30 của người làm văn phòng khi thu nhập đứng yên mà chi phí tăng. nỗi sợ bị bỏ lại phía sau trước làn sóng công nghệ mới và quyết tâm học lại từ đầu.">
-        <div class="card-top">
-          <div class="card-thumb-wrap">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="Kịch Bản 03: Chững Lại Sau Tuổi 30">
-            <span class="card-thumb-badge">30 Giây</span>
-          </div>
-          <div class="card-info">
-            <div>
-              <span class="card-category-badge" style="background: #f59e0b20; color: #f59e0b; border: 1px solid #f59e0b40;">
-                Phát Triển Bản Thân & Nghề Nghiệp
-              </span>
-              <h2 class="card-title">Kịch Bản 03: Chững Lại Sau Tuổi 30</h2>
-              <div class="card-target">🎯 <b>Đối tượng:</b> Người làm văn phòng 30+, người sợ tụt hậu công nghệ</div>
-            </div>
-            <div class="card-meta-chips">
-              <span class="chip">⏱️ 5 Cảnh • 15 Beats</span>
-              <span class="chip">⚡ 1.5s / Beat (J-Cut -0.4s)</span>
-              <span class="chip">📅 21/08/2026</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <p class="summary-text">Khủng hoảng tuổi 30 của người làm văn phòng khi thu nhập đứng yên mà chi phí tăng. Nỗi sợ bị bỏ lại phía sau trước làn sóng công nghệ mới và quyết tâm học lại từ đầu.</p>
-          
-          <div class="hook-quote-box">
-            <div class="hook-quote-label">🎙️ Câu Mở Đầu (Hook):</div>
-            <div class="hook-quote-text">"Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."</div>
-          </div>
-
-          <div>
-            <div class="mini-filmstrip-label" style="margin-bottom: 6px;">🎞️ Preview 5 Cảnh Chính:</div>
-            <div class="mini-filmstrip">
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="frame"></div>
-              <div class="mini-frame-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="frame"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <a href="kich_ban_03_chung_lai_sau_tuoi_30.html" class="btn-view-primary">
-            📱 Xem Bảng Phân Cảnh Đầy Đủ ➔
-          </a>
-          <div style="display: flex; gap: 4px;">
-            <a href="https://fedu.vn/Bang-Phan-Canh/kich_ban_03_chung_lai_sau_tuoi_30.html" class="btn-sub-link">🌐 Cổng fedu.vn</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Guide Section -->
-    <section class="guide-box">
-      <h2 class="guide-title">💡 Cách Tạo Thêm Bảng Phân Cảnh Mới Tự Động</h2>
-      <div class="guide-grid">
-        <div class="guide-card">
-          <div class="guide-card-title">1. Gửi qua Telegram Bot (@nova0410_bot)</div>
-          <div class="guide-card-text">
-            Gửi 1–3 ảnh bối cảnh kèm caption kịch bản hoặc gõ lệnh:
-            <span class="guide-code">/storyboard [Dán kịch bản hoặc link online]</span>
-          </div>
-        </div>
-        <div class="guide-card">
-          <div class="guide-card-title">2. Giao việc trong Antigravity IDE</div>
-          <div class="guide-card-text">
-            Nhắn trực tiếp trong chat:
-            <span class="guide-code">"Lên bảng phân cảnh cho kịch bản này giúp tôi..."</span>
-          </div>
-        </div>
-        <div class="guide-card">
-          <div class="guide-card-title">3. Tự động xuất bản GitHub Pages & R2</div>
-          <div class="guide-card-text">
-            Hệ thống tự động băm nhỏ 15 beat, đẩy media lên Cloudflare R2 và cập nhật vào Master Hub này.
-          </div>
+          <a href="kich_ban_01_ngoi_ca_phe_10h_toi.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
         </div>
       </div>
-    </section>
 
+      <div class="sb-card" data-category="Kinh Doanh Cửa Hàng & Bán Lẻ CHỦ SHOP & MỞ TIỆM Tiền Mặt Bằng & Cửa Hàng Vắng Khách Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Tiền Mặt Bằng & Cửa Hàng Vắng Khách">
+            <span class="card-badge-tag">KB 02</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #e11d4822; color: #e11d48; border: 1px solid #e11d4855;">CHỦ SHOP & MỞ TIỆM</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 02: Tiền Mặt Bằng & Cửa Hàng Vắng Khách</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Bàn làm việc • Chạm vào: Áp lực chi phí mặt bằng & vắng khách</p>
+            <div class="card-quote">🎙️ "Sáng Chủ Nhật, tôi ngồi ở lớp này không phải vì rảnh rỗi..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Chủ shop offline, chủ tiệm dịch vụ chịu áp lực mặt bằng</b></span>
+          </div>
+          <a href="kich_ban_02_tien_mat_bang_va_cua_hang_vang_khach.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Phát Triển Bản Thân & Nghề Nghiệp NGƯỜI LÀM VĂN PHÒNG Chững Lại Sau Tuổi 30 Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Chững Lại Sau Tuổi 30">
+            <span class="card-badge-tag">KB 03</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b55;">NGƯỜI LÀM VĂN PHÒNG</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 03: Chững Lại Sau Tuổi 30</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Laptop • Chạm vào: Khủng hoảng tuổi 30 & Sợ tụt hậu</p>
+            <div class="card-quote">🎙️ "Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Người làm văn phòng 30+, người sợ tụt hậu công nghệ</b></span>
+          </div>
+          <a href="kich_ban_03_chung_lai_sau_tuoi_30.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Kinh Doanh & Bán Hàng Online BÁN HÀNG ONLINE Tiền Quảng Cáo Ăn Hết Tiền Lãi Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Tiền Quảng Cáo Ăn Hết Tiền Lãi">
+            <span class="card-badge-tag">KB 04</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #38bdf822; color: #38bdf8; border: 1px solid #38bdf855;">BÁN HÀNG ONLINE</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 04: Tiền Quảng Cáo Ăn Hết Tiền Lãi</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Điện thoại • Chạm vào: Bế tắc vì phụ thuộc chạy Ads</p>
+            <div class="card-quote">🎙️ "Cứ 5 phút tôi lại mở màn hình điện thoại kiểm tra một lần..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Chủ shop, người bán hàng online phụ thuộc chạy Ads</b></span>
+          </div>
+          <a href="kich_ban_04_tien_quang_cao_an_het_tien_lai.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Tự Do & Dịch Vụ Tư Vấn LÀM TỰ DO & TƯ VẤN Hết Khách Từ Mối Quan Hệ Quen Ngồi trong lớp, tôi vừa mở danh bạ tính nhắn tin cho vài người quen...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Hết Khách Từ Mối Quan Hệ Quen">
+            <span class="card-badge-tag">KB 05</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #a855f722; color: #a855f7; border: 1px solid #a855f755;">LÀM TỰ DO & TƯ VẤN</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 05: Hết Khách Từ Mối Quan Hệ Quen</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Danh bạ Zalo • Chạm vào: Cạn nguồn khách giới thiệu</p>
+            <div class="card-quote">🎙️ "Ngồi trong lớp, tôi vừa mở danh bạ tính nhắn tin cho vài người quen..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Freelancer, chuyên viên tư vấn, người làm dịch vụ cạn mối quen</b></span>
+          </div>
+          <a href="kich_ban_05_het_khach_tu_moi_quan_he_quen.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Tay Nghề & Kỹ Thuật Chuyên Môn THỢ & NGHỀ KỸ THUẬT Tay Nghề Tốt Nhưng Vẫn Vắng Khách Tôi làm nghề cả chục năm nay, tay nghề không thua kém ai...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Tay Nghề Tốt Nhưng Vẫn Vắng Khách">
+            <span class="card-badge-tag">KB 06</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #f9731622; color: #f97316; border: 1px solid #f9731655;">THỢ & NGHỀ KỸ THUẬT</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 06: Tay Nghề Tốt Nhưng Vẫn Vắng Khách</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Sách kỹ thuật • Chạm vào: Tự ái của người làm nghề</p>
+            <div class="card-quote">🎙️ "Tôi làm nghề cả chục năm nay, tay nghề không thua kém ai..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Thợ thủ công, kỹ sư, chuyên gia giỏi nghề nhưng ngại làm truyền thông</b></span>
+          </div>
+          <a href="kich_ban_06_tay_nghe_tot_nhung_van_vang_khach.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Đại Lý & Chuỗi Phân Phối ĐẠI LÝ BÁN LẺ Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc Nhìn các tổng kho tự lên livestream bán giá gốc...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc">
+            <span class="card-badge-tag">KB 07</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #ef444422; color: #ef4444; border: 1px solid #ef444455;">ĐẠI LÝ BÁN LẺ</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 07: Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Livestream • Chạm vào: Nguy cơ mất đất sống của trung gian</p>
+            <div class="card-quote">🎙️ "Nhìn các tổng kho tự lên livestream bán giá gốc..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Chủ đại lý phân phối, cửa hàng bán lẻ bị tổng kho bán phá giá</b></span>
+          </div>
+          <a href="kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Chuyển Nghề & Tái Khởi Nghiệp CHUYỂN NGHỀ & LÀM LẠI Bắt Đầu Lại Từ Con Số 0 Rời công việc quen thuộc sau nhiều năm để bắt đầu lại từ con số 0...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Bắt Đầu Lại Từ Con Số 0">
+            <span class="card-badge-tag">KB 08</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #10b98122; color: #10b981; border: 1px solid #10b98155;">CHUYỂN NGHỀ & LÀM LẠI</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 08: Bắt Đầu Lại Từ Con Số 0</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Sổ mới • Chạm vào: Nỗi bất an tài chính & sợ bàn tán</p>
+            <div class="card-quote">🎙️ "Rời công việc quen thuộc sau nhiều năm để bắt đầu lại từ con số 0..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Người bỏ việc cũ chuyển ngành, người khởi nghiệp lại từ đầu</b></span>
+          </div>
+          <a href="kich_ban_08_bat_dau_lai_tu_con_so_0.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+      <div class="sb-card" data-category="Sản Phẩm & Nghệ Nhân Tận Tâm SẢN PHẨM LÀM KỸ Hàng Làm Kỹ Nhưng Bị So Sánh Giá Làm ra một món đồ kỹ lưỡng, nguyên liệu chọn lọc từng chút một...">
+        <div class="card-top">
+          <div class="card-thumb-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="Hàng Làm Kỹ Nhưng Bị So Sánh Giá">
+            <span class="card-badge-tag">KB 09</span>
+          </div>
+          <div class="card-info">
+            <div class="card-meta-row">
+              <span class="pill" style="background: #ec489922; color: #ec4899; border: 1px solid #ec489955;">SẢN PHẨM LÀM KỸ</span>
+              <span class="pill" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">30 Giây • 15 Beats</span>
+            </div>
+            <h2 class="card-title">Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá</h2>
+            <p class="card-summary">Bối cảnh: Phòng học / Mẫu sản phẩm • Chạm vào: Mâu thuẫn giữa chất lượng & giá rẻ</p>
+            <div class="card-quote">🎙️ "Làm ra một món đồ kỹ lưỡng, nguyên liệu chọn lọc từng chút một..."</div>
+          </div>
+        </div>
+        
+        <div class="card-strip">
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="f"></div>
+          <div class="card-strip-thumb"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="f"></div>
+
+        </div>
+        
+        <div class="card-bottom">
+          <div class="card-metrics-mini">
+            <span>🎯 Target: <b>Người làm sản phẩm kỹ, hàng thủ công/chất lượng cao bị so giá với hàng chợ</b></span>
+          </div>
+          <a href="kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html" class="view-btn">🎬 Mở Bảng Phân Cảnh ➔</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <script>
-    function filterCards() {
-      const q = document.getElementById('searchInput').value.toLowerCase();
+    function setFilter(cat, btn) {
+      document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
       const cards = document.querySelectorAll('.sb-card');
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title');
-        const summary = card.getAttribute('data-summary');
-        if (title.includes(q) || summary.includes(q)) {
-          card.style.display = 'flex';
+      cards.forEach(c => {
+        if (cat === 'all') {
+          c.style.display = 'flex';
         } else {
-          card.style.display = 'none';
+          const text = c.getAttribute('data-category').toLowerCase();
+          c.style.display = text.includes(cat.toLowerCase()) ? 'flex' : 'none';
         }
       });
     }
 
-    function filterCategory(cat, el) {
-      document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      
+    function filterCards() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
       const cards = document.querySelectorAll('.sb-card');
-      cards.forEach(card => {
-        const itemCat = card.getAttribute('data-category');
-        if (cat === 'all' || itemCat.includes(cat)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      cards.forEach(c => {
+        const text = c.getAttribute('data-category').toLowerCase();
+        c.style.display = text.includes(q) ? 'flex' : 'none';
       });
     }
   </script>
