@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Phân Cảnh Storyboard: Kịch Bản 03 • Chững Lại Sau Tuổi 30 | Bảng Phân Cảnh AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #172033;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.15);
+      --emerald: #10b981;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 6px; text-transform: uppercase;
+    }
+    .header-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+    .header-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .nav-btn {
+      background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+      font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: var(--radius-sm); text-decoration: none;
+    }
+    .nav-btn:hover { background: var(--cyan); color: #000; }
+    .action-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 700; border: none;
+      padding: 6px 14px; border-radius: var(--radius-sm); cursor: pointer; font-size: 12px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+    .original-message-box {
+      background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;
+    }
+    .orig-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .orig-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .orig-badge { background: rgba(56, 189, 248, 0.15); color: var(--cyan); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .orig-content-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+    @media (max-width: 900px) { .orig-content-grid { grid-template-columns: 1fr; } }
+    .raw-text-panel {
+      background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);
+      padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #e2e8f0; white-space: pre-wrap; line-height: 1.6; max-height: 320px; overflow-y: auto;
+    }
+    .ref-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md); overflow: hidden; }
+    .ref-thumb-box { height: 180px; background: #000; }
+    .ref-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+    .ref-caption { padding: 8px 10px; font-size: 11px; }
+    .ref-caption strong { color: #fff; display: block; margin-bottom: 2px; }
+    .ref-caption span { color: var(--text-muted); font-size: 10px; }
+    .hero { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; }
+    .tag { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .tag-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .tag-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .tag-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .hero h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; color: #fff; }
+    .metrics-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 12px 16px; margin-top: 14px; }
+    .metric-label { font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+    .metric-value { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+    .scene-block { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 30px; scroll-margin-top: 70px; }
+    .scene-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px; flex-wrap: wrap; }
+    .scene-title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .scene-num-badge { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #000; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+    .scene-main-title { font-size: 18px; font-weight: 800; color: #fff; }
+    .scene-time-badge { background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; }
+    .scene-intent-box { background: rgba(0, 0, 0, 0.25); border-left: 3px solid var(--cyan); padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+    .audio-box { background: linear-gradient(90deg, rgba(56, 189, 248, 0.08) 0%, rgba(24, 34, 52, 0.4) 100%); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .voice-content { display: flex; align-items: center; gap: 10px; flex: 1; }
+    .voice-icon { font-size: 18px; background: var(--cyan-glow); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .voice-text { font-size: 13.5px; font-weight: 600; color: #fff; font-style: italic; }
+    .beats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 960px) { .beats-grid { grid-template-columns: 1fr; } }
+    .beat-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; }
+    .beat-img-container { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; overflow: hidden; }
+    .beat-img-container img { width: 100%; height: 100%; object-fit: cover; }
+    .beat-badge-top { position: absolute; top: 8px; left: 8px; z-index: 2; font-size: 9.5px; font-weight: 800; padding: 3px 7px; border-radius: 4px; text-transform: uppercase; }
+    .badge-in { background: rgba(16, 185, 129, 0.9); color: #fff; }
+    .badge-main { background: rgba(245, 158, 11, 0.9); color: #000; }
+    .badge-out { background: rgba(56, 189, 248, 0.9); color: #000; }
+    .beat-time-tag { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.75); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+    .beat-content { padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .beat-header { display: flex; justify-content: space-between; align-items: center; }
+    .beat-id-title { font-size: 13px; font-weight: 800; color: var(--text-primary); }
+    .specs-table { width: 100%; font-size: 11px; border-collapse: collapse; background: rgba(0, 0, 0, 0.2); border-radius: 6px; overflow: hidden; }
+    .specs-table tr { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 5px 8px; }
+    .specs-table td.spec-name { color: var(--text-muted); font-weight: 600; width: 38%; }
+    .specs-table td.spec-val { color: var(--text-primary); font-weight: 500; }
+    .director-note-box { background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.3); padding: 8px 10px; border-radius: 6px; font-size: 11px; color: #fde68a; line-height: 1.4; margin-top: auto; }
+    .timeline-wrapper { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px 20px; margin-bottom: 28px; }
+    .filmstrip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 12px; }
+    .strip-frame { flex: 0 0 130px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; }
+    .strip-frame-img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
+    .strip-meta { padding: 5px 6px; font-size: 9.5px; text-align: center; }
+    .strip-title { font-weight: 700; color: #fff; }
+    .strip-ts { color: var(--cyan); font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="brand-group">
+      <span class="brand-badge">Bảng Phân Cảnh AI</span>
+      <div class="header-title">🎬 Kịch Bản 03: Chững Lại Sau Tuổi 30 (30s)</div>
+    </div>
+    <div class="header-controls">
+      <a href="#orig-msg" class="nav-btn">📩 Tin Nhắn Gốc</a>
+      <a href="#scene-1" class="nav-btn">Cảnh 1</a>
+      <a href="#scene-2" class="nav-btn">Cảnh 2</a>
+      <a href="#scene-3" class="nav-btn">Cảnh 3</a>
+      <a href="#scene-4" class="nav-btn">Cảnh 4</a>
+      <a href="#scene-5" class="nav-btn">Cảnh 5</a>
+      <a href="#filmstrip-view" class="nav-btn">🎞️ Dải Timeline</a>
+      <button class="action-btn" onclick="window.print()">📄 In / Xuất PDF</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="original-message-box" id="orig-msg">
+      <div class="orig-header">
+        <div class="orig-title">📩 Tin Nhắn & Kịch Bản Gốc Trích Xuất Online <span class="orig-badge">Auto Fetcher 100%</span></div>
+        <div style="font-size: 11px; color: var(--text-muted);">⏱️ Tải lúc: <b>21/08/2026 10:12:45</b></div>
+      </div>
+      <div class="orig-content-grid">
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            💬 Kịch bản gốc từ Link Online (https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/9_kich_ban_thuc_chien.html):
+          </div>
+          <div class="raw-text-panel">KỊCH BẢN 03: Chững Lại Sau Tuổi 30
+Bối cảnh: Phòng học / Laptop • Chạm vào: Khủng hoảng tuổi 30 & Sợ tụt hậu
+
+Cảnh 1 (0 - 3s) • [Đặc tả]: Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.
+🎙️ Lời thoại: "Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."
+
+Cảnh 2 (3 - 7s) • [Trung cảnh]: Ngồi trước laptop, gõ vài nhịp bàn phím.
+🎙️ Lời thoại: "...Ai hỏi thì bảo tranh thủ đi học thêm kỹ năng mới."
+
+Cảnh 3 (7 - 15s) • [Cận cảnh]: Tay chống cằm nhìn lên bài giảng suy nghĩ.
+🎙️ Lời thoại: "Nhưng thật ra trong lòng đang rất sốt ruột. Công việc làm chục năm nay đang chững lại, thu nhập đứng yên mà chi phí ngày càng tăng."
+
+Cảnh 4 (15 - 25s) • [Cảnh lia]: Lia máy từ phòng học quay về phía cuốn sổ tay.
+🎙️ Lời thoại: "Sợ nhất là mình bị tụt hậu. Thấy mọi người thích nghi công nghệ mới nhanh quá, còn mình cứ giữ mãi thói quen cũ thì sớm muộn cũng bị bỏ lại phía sau."
+
+Cảnh 5 (25 - 30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói tự nhiên.
+🎙️ Lời thoại: "Bớt ngại đi, chịu khó học lại từ đầu còn hơn cứ ngồi yên nhìn công việc của mình đi xuống."</div>
+        </div>
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            🖼️ Ảnh bối cảnh tham chiếu (Cloudflare R2):
+          </div>
+          <div class="ref-gallery">
+
+            <div class="ref-item">
+              <div class="ref-thumb-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg" alt="Ảnh Bối Cảnh Lớp Học & Bàn Gỗ"></div>
+              <div class="ref-caption"><strong>Ảnh Bối Cảnh Lớp Học & Bàn Gỗ</strong><span>Bàn học gỗ tự nhiên, ly cafe, sổ tay, ánh sáng xiên cửa sổ.</span></div>
+            </div>
+
+            <div class="ref-item">
+              <div class="ref-thumb-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg" alt="Ảnh Nhân Vật Nam Văn Phòng 30+"></div>
+              <div class="ref-caption"><strong>Ảnh Nhân Vật Nam Văn Phòng 30+</strong><span>Nam giới hơn 30 tuổi, áo sơ mi tối giản, nét mặt trầm ngâm sốt ruột.</span></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="hero-tags">
+        <span class="tag tag-cyan">⚡ 9:16 Vertical Master</span>
+        <span class="tag tag-amber">🎯 15 Storyboard Beats</span>
+        <span class="tag tag-emerald">🔄 J-Cut -0.4s Sync</span>
+      </div>
+      <h1>Bảng Phân Cảnh Storyboard: Kịch Bản 03 • Chững Lại Sau Tuổi 30</h1>
+      <p style="color: var(--text-secondary); font-size: 13px;">Bối cảnh: Phòng học / Laptop • Chạm vào: Khủng hoảng tuổi 30 & Sợ tụt hậu công nghệ.</p>
+      <div class="metrics-bar">
+        <div><span class="metric-label">Tổng Thời Lượng</span><div class="metric-value">30 Giây</div></div>
+        <div><span class="metric-label">Số Cảnh Chính</span><div class="metric-value">5 Cảnh</div></div>
+        <div><span class="metric-label">Số Vi Phân Cảnh</span><div class="metric-value">15 Beats</div></div>
+        <div><span class="metric-label">Nhịp Cắt Trung Bình</span><div class="metric-value">1.5s / Beat</div></div>
+      </div>
+    </section>
+
+    <section class="scene-block" id="scene-1">
+      <div class="scene-header">
+        <div class="scene-title-group">
+          <span class="scene-num-badge">CẢNH 1</span>
+          <h3 class="scene-main-title">Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.</h3>
+          <span class="tag tag-cyan">Đặc tả</span>
+        </div>
+        <span class="scene-time-badge">⏱️ 0 - 3s (3s)</span>
+      </div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Khắc họa thói quen vô thức khi ngồi lẫn giữa đám đông, chạm đúng nỗi niềm tuổi 30 đi học lại.</div>
+      <div class="audio-box">
+        <div class="voice-content">
+          <div class="voice-icon">🎙️</div>
+          <div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
+            <div class="voice-text">"Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người..."</div>
+          </div>
+        </div>
+        <span class="tag tag-cyan">J-Cut -0.4s</span>
+      </div>
+      <div class="beats-grid">
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
+            <span class="beat-time-tag">0s - 1.0s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 1.1</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh (Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 45° từ trên xuống</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Máy tĩnh bắt nét cạnh ly cafe</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">1/3 góc bàn</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở đầu phân cảnh 1: Cận cảnh (Close-Up). Tay khuấy nhẹ ống hút trong cốc cafe trên bàn..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
+            <span class="beat-time-tag">1.0s - 2.2s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 1.2</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả cực cận (Extreme Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc trực diện 60°</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm vào đầu ngón tay</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tâm điểm ống hút & đá tan</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cao trào phân cảnh 1: Khắc họa biểu cảm nội tâm và hành động chính: Tay khuấy nhẹ ống hút trong cốc cafe trên bàn..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
+            <span class="beat-time-tag">2.2s - 3s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 1.3</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh ngắt nhịp (Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc ngang mặt bàn</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tilt-up nhẹ hướng lên người</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Bóng đổ trầm ngâm</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Điểm ngắt nhịp cuối phân cảnh 1: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 2.</div>
+          </div>
+        </div>
+</div></section>
+    <section class="scene-block" id="scene-2">
+      <div class="scene-header">
+        <div class="scene-title-group">
+          <span class="scene-num-badge">CẢNH 2</span>
+          <h3 class="scene-main-title">Ngồi trước laptop, gõ vài nhịp bàn phím.</h3>
+          <span class="tag tag-cyan">Trung cảnh</span>
+        </div>
+        <span class="scene-time-badge">⏱️ 3 - 7s (4s)</span>
+      </div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Bộc lộ lớp vỏ bọc an toàn 'đi học thêm' để giấu đi sự bế tắc trong công việc.</div>
+      <div class="audio-box">
+        <div class="voice-content">
+          <div class="voice-icon">🎙️</div>
+          <div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
+            <div class="voice-text">"...Ai hỏi thì bảo tranh thủ đi học thêm kỹ năng mới."</div>
+          </div>
+        </div>
+        <span class="tag tag-cyan">J-Cut -0.4s</span>
+      </div>
+      <div class="beats-grid">
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
+            <span class="beat-time-tag">3s - 4.4s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 2.1</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh (Medium Shot)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang tầm mắt (Eye Level)</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Trôi nhẹ sang ngang (Drift)</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">1/3 bên trái khung hình</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở đầu phân cảnh 2: Trung cảnh (Medium Shot). Ngồi trước laptop, gõ vài nhịp bàn phím..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
+            <span class="beat-time-tag">4.4s - 6.0s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 2.2</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận qua vai (Over-the-Shoulder)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc qua vai trái 30°</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld nhịp thở nhẹ</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Màn hình laptop trung tâm</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cao trào phân cảnh 2: Khắc họa biểu cảm nội tâm và hành động chính: Ngồi trước laptop, gõ vài nhịp bàn phím..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
+            <span class="beat-time-tag">6.0s - 7s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 2.3</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh bàn phím (Keyboard Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc hếch nhẹ từ dưới lên</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in dồn dập</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Bàn tay gõ nhịp ngập ngừng</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Điểm ngắt nhịp cuối phân cảnh 2: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 3.</div>
+          </div>
+        </div>
+</div></section>
+    <section class="scene-block" id="scene-3">
+      <div class="scene-header">
+        <div class="scene-title-group">
+          <span class="scene-num-badge">CẢNH 3</span>
+          <h3 class="scene-main-title">Tay chống cằm nhìn lên bài giảng suy nghĩ.</h3>
+          <span class="tag tag-cyan">Cận cảnh</span>
+        </div>
+        <span class="scene-time-badge">⏱️ 7 - 15s (8s)</span>
+      </div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Đánh thẳng vào nỗi đau: thu nhập chững lại, chi phí gia đình đè nặng sau 10 năm đi làm.</div>
+      <div class="audio-box">
+        <div class="voice-content">
+          <div class="voice-icon">🎙️</div>
+          <div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
+            <div class="voice-text">"Nhưng thật ra trong lòng đang rất sốt ruột. Công việc làm chục năm nay đang chững lại, thu nhập đứng yên mà chi phí ngày càng tăng."</div>
+          </div>
+        </div>
+        <span class="tag tag-cyan">J-Cut -0.4s</span>
+      </div>
+      <div class="beats-grid">
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
+            <span class="beat-time-tag">7s - 9.8s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 3.1</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh chân dung (Facial Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 3/4</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Máy tĩnh ngột ngạt</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Khuôn mặt chiếm trọn</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở đầu phân cảnh 3: Cận cảnh chân dung (Facial Close-Up). Tay chống cằm nhìn lên bài giảng suy nghĩ..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
+            <span class="beat-time-tag">9.8s - 13.0s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 3.2</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh tay chống cằm (Thoughtful Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện hơi thấp</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Slow Creep-In</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Đôi mắt nặng trĩu suy tư</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cao trào phân cảnh 3: Khắc họa biểu cảm nội tâm và hành động chính: Tay chống cằm nhìn lên bài giảng suy nghĩ..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
+            <span class="beat-time-tag">13.0s - 15s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 3.3</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận nghiêng (Medium Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng cạnh bàn</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Pan êm hướng mắt nhìn lên bảng</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Thở dài ngẫm nghĩ</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Điểm ngắt nhịp cuối phân cảnh 3: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 4.</div>
+          </div>
+        </div>
+</div></section>
+    <section class="scene-block" id="scene-4">
+      <div class="scene-header">
+        <div class="scene-title-group">
+          <span class="scene-num-badge">CẢNH 4</span>
+          <h3 class="scene-main-title">Lia máy từ phòng học quay về phía cuốn sổ tay.</h3>
+          <span class="tag tag-cyan">Cảnh lia</span>
+        </div>
+        <span class="scene-time-badge">⏱️ 15 - 25s (10s)</span>
+      </div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Nỗi sợ bị đào thải trước làn sóng công nghệ mới nếu không chịu thay đổi.</div>
+      <div class="audio-box">
+        <div class="voice-content">
+          <div class="voice-icon">🎙️</div>
+          <div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
+            <div class="voice-text">"Sợ nhất là mình bị tụt hậu. Thấy mọi người thích nghi công nghệ mới nhanh quá, còn mình cứ giữ mãi thói quen cũ thì sớm muộn cũng bị bỏ lại phía sau."</div>
+          </div>
+        </div>
+        <span class="tag tag-cyan">J-Cut -0.4s</span>
+      </div>
+      <div class="beats-grid">
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
+            <span class="beat-time-tag">15s - 18.5s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 4.1</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cảnh lia mở đầu (Pan Establishing)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc rộng lia ngang 60°</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Lia máy mượt từ lớp học sang sổ</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Khung cảnh lớp học mờ ảo</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở đầu phân cảnh 4: Cảnh lia mở đầu (Pan Establishing). Lia máy từ phòng học quay về phía cuốn sổ tay..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
+            <span class="beat-time-tag">18.5s - 22.5s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 4.2</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh trang sổ ghi chép (Notebook Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc 45° từ trên xuống</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm nhấn mạnh từ khóa</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Dòng chữ công nghệ mới</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cao trào phân cảnh 4: Khắc họa biểu cảm nội tâm và hành động chính: Lia máy từ phòng học quay về phía cuốn sổ tay..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
+            <span class="beat-time-tag">22.5s - 25s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 4.3</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh chuẩn bị (Medium Setup)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc ngang tầm mắt</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Cầm máy giơ lên ngang mặt</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Màn hình selfie sẵn sàng</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Điểm ngắt nhịp cuối phân cảnh 4: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 5.</div>
+          </div>
+        </div>
+</div></section>
+    <section class="scene-block" id="scene-5">
+      <div class="scene-header">
+        <div class="scene-title-group">
+          <span class="scene-num-badge">CẢNH 5</span>
+          <h3 class="scene-main-title">Cầm máy ngang tầm mắt, nói tự nhiên.</h3>
+          <span class="tag tag-cyan">Trực diện</span>
+        </div>
+        <span class="scene-time-badge">⏱️ 25 - 30s (5s)</span>
+      </div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Kêu gọi hành động: Bớt ngại, đối diện thực tế, học lại từ đầu để lội ngược dòng.</div>
+      <div class="audio-box">
+        <div class="voice-content">
+          <div class="voice-icon">🎙️</div>
+          <div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
+            <div class="voice-text">"Bớt ngại đi, chịu khó học lại từ đầu còn hơn cứ ngồi yên nhìn công việc của mình đi xuống."</div>
+          </div>
+        </div>
+        <span class="tag tag-cyan">J-Cut -0.4s</span>
+      </div>
+      <div class="beats-grid">
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
+            <span class="beat-time-tag">25s - 26.8s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 5.1</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận trực diện (Frontal Close-Up)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld vững chắc</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Center Framing 1-1</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở đầu phân cảnh 5: Cận trực diện (Frontal Close-Up). Cầm máy ngang tầm mắt, nói tự nhiên..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
+            <span class="beat-time-tag">26.8s - 28.8s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 5.2</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh truyền lửa (Conviction Shot)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện hất nhẹ 5°</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Punch-in nhẹ 10%</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Năng lượng mạnh mẽ dứt khoát</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cao trào phân cảnh 5: Khắc họa biểu cảm nội tâm và hành động chính: Cầm máy ngang tầm mắt, nói tự nhiên..</div>
+          </div>
+        </div>
+
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
+            <span class="beat-time-tag">28.8s - 30s</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header">
+              <span class="beat-id-title">Khung Hình 5.3</span>
+              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận kết thúc (Outro Frame)</span>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang tầm mắt (Eye Level)</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tĩnh giữ frame 0.5s</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Chừa 1/3 dưới cho Subtitle & CTA</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Điểm ngắt nhịp cuối phân cảnh 5: Chuẩn bị tư thế mồi nối Match-cut sang cảnh kết.</div>
+          </div>
+        </div>
+</div></section>
+    <section class="timeline-wrapper" id="filmstrip-view">
+      <h2 style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #fff;">🎞️ Dải Timeline Phân Cảnh (15 Khung Hình Liên Tiếp • 0s ➔ 30s)</h2>
+      <div class="filmstrip">
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg" alt="1.1">
+          <div class="strip-meta"><div class="strip-title">Cảnh 1.1</div><div class="strip-ts">0s - 1.0s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg" alt="1.2">
+          <div class="strip-meta"><div class="strip-title">Cảnh 1.2</div><div class="strip-ts">1.0s - 2.2s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg" alt="1.3">
+          <div class="strip-meta"><div class="strip-title">Cảnh 1.3</div><div class="strip-ts">2.2s - 3s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg" alt="2.1">
+          <div class="strip-meta"><div class="strip-title">Cảnh 2.1</div><div class="strip-ts">3s - 4.4s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg" alt="2.2">
+          <div class="strip-meta"><div class="strip-title">Cảnh 2.2</div><div class="strip-ts">4.4s - 6.0s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg" alt="2.3">
+          <div class="strip-meta"><div class="strip-title">Cảnh 2.3</div><div class="strip-ts">6.0s - 7s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg" alt="3.1">
+          <div class="strip-meta"><div class="strip-title">Cảnh 3.1</div><div class="strip-ts">7s - 9.8s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg" alt="3.2">
+          <div class="strip-meta"><div class="strip-title">Cảnh 3.2</div><div class="strip-ts">9.8s - 13.0s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg" alt="3.3">
+          <div class="strip-meta"><div class="strip-title">Cảnh 3.3</div><div class="strip-ts">13.0s - 15s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg" alt="4.1">
+          <div class="strip-meta"><div class="strip-title">Cảnh 4.1</div><div class="strip-ts">15s - 18.5s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg" alt="4.2">
+          <div class="strip-meta"><div class="strip-title">Cảnh 4.2</div><div class="strip-ts">18.5s - 22.5s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg" alt="4.3">
+          <div class="strip-meta"><div class="strip-title">Cảnh 4.3</div><div class="strip-ts">22.5s - 25s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg" alt="5.1">
+          <div class="strip-meta"><div class="strip-title">Cảnh 5.1</div><div class="strip-ts">25s - 26.8s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg" alt="5.2">
+          <div class="strip-meta"><div class="strip-title">Cảnh 5.2</div><div class="strip-ts">26.8s - 28.8s</div></div>
+        </div>
+
+        <div class="strip-frame">
+          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg" alt="5.3">
+          <div class="strip-meta"><div class="strip-title">Cảnh 5.3</div><div class="strip-ts">28.8s - 30s</div></div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</body>
+</html>

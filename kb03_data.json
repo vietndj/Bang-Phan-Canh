@@ -1,0 +1,262 @@
+{
+  "project_title": "Bảng Phân Cảnh Storyboard: Kịch Bản 03 • Chững Lại Sau Tuổi 30",
+  "project_slug": "kich_ban_03_chung_lai_sau_tuoi_30",
+  "total_duration_sec": 30,
+  "scenes_count": 5,
+  "beats_count": 15,
+  "aspect_ratio": "9:16 (TikTok / Reels)",
+  "input_context": {
+    "source": "Link Online: https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/9_kich_ban_thuc_chien.html",
+    "timestamp": "21/08/2026 10:12:45",
+    "raw_text": "KỊCH BẢN 03: Chững Lại Sau Tuổi 30\nBối cảnh: Phòng học / Laptop • Chạm vào: Khủng hoảng tuổi 30 & Sợ tụt hậu\n\nCảnh 1 (0 - 3s) • [Đặc tả]: Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.\n🎙️ Lời thoại: \"Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người...\"\n\nCảnh 2 (3 - 7s) • [Trung cảnh]: Ngồi trước laptop, gõ vài nhịp bàn phím.\n🎙️ Lời thoại: \"...Ai hỏi thì bảo tranh thủ đi học thêm kỹ năng mới.\"\n\nCảnh 3 (7 - 15s) • [Cận cảnh]: Tay chống cằm nhìn lên bài giảng suy nghĩ.\n🎙️ Lời thoại: \"Nhưng thật ra trong lòng đang rất sốt ruột. Công việc làm chục năm nay đang chững lại, thu nhập đứng yên mà chi phí ngày càng tăng.\"\n\nCảnh 4 (15 - 25s) • [Cảnh lia]: Lia máy từ phòng học quay về phía cuốn sổ tay.\n🎙️ Lời thoại: \"Sợ nhất là mình bị tụt hậu. Thấy mọi người thích nghi công nghệ mới nhanh quá, còn mình cứ giữ mãi thói quen cũ thì sớm muộn cũng bị bỏ lại phía sau.\"\n\nCảnh 5 (25 - 30s) • [Trực diện]: Cầm máy ngang tầm mắt, nói tự nhiên.\n🎙️ Lời thoại: \"Bớt ngại đi, chịu khó học lại từ đầu còn hơn cứ ngồi yên nhìn công việc của mình đi xuống.\"",
+    "ref_images": [
+      {
+        "title": "Ảnh Bối Cảnh Lớp Học & Bàn Gỗ",
+        "url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg",
+        "desc": "Bàn học gỗ tự nhiên, ly cafe, sổ tay, ánh sáng xiên cửa sổ."
+      },
+      {
+        "title": "Ảnh Nhân Vật Nam Văn Phòng 30+",
+        "url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg",
+        "desc": "Nam giới hơn 30 tuổi, áo sơ mi tối giản, nét mặt trầm ngâm sốt ruột."
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "time_range": "0 - 3s",
+      "duration": "3s",
+      "title": "Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.",
+      "main_shot_type": "Đặc tả",
+      "director_core_intent": "Khắc họa thói quen vô thức khi ngồi lẫn giữa đám đông, chạm đúng nỗi niềm tuổi 30 đi học lại.",
+      "voiceover": "Hơn 30 tuổi, ngồi trong căn phòng này cùng mọi người...",
+      "beats": [
+        {
+          "beat_id": "1.1",
+          "beat_type": "in_point",
+          "beat_label": "🔰 Đầu cảnh (In-point)",
+          "timestamp": "0s - 1.0s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat1.jpg",
+          "shot_type": "Cận cảnh (Close-Up)",
+          "angle": "Góc nghiêng 45° từ trên xuống",
+          "camera_motion": "Máy tĩnh bắt nét cạnh ly cafe",
+          "composition": "1/3 góc bàn",
+          "director_note": "Mở đầu phân cảnh 1: Cận cảnh (Close-Up). Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.."
+        },
+        {
+          "beat_id": "1.2",
+          "beat_type": "main_action",
+          "beat_label": "🔥 Chi tiết / Cao trào (Main Action)",
+          "timestamp": "1.0s - 2.2s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat2.jpg",
+          "shot_type": "Đặc tả cực cận (Extreme Close-Up)",
+          "angle": "Góc trực diện 60°",
+          "camera_motion": "Push-in chậm vào đầu ngón tay",
+          "composition": "Tâm điểm ống hút & đá tan",
+          "director_note": "Cao trào phân cảnh 1: Khắc họa biểu cảm nội tâm và hành động chính: Tay khuấy nhẹ ống hút trong cốc cafe trên bàn.."
+        },
+        {
+          "beat_id": "1.3",
+          "beat_type": "out_point",
+          "beat_label": "🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)",
+          "timestamp": "2.2s - 3s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene1_beat3.jpg",
+          "shot_type": "Cận cảnh ngắt nhịp (Close-Up)",
+          "angle": "Góc ngang mặt bàn",
+          "camera_motion": "Tilt-up nhẹ hướng lên người",
+          "composition": "Bóng đổ trầm ngâm",
+          "director_note": "Điểm ngắt nhịp cuối phân cảnh 1: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 2."
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "time_range": "3 - 7s",
+      "duration": "4s",
+      "title": "Ngồi trước laptop, gõ vài nhịp bàn phím.",
+      "main_shot_type": "Trung cảnh",
+      "director_core_intent": "Bộc lộ lớp vỏ bọc an toàn 'đi học thêm' để giấu đi sự bế tắc trong công việc.",
+      "voiceover": "...Ai hỏi thì bảo tranh thủ đi học thêm kỹ năng mới.",
+      "beats": [
+        {
+          "beat_id": "2.1",
+          "beat_type": "in_point",
+          "beat_label": "🔰 Đầu cảnh (In-point)",
+          "timestamp": "3s - 4.4s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat1.jpg",
+          "shot_type": "Trung cảnh (Medium Shot)",
+          "angle": "Ngang tầm mắt (Eye Level)",
+          "camera_motion": "Trôi nhẹ sang ngang (Drift)",
+          "composition": "1/3 bên trái khung hình",
+          "director_note": "Mở đầu phân cảnh 2: Trung cảnh (Medium Shot). Ngồi trước laptop, gõ vài nhịp bàn phím.."
+        },
+        {
+          "beat_id": "2.2",
+          "beat_type": "main_action",
+          "beat_label": "🔥 Chi tiết / Cao trào (Main Action)",
+          "timestamp": "4.4s - 6.0s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat2.jpg",
+          "shot_type": "Trung cận qua vai (Over-the-Shoulder)",
+          "angle": "Góc qua vai trái 30°",
+          "camera_motion": "Handheld nhịp thở nhẹ",
+          "composition": "Màn hình laptop trung tâm",
+          "director_note": "Cao trào phân cảnh 2: Khắc họa biểu cảm nội tâm và hành động chính: Ngồi trước laptop, gõ vài nhịp bàn phím.."
+        },
+        {
+          "beat_id": "2.3",
+          "beat_type": "out_point",
+          "beat_label": "🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)",
+          "timestamp": "6.0s - 7s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene2_beat3.jpg",
+          "shot_type": "Cận cảnh bàn phím (Keyboard Close-Up)",
+          "angle": "Góc hếch nhẹ từ dưới lên",
+          "camera_motion": "Push-in dồn dập",
+          "composition": "Bàn tay gõ nhịp ngập ngừng",
+          "director_note": "Điểm ngắt nhịp cuối phân cảnh 2: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 3."
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "time_range": "7 - 15s",
+      "duration": "8s",
+      "title": "Tay chống cằm nhìn lên bài giảng suy nghĩ.",
+      "main_shot_type": "Cận cảnh",
+      "director_core_intent": "Đánh thẳng vào nỗi đau: thu nhập chững lại, chi phí gia đình đè nặng sau 10 năm đi làm.",
+      "voiceover": "Nhưng thật ra trong lòng đang rất sốt ruột. Công việc làm chục năm nay đang chững lại, thu nhập đứng yên mà chi phí ngày càng tăng.",
+      "beats": [
+        {
+          "beat_id": "3.1",
+          "beat_type": "in_point",
+          "beat_label": "🔰 Đầu cảnh (In-point)",
+          "timestamp": "7s - 9.8s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat1.jpg",
+          "shot_type": "Cận cảnh chân dung (Facial Close-Up)",
+          "angle": "Góc nghiêng 3/4",
+          "camera_motion": "Máy tĩnh ngột ngạt",
+          "composition": "Khuôn mặt chiếm trọn",
+          "director_note": "Mở đầu phân cảnh 3: Cận cảnh chân dung (Facial Close-Up). Tay chống cằm nhìn lên bài giảng suy nghĩ.."
+        },
+        {
+          "beat_id": "3.2",
+          "beat_type": "main_action",
+          "beat_label": "🔥 Chi tiết / Cao trào (Main Action)",
+          "timestamp": "9.8s - 13.0s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat2.jpg",
+          "shot_type": "Cận cảnh tay chống cằm (Thoughtful Close-Up)",
+          "angle": "Trực diện hơi thấp",
+          "camera_motion": "Slow Creep-In",
+          "composition": "Đôi mắt nặng trĩu suy tư",
+          "director_note": "Cao trào phân cảnh 3: Khắc họa biểu cảm nội tâm và hành động chính: Tay chống cằm nhìn lên bài giảng suy nghĩ.."
+        },
+        {
+          "beat_id": "3.3",
+          "beat_type": "out_point",
+          "beat_label": "🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)",
+          "timestamp": "13.0s - 15s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene3_beat3.jpg",
+          "shot_type": "Trung cận nghiêng (Medium Close-Up)",
+          "angle": "Góc nghiêng cạnh bàn",
+          "camera_motion": "Pan êm hướng mắt nhìn lên bảng",
+          "composition": "Thở dài ngẫm nghĩ",
+          "director_note": "Điểm ngắt nhịp cuối phân cảnh 3: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 4."
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "time_range": "15 - 25s",
+      "duration": "10s",
+      "title": "Lia máy từ phòng học quay về phía cuốn sổ tay.",
+      "main_shot_type": "Cảnh lia",
+      "director_core_intent": "Nỗi sợ bị đào thải trước làn sóng công nghệ mới nếu không chịu thay đổi.",
+      "voiceover": "Sợ nhất là mình bị tụt hậu. Thấy mọi người thích nghi công nghệ mới nhanh quá, còn mình cứ giữ mãi thói quen cũ thì sớm muộn cũng bị bỏ lại phía sau.",
+      "beats": [
+        {
+          "beat_id": "4.1",
+          "beat_type": "in_point",
+          "beat_label": "🔰 Đầu cảnh (In-point)",
+          "timestamp": "15s - 18.5s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat1.jpg",
+          "shot_type": "Cảnh lia mở đầu (Pan Establishing)",
+          "angle": "Góc rộng lia ngang 60°",
+          "camera_motion": "Lia máy mượt từ lớp học sang sổ",
+          "composition": "Khung cảnh lớp học mờ ảo",
+          "director_note": "Mở đầu phân cảnh 4: Cảnh lia mở đầu (Pan Establishing). Lia máy từ phòng học quay về phía cuốn sổ tay.."
+        },
+        {
+          "beat_id": "4.2",
+          "beat_type": "main_action",
+          "beat_label": "🔥 Chi tiết / Cao trào (Main Action)",
+          "timestamp": "18.5s - 22.5s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat2.jpg",
+          "shot_type": "Cận cảnh trang sổ ghi chép (Notebook Close-Up)",
+          "angle": "Góc 45° từ trên xuống",
+          "camera_motion": "Push-in chậm nhấn mạnh từ khóa",
+          "composition": "Dòng chữ công nghệ mới",
+          "director_note": "Cao trào phân cảnh 4: Khắc họa biểu cảm nội tâm và hành động chính: Lia máy từ phòng học quay về phía cuốn sổ tay.."
+        },
+        {
+          "beat_id": "4.3",
+          "beat_type": "out_point",
+          "beat_label": "🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)",
+          "timestamp": "22.5s - 25s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene4_beat3.jpg",
+          "shot_type": "Trung cảnh chuẩn bị (Medium Setup)",
+          "angle": "Góc ngang tầm mắt",
+          "camera_motion": "Cầm máy giơ lên ngang mặt",
+          "composition": "Màn hình selfie sẵn sàng",
+          "director_note": "Điểm ngắt nhịp cuối phân cảnh 4: Chuẩn bị tư thế mồi nối Match-cut sang cảnh 5."
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "time_range": "25 - 30s",
+      "duration": "5s",
+      "title": "Cầm máy ngang tầm mắt, nói tự nhiên.",
+      "main_shot_type": "Trực diện",
+      "director_core_intent": "Kêu gọi hành động: Bớt ngại, đối diện thực tế, học lại từ đầu để lội ngược dòng.",
+      "voiceover": "Bớt ngại đi, chịu khó học lại từ đầu còn hơn cứ ngồi yên nhìn công việc của mình đi xuống.",
+      "beats": [
+        {
+          "beat_id": "5.1",
+          "beat_type": "in_point",
+          "beat_label": "🔰 Đầu cảnh (In-point)",
+          "timestamp": "25s - 26.8s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat1.jpg",
+          "shot_type": "Cận trực diện (Frontal Close-Up)",
+          "angle": "Trực diện ngang tầm mắt",
+          "camera_motion": "Handheld vững chắc",
+          "composition": "Center Framing 1-1",
+          "director_note": "Mở đầu phân cảnh 5: Cận trực diện (Frontal Close-Up). Cầm máy ngang tầm mắt, nói tự nhiên.."
+        },
+        {
+          "beat_id": "5.2",
+          "beat_type": "main_action",
+          "beat_label": "🔥 Chi tiết / Cao trào (Main Action)",
+          "timestamp": "26.8s - 28.8s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat2.jpg",
+          "shot_type": "Cận cảnh truyền lửa (Conviction Shot)",
+          "angle": "Trực diện hất nhẹ 5°",
+          "camera_motion": "Punch-in nhẹ 10%",
+          "composition": "Năng lượng mạnh mẽ dứt khoát",
+          "director_note": "Cao trào phân cảnh 5: Khắc họa biểu cảm nội tâm và hành động chính: Cầm máy ngang tầm mắt, nói tự nhiên.."
+        },
+        {
+          "beat_id": "5.3",
+          "beat_type": "out_point",
+          "beat_label": "🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)",
+          "timestamp": "28.8s - 30s",
+          "image": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/frames/scene5_beat3.jpg",
+          "shot_type": "Trung cận kết thúc (Outro Frame)",
+          "angle": "Ngang tầm mắt (Eye Level)",
+          "camera_motion": "Tĩnh giữ frame 0.5s",
+          "composition": "Chừa 1/3 dưới cho Subtitle & CTA",
+          "director_note": "Điểm ngắt nhịp cuối phân cảnh 5: Chuẩn bị tư thế mồi nối Match-cut sang cảnh kết."
+        }
+      ]
+    }
+  ]
+}
