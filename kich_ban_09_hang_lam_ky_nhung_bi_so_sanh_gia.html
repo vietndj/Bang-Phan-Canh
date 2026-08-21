@@ -14,17 +14,18 @@
       --bg-card: #172033;
       --bg-card-hover: #1e2a44;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-accent: #ec489988;
+      --border-accent: #e11d4888;
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --accent: #ec4899;
-      --accent-glow: #ec489925;
+      --accent: #e11d48;
+      --accent-glow: #e11d4825;
       --cyan: #38bdf8;
       --cyan-glow: rgba(56, 189, 248, 0.15);
       --amber: #f59e0b;
       --amber-glow: rgba(245, 158, 11, 0.15);
       --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -47,7 +48,7 @@
     }
     .brand-group { display: flex; align-items: center; gap: 10px; }
     .brand-badge {
-      background: linear-gradient(135deg, #ec4899, #2563eb);
+      background: linear-gradient(135deg, #e11d48, #2563eb);
       color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
     }
     .header-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
@@ -67,28 +68,6 @@
     }
     .hub-link:hover { background: var(--cyan); color: #000; }
     .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
-    
-    /* Original Message Box */
-    .original-message-box {
-      background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
-      border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;
-    }
-    .orig-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .orig-title { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
-    .orig-badge { background: var(--accent-glow); color: var(--accent); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--accent); }
-    .orig-content-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
-    @media (max-width: 900px) { .orig-content-grid { grid-template-columns: 1fr; } }
-    .raw-text-panel {
-      background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);
-      padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #e2e8f0; white-space: pre-wrap; line-height: 1.6; max-height: 320px; overflow-y: auto;
-    }
-    .ref-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md); overflow: hidden; }
-    .ref-thumb-box { height: 180px; background: #000; }
-    .ref-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
-    .ref-caption { padding: 8px 10px; font-size: 11px; }
-    .ref-caption strong { color: #fff; display: block; margin-bottom: 2px; }
-    .ref-caption span { color: var(--text-muted); font-size: 10px; }
     
     /* Hero */
     .hero { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; }
@@ -126,7 +105,7 @@
     .audio-box { background: linear-gradient(90deg, rgba(56, 189, 248, 0.08) 0%, rgba(24, 34, 52, 0.4) 100%); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .voice-content { display: flex; align-items: center; gap: 10px; flex: 1; }
     .voice-icon { font-size: 18px; background: var(--cyan-glow); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .voice-text { font-size: 13.5px; font-weight: 600; color: #fff; font-style: italic; }
+    .voice-text { font-size: 14px; font-weight: 700; color: #fde047; font-style: italic; }
     
     /* 3 Beats Grid */
     .beats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -140,7 +119,6 @@
     .badge-in { background: rgba(16, 185, 129, 0.9); color: #fff; }
     .badge-main { background: rgba(245, 158, 11, 0.9); color: #000; }
     .badge-out { background: rgba(56, 189, 248, 0.9); color: #000; }
-    .beat-time-tag { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.75); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
     .beat-content { padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
     .beat-header { display: flex; justify-content: space-between; align-items: center; }
     .beat-id-title { font-size: 13px; font-weight: 800; color: var(--text-primary); }
@@ -152,121 +130,52 @@
     .specs-table td.spec-val { color: var(--text-primary); font-weight: 500; }
     .director-note-box { background: rgba(245, 158, 11, 0.06); border: 1px dashed rgba(245, 158, 11, 0.3); padding: 8px 10px; border-radius: 6px; font-size: 11px; color: #fde68a; line-height: 1.4; margin-top: auto; }
     
-    /* Timeline Filmstrip */
-    .timeline-wrapper { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px 20px; margin-bottom: 28px; }
-    .filmstrip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 12px; }
-    .strip-frame { flex: 0 0 130px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }
-    .strip-frame:hover { transform: translateY(-3px); border-color: var(--cyan); }
-    .strip-frame-img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
-    .strip-meta { padding: 5px 6px; font-size: 9.5px; text-align: center; }
-    .strip-title { font-weight: 700; color: #fff; }
-    .strip-ts { color: var(--cyan); font-family: 'JetBrains Mono', monospace; }
-    
-    /* Lightbox Modal */
-    .lightbox {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.88); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    /* Option Switcher for Scene 5 */
+    .opt-tabs { display: flex; gap: 10px; margin-bottom: 16px; }
+    .opt-tab-btn {
+      background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+      font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s;
     }
-    .lightbox.active { display: flex; }
-    .lightbox-content {
-      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
-      max-width: 800px; width: 100%; max-height: 90vh; overflow: hidden; display: flex; gap: 20px; padding: 20px; position: relative;
+    .opt-tab-btn.active {
+      background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 0 14px rgba(225, 29, 72, 0.4);
     }
-    @media (max-width: 650px) { .lightbox-content { flex-direction: column; overflow-y: auto; } }
-    .lightbox-img-box { flex: 1; max-width: 320px; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; overflow: hidden; }
-    .lightbox-img-box img { width: 100%; height: 100%; object-fit: cover; }
-    .lightbox-details { flex: 1.2; display: flex; flex-direction: column; gap: 12px; }
-    .lightbox-close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 24px; color: #fff; cursor: pointer; }
+    .opt-content { display: none; }
+    .opt-content.active { display: grid; }
   </style>
 </head>
 <body>
   <header class="top-header">
     <div class="brand-group">
       <span class="brand-badge">Bảng Phân Cảnh AI</span>
-      <div class="header-title">🎬 Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá (30s)</div>
+      <div class="header-title">🎬 Kịch Bản 09: Hàng Làm Kỹ Nhưng Bị So Sánh Giá (Style Trà Đá)</div>
     </div>
     <div class="header-controls">
-      <a href="index.html" class="hub-link">🏛️ Master Hub</a>
-      <a href="#orig-msg" class="nav-btn">📩 Tin Nhắn Gốc</a>
-      <a href="#scene-1" class="nav-btn">Cảnh 1</a>
-      <a href="#scene-2" class="nav-btn">Cảnh 2</a>
-      <a href="#scene-3" class="nav-btn">Cảnh 3</a>
-      <a href="#scene-4" class="nav-btn">Cảnh 4</a>
-      <a href="#scene-5" class="nav-btn">Cảnh 5</a>
-      <a href="#filmstrip-view" class="nav-btn">🎞️ Dải Timeline</a>
+      <a href="9_kich_ban_thuc_chien.html" class="hub-link">🏛️ Master Hub 9 Kịch Bản</a>
+      <a href="#scene-1" class="nav-btn">Cảnh 1 (A-Roll)</a>
+      <a href="#scene-2" class="nav-btn">Cảnh 2 (A-Roll)</a>
+      <a href="#scene-3" class="nav-btn">Cảnh 3 (B-Roll)</a>
+      <a href="#scene-4" class="nav-btn">Cảnh 4 (B-Roll)</a>
+      <a href="#scene-5" class="nav-btn">Cảnh 5 (A-Roll Chốt)</a>
       <button class="action-btn" onclick="window.print()">📄 In / PDF</button>
     </div>
   </header>
 
   <div class="container">
-    <!-- ORIGINAL MESSAGE SECTION -->
-    <section class="original-message-box" id="orig-msg">
-      <div class="orig-header">
-        <div class="orig-title">📩 Tin Nhắn & Kịch Bản Gốc Trích Xuất Online <span class="orig-badge">KỊCH BẢN 09</span></div>
-        <div style="font-size: 11px; color: var(--text-muted);">⏱️ Nguồn: <b>9_kich_ban_thuc_chien.html</b></div>
-      </div>
-      <div class="orig-content-grid">
-        <div>
-          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
-            💬 Kịch bản thoại & Phân cảnh gốc:
-          </div>
-          <div class="raw-text-panel">KỊCH BẢN 09 • SẢN PHẨM LÀM KỸ
-Tiêu đề: Hàng Làm Kỹ Nhưng Bị So Sánh Giá
-Bối cảnh: Phòng học / Mẫu sản phẩm • Chạm vào: Mâu thuẫn giữa chất lượng & giá rẻ
-
-3 TẦNG SỰ THẬT:
-• Tầng 1: Đãi bôi: "Kiên định với chất lượng thật, chỉ bán sản phẩm an toàn và nguồn gốc rõ ràng."
-• Tầng 2: Cảm giác thật: "Mỗi lần báo giá xong khách im lặng hoặc so sánh với hàng trôi nổi giá rẻ, thấy vừa hụt hẫng vừa bực mình."
-• Tầng 3: Ngượng miệng: "Từng nghĩ hay là giảm bớt chất lượng đi cho dễ bán. Nhưng làm thế cắn rứt lương tâm, mà giữ chất lượng thì không biết giải thích sao cho khách hiểu."
-
-5 PHÂN CẢNH QUAY CHI TIẾT (30 GIÂY):
-- Cảnh 1 (00:00 - 00:03, 3s) • [Đặc tả (Extreme Close-Up)]: Bàn tay xoay nhẹ một hộp sản phẩm nhỏ mang theo trên bàn học
-  🎙️ Lời thoại: "Làm ra một món đồ kỹ lưỡng, nguyên liệu chọn lọc từng chút một..."
-- Cảnh 2 (00:03 - 00:07, 4s) • [Trung cảnh (Medium Shot)]: Ngồi tựa lưng vào ghế, thở dài nhìn xuống bàn
-  🎙️ Lời thoại: "...Nhưng cứ báo giá là khách lại hỏi: 'Sao chỗ kia bán rẻ bằng nửa chỗ em?'."
-- Cảnh 3 (00:07 - 00:15, 8s) • [Cận cảnh (Close-Up)]: Màn hình điện thoại hiển thị tin nhắn khách im lặng
-  🎙️ Lời thoại: "Nhiều lúc nản, tôi cũng từng nghĩ hay là bớt chất lượng đi cho dễ bán. Nhưng nghĩ lại thấy không đành lòng."
-- Cảnh 4 (00:15 - 00:25, 10s) • [Góc nghiêng (Side Profile)]: Nhìn lên bài giảng về cách quay video chi tiết quy trình
-  🎙️ Lời thoại: "Khách chê đắt không phải vì họ tiếc tiền, mà vì mình chỉ biết báo giá chứ chưa từng cho họ thấy cái công mình làm kỹ thế nào."
-- Cảnh 5 (00:25 - 00:30, 5s) • [Trực diện (Frontal Shot)]: Nhìn thẳng camera nói chân thành
-  🎙️ Lời thoại: "Thay vì ngồi bực mình khi bị so sánh, tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị."
-
-💡 ĐIỂM MẤU CHỐT:
-Biến sự bức xúc khi bị so sánh giá thành hành động quay lại quy trình làm thật để chứng minh giá trị sản phẩm.</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
-            🖼️ Ảnh bối cảnh tham chiếu (Cloudflare R2):
-          </div>
-          <div class="ref-gallery">
-            <div class="ref-item">
-              <div class="ref-thumb-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg" alt="Bối Cảnh Lớp Học"></div>
-              <div class="ref-caption"><strong>Bối Cảnh Lớp Học & Bàn Gỗ</strong><span>Bàn gỗ tự nhiên, ly cafe, sổ tay, ánh sáng xiên.</span></div>
-            </div>
-            <div class="ref-item">
-              <div class="ref-thumb-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg" alt="Nhân Vật Mặc Định"></div>
-              <div class="ref-caption"><strong>Nhân Diện Mặc Định: Anh Việt</strong><span>Áo blazer đen/sơ mi tối giản, biểu cảm từng trải.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-tags">
         <span class="tag tag-accent">⚡ 9:16 Vertical Master</span>
-        <span class="tag tag-amber">🎯 15 Storyboard Beats</span>
-        <span class="tag tag-emerald">🔄 J-Cut -0.4s Sync</span>
-        <span class="tag tag-cyan">🏷️ Sản Phẩm & Nghệ Nhân Tận Tâm</span>
+        <span class="tag tag-amber">🎯 18 Distinct Storyboard Beats</span>
+        <span class="tag tag-emerald">🔄 2 Options A-Roll Chốt</span>
+        <span class="tag tag-cyan">🏷️ Văn Nói Trà Đá Cực Gọn</span>
       </div>
-      <h1>Bảng Phân Cảnh Storyboard: Kịch Bản 09 • Hàng Làm Kỹ Nhưng Bị So Sánh Giá</h1>
-      <p style="color: var(--text-secondary); font-size: 13px;">Bối cảnh: Phòng học / Mẫu sản phẩm • Chạm vào: Mâu thuẫn giữa chất lượng & giá rẻ • 💡 Biến sự bức xúc khi bị so sánh giá thành hành động quay lại quy trình làm thật để chứng minh giá trị sản phẩm.</p>
+      <h1>Kịch Bản 09 • Hàng Làm Kỹ Nhưng Bị So Sánh Giá</h1>
+      <p style="color: var(--text-secondary); font-size: 13px;">Chạm vào: Sản phẩm tận tâm • Bực mình khi bị so với hàng chợ • Thoại băm nhỏ 5-12 từ, cỡ cảnh & góc máy biến chuyển rõ rệt qua từng beat.</p>
       <div class="metrics-bar">
-        <div><span class="metric-label">Tổng Thời Lượng</span><div class="metric-value">30 Giây</div></div>
-        <div><span class="metric-label">Số Cảnh Chính</span><div class="metric-value">5 Cảnh</div></div>
-        <div><span class="metric-label">Số Vi Phân Cảnh</span><div class="metric-value">15 Beats</div></div>
-        <div><span class="metric-label">Nhịp Cắt Trung Bình</span><div class="metric-value">1.5s / Beat</div></div>
+        <div><span class="metric-label">Tổng Thời Lượng</span><div class="metric-value">20 - 22 Giây</div></div>
+        <div><span class="metric-label">Số Cảnh Chính</span><div class="metric-value">5 Cảnh (A-Roll + B-Roll)</div></div>
+        <div><span class="metric-label">Độ Dài Câu Thoại</span><div class="metric-value">7 - 13 Từ / Cảnh</div></div>
+        <div><span class="metric-label">A-Roll Chốt Cuối</span><div class="metric-value">2 Phương Án Tùy Chọn</div></div>
       </div>
     </section>
 
@@ -274,566 +183,448 @@ Biến sự bức xúc khi bị so sánh giá thành hành động quay lại qu
     <section class="tiers-box">
       <div class="tier-card t1">
         <div class="tier-card-head">❌ Tầng 1: Đãi bôi</div>
-        <div class="tier-card-content">"Kiên định với chất lượng thật, chỉ bán sản phẩm an toàn và nguồn gốc rõ ràng."</div>
+        <div class="tier-card-content">"Chỉ bán hàng chất lượng, nguồn gốc chuẩn chỉ."</div>
       </div>
       <div class="tier-card t2">
         <div class="tier-card-head">⚠️ Tầng 2: Cảm giác thật</div>
-        <div class="tier-card-content">"Mỗi lần báo giá xong khách im lặng hoặc so sánh với hàng trôi nổi giá rẻ, thấy vừa hụt hẫng vừa bực mình."</div>
+        <div class="tier-card-content">"Cứ báo giá là khách im lặng hoặc kêu đắt, so với hàng trôi nổi bực cả mình."</div>
       </div>
       <div class="tier-card t3">
         <div class="tier-card-head">✅ Tầng 3: Ngượng miệng</div>
-        <div class="tier-card-content">"Từng nghĩ hay là giảm bớt chất lượng đi cho dễ bán. Nhưng làm thế cắn rứt lương tâm, mà giữ chất lượng thì không biết giải thích sao cho khách hiểu."</div>
+        <div class="tier-card-content">"Khách chê đắt vì mình chỉ biết báo giá chứ không biết quay video cho người ta thấy công mình làm kỹ thế nào."</div>
       </div>
     </section>
 
+    
     <!-- SCENE 1 -->
     <section class="scene-block" id="scene-1">
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 1</span>
-          <h3 class="scene-main-title">Bàn tay xoay nhẹ một hộp sản phẩm nhỏ mang theo trên bàn học</h3>
-          <span class="tag tag-cyan">Đặc tả (Extreme Close-Up)</span>
+          <h3 class="scene-main-title">A-Roll 1 (Selfie): Sản Phẩm Kỹ Từng Đường Kim</h3>
+          <span class="tag tag-cyan">Cầm Máy Xoay Sản Phẩm</span>
         </div>
         <span class="scene-time-badge">⏱️ 00:00 - 00:03 (3s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Mở đầu tinh tế: Thể hiện sự nâng niu và tâm huyết dành cho sản phẩm làm kỹ.</div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Cầm máy xoay nhẹ sản phẩm mẫu trên tay, tự tin vào chất lượng.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Làm ra một món đồ kỹ lưỡng, nguyên liệu chọn lọc từng chút một..."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
+            <div class="voice-text">"Làm kỹ từng đường kim mũi chỉ, chọn nguyên liệu xịn..."</div>
           </div>
         </div>
         <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg', 'Khung Hình 1.1: Cận cảnh hộp sản phẩm mẫu (Product Close-Up)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
+          <div class="beat-img-container">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <span class="beat-time-tag">0.0s - 1.0s</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="1.1">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 1.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh hộp sản phẩm mẫu (Product Close-Up)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.1</span><span class="tag tag-cyan">Xoay sản phẩm trên tay</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 45° từ trên xuống</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Máy tĩnh bắt nét chất liệu bao bì cao cấp</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Mẫu sản phẩm nhỏ tinh xảo đặt trên mặt bàn gỗ</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Selfie góc cao 30°, tay cầm mẫu</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Xoay nhẹ sản phẩm mẫu trước máy</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt tự hào về chất lượng</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Tự tin khẳng định công sức làm kỹ.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg', 'Khung Hình 1.2: Đặc tả xoay nhẹ góc sản phẩm (Product ECU)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
-            <span class="beat-time-tag">1.0s - 2.2s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg" alt="1.2">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 1.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả xoay nhẹ góc sản phẩm (Product ECU)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.2</span><span class="tag tag-cyan">Cực cận đường may/chất liệu</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nhìn 60° từ trên xuống</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm theo vòng xoay</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh sáng xiên rọi rõ vân bề mặt sản phẩm</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Đặc tả cực cận 60° vào chi tiết</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in dồn vào chất liệu cao cấp</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Từng đường kim mũi chỉ tỉ mỉ</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Bằng chứng sản phẩm làm rất kỹ.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg', 'Khung Hình 1.3: Cận cảnh đặt sản phẩm xuống bàn (Desk Rest)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
-            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
-            <span class="beat-time-tag">2.2s - 3.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg" alt="1.3">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 1.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh đặt sản phẩm xuống bàn (Desk Rest)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.3</span><span class="tag tag-cyan">Hạ sản phẩm xuống bàn</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc ngang mặt bàn</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tilt-up nhẹ sang bàn tay buông lơi</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Sản phẩm đứng vững chãi, bàn tay rút lại</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang mặt bàn gỗ</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Đặt sản phẩm xuống mặt bàn gỗ</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tay giữ cạnh sản phẩm ngán ngẩm</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Rút tay lại và tựa người ra sau ghế ở Cảnh 2.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mồi nối chuẩn bị Cảnh 2.</div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- SCENE 2 -->
     <section class="scene-block" id="scene-2">
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 2</span>
-          <h3 class="scene-main-title">Ngồi tựa lưng vào ghế, thở dài nhìn xuống bàn</h3>
-          <span class="tag tag-cyan">Trung cảnh (Medium Shot)</span>
+          <h3 class="scene-main-title">A-Roll 2 (Tại Bàn): Khách Kêu Đắt So Hàng Chợ</h3>
+          <span class="tag tag-cyan">Trung Cận Tại Bàn</span>
         </div>
         <span class="scene-time-badge">⏱️ 00:03 - 00:07 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Nỗi đau bị so sánh giá: Cảm giác hụt hẫng và bất lực khi khách đem hàng chợ ra ép giá.</div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Đặt máy xuống bàn, thở dài kể khổ khi khách so sánh với hàng chợ.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"...Nhưng cứ báo giá là khách lại hỏi: 'Sao chỗ kia bán rẻ bằng nửa chỗ em?'."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
+            <div class="voice-text">"...Thế mà cứ báo giá là khách kêu đắt, so với hàng chợ."</div>
           </div>
         </div>
         <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg', 'Khung Hình 2.1: Trung cảnh (Medium Shot)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
+          <div class="beat-img-container">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <span class="beat-time-tag">3.0s - 4.5s</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg" alt="2.1">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 2.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh (Medium Shot)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.1</span><span class="tag tag-cyan">Toàn cảnh bàn học</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang tầm mắt (Eye Level)</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Trôi nhẹ sang ngang</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Nhân vật tựa lưng vào ghế, vẻ mặt thoáng buồn</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc cao sau lưng bao quát bàn</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Trôi nhẹ ngang</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Nhân vật ngồi trước sản phẩm mẫu</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cảm giác bất lực khi bị ép giá.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg', 'Khung Hình 2.2: Trung cận qua vai (Over-the-Shoulder)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
-            <span class="beat-time-tag">4.5s - 6.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg" alt="2.2">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 2.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận qua vai (Over-the-Shoulder)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.2</span><span class="tag tag-cyan">Trung cận qua vai</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc qua vai 30°</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc qua vai trái 30°, zoom đt</td></tr>
               <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld nhịp thở nhẹ</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Chiếc điện thoại đang mở đoạn chat khách hàng im lặng</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Bờ vai 1/3, mắt nhìn tin nhắn chê đắt</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nỗi thất vọng khi bị so sánh khập khiễng.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg', 'Khung Hình 2.3: Cận cảnh ngón tay lướt màn hình chat', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
-            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
-            <span class="beat-time-tag">6.0s - 7.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg" alt="2.3">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 2.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh ngón tay lướt màn hình chat</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.3</span><span class="tag tag-cyan">Cận cảnh thở dài</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc hếch nhẹ</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in vào dòng tin nhắn</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Dòng tin nhắn 'Sao bên kia bán có nửa giá?'</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc thấp ngang mặt bàn</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tay chống cằm thở dài ngao ngán</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Động tác thở dài mồi B-Roll 3</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Phóng to màn hình tin nhắn khách ở Cảnh 3.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chuyển sang bóc trần lỗi tại mình.</div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- SCENE 3 -->
     <section class="scene-block" id="scene-3">
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 3</span>
-          <h3 class="scene-main-title">Màn hình điện thoại hiển thị tin nhắn khách im lặng</h3>
-          <span class="tag tag-cyan">Cận cảnh (Close-Up)</span>
+          <h3 class="scene-main-title">B-Roll 1: Tin Nhắn Khách Im Lặng</h3>
+          <span class="tag tag-cyan">Đặc Tả Tin Nhắn Xem Xong Im</span>
         </div>
-        <span class="scene-time-badge">⏱️ 00:07 - 00:15 (8s)</span>
+        <span class="scene-time-badge">⏱️ 00:07 - 00:12 (5s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Bóc trần Tầng 2 & 3 Sự Thật: Từng có lúc muốn giảm chất lượng để dễ bán nhưng lương tâm không cho phép.</div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> B-Roll màn hình điện thoại hiển thị tin nhắn khách xem xong không trả lời.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Nhiều lúc nản, tôi cũng từng nghĩ hay là bớt chất lượng đi cho dễ bán. Nhưng nghĩ lại thấy không đành lòng."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
+            <div class="voice-text">"Nhiều lúc bực, nhưng nghĩ lại khách chê đắt là do lỗi của mình."</div>
           </div>
         </div>
         <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg', 'Khung Hình 3.1: Đặc tả màn hình chat khách im lặng (UI POV)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
+          <div class="beat-img-container">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <span class="beat-time-tag">7.0s - 9.5s</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg" alt="3.1">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 3.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Đặc tả màn hình chat khách im lặng (UI POV)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.1</span><span class="tag tag-cyan">Cận tin nhắn im lặng</span></div>
             <table class="specs-table">
               <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện 90° vào màn hình</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in từ từ</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Dòng trạng thái 'Đã xem' và không có câu trả lời</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tin nhắn báo giá khách 'Đã xem' im lặng</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nỗi đau bán hàng chất lượng bị chê đắt.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg', 'Khung Hình 3.2: Cận cảnh chân dung giằng xé nội tâm (Facial ECU)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
-            <span class="beat-time-tag">9.5s - 12.5s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg" alt="3.2">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 3.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh chân dung giằng xé nội tâm (Facial ECU)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.2</span><span class="tag tag-cyan">Cực cận ngón tay lướt</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc trực diện hơi thấp</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Máy tĩnh ngột ngạt</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Khuôn mặt đăm chiêu, cái lắc đầu nhẹ</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Cực cận zoom 165% vào tin nhắn</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Lướt xem lại đoạn báo giá trần trụi</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Khách hỏi: 'Bên kia bán rẻ bằng nửa'</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Sự thật: Khách không hiểu giá trị bên trong.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg', 'Khung Hình 3.3: Trung cận ngẩng đầu nhìn bài giảng', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
-            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
-            <span class="beat-time-tag">12.5s - 15.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg" alt="3.3">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 3.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận ngẩng đầu nhìn bài giảng</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.3</span><span class="tag tag-cyan">Úp điện thoại xuống</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng cạnh bàn</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Pan êm hướng mắt nhìn lên màn chiếu</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh mắt chuyển từ bế tắc sang hy vọng</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang mặt bàn gỗ</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Bàn tay úp điện thoại xuống bàn</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Cú úp máy dứt khoát</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chuẩn bị nhìn bài giảng Cảnh 4.</div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- SCENE 4 -->
     <section class="scene-block" id="scene-4">
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 4</span>
-          <h3 class="scene-main-title">Nhìn lên bài giảng về cách quay video chi tiết quy trình</h3>
-          <span class="tag tag-cyan">Góc nghiêng (Side Profile)</span>
+          <h3 class="scene-main-title">B-Roll 2: Phải Cho Khách Thấy Quy Trình</h3>
+          <span class="tag tag-cyan">Xem Bài Giảng Quy Trình</span>
         </div>
-        <span class="scene-time-badge">⏱️ 00:15 - 00:25 (10s)</span>
+        <span class="scene-time-badge">⏱️ 00:12 - 00:16 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Giác ngộ bản chất: Khách chê đắt vì mình chưa chứng minh được công sức và quy trình làm kỹ.</div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Nhìn lên bài giảng cách quay video quy trình sản phẩm, đăm chiêu.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Khách chê đắt không phải vì họ tiếc tiền, mà vì mình chỉ biết báo giá chứ chưa từng cho họ thấy cái công mình làm kỹ thế nào."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
+            <div class="voice-text">"Mình chỉ biết báo giá, chứ có cho người ta thấy mình làm vất vả thế nào đâu?"</div>
           </div>
         </div>
         <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg', 'Khung Hình 4.1: Cận góc nghiêng bài giảng quy trình (Side Profile)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
+          <div class="beat-img-container">
             <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <span class="beat-time-tag">15.0s - 18.0s</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg" alt="4.1">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 4.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận góc nghiêng bài giảng quy trình (Side Profile)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.1</span><span class="tag tag-cyan">Nhìn bài giảng quy trình</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 90°</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Arc shot xoay nhẹ góc nhìn</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Slide bài giảng chiếu sơ đồ: 'Show The Process, Not Just The Price'</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 45° đón ánh sáng</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Arc shot xoay nhẹ</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Nhìn màn hình hướng dẫn quay cận cảnh</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhận ra bài học: Show, don't tell.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg', 'Khung Hình 4.2: Cận cảnh ánh mắt thấu suốt (Insight Close-Up)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
-            <span class="beat-time-tag">18.0s - 22.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg" alt="4.2">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 4.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh ánh mắt thấu suốt (Insight Close-Up)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.2</span><span class="tag tag-cyan">Cực cận ánh mắt</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc 3/4 trực diện</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Cực cận zoom 170% vào mắt</td></tr>
               <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm chắt lọc cảm xúc</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Đôi mắt sáng ngời niềm tin vào giá trị thật</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh mắt thông suốt, hào hứng</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Thay vì cãi nhau, hãy quay video chứng minh.</div>
           </div>
         </div>
 
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg', 'Khung Hình 4.3: Trung cảnh nhấc sản phẩm lên (Product Lift)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
-            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
-            <span class="beat-time-tag">22.0s - 25.0s</span>
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
             <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg" alt="4.3">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 4.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cảnh nhấc sản phẩm lên (Product Lift)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.3</span><span class="tag tag-cyan">Quay người dứt khoát</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc ngang tầm mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Cầm hộp sản phẩm giơ ngang trước ngực</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Mẫu sản phẩm và khuôn mặt cùng chung khung hình</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc 3/4 ngang tầm mắt</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Pan theo động tác quay đầu nhanh</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Quay mặt về thẳng camera</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mồi chuyển hoàn hảo sang A-Roll chốt.</div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- SCENE 5 -->
     <section class="scene-block" id="scene-5">
       <div class="scene-header">
         <div class="scene-title-group">
           <span class="scene-num-badge">CẢNH 5</span>
-          <h3 class="scene-main-title">Nhìn thẳng camera nói chân thành</h3>
-          <span class="tag tag-cyan">Trực diện (Frontal Shot)</span>
+          <h3 class="scene-main-title">A-Roll 3 (Chốt Hạ): 2 Phương Án Tùy Chọn</h3>
+          <span class="tag tag-emerald">2 Options Chọn Linh Hoạt</span>
         </div>
-        <span class="scene-time-badge">⏱️ 00:25 - 00:30 (5s)</span>
+        <span class="scene-time-badge">⏱️ 00:16 - 00:20 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Giải pháp hành động thực chiến: Quay lại toàn bộ quy trình làm thật để giá trị tự lên tiếng.</div>
+      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Khỏi giải thích nhiều, cầm máy quay từng công đoạn thật lên cho khách tự nhìn.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Kịch Bản:</div>
-            <div class="voice-text">"Thay vì ngồi bực mình khi bị so sánh, tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị."</div>
+            <div style="font-size: 10.5px; color: var(--emerald); font-weight: 700; text-transform: uppercase;">Lời Thoại Chốt Hạ:</div>
+            <div class="voice-text">"Thôi khỏi giải thích nhiều. Cầm máy quay từng công đoạn thật lên cho khách tự nhìn!"</div>
           </div>
         </div>
-        <span class="tag tag-cyan">J-Cut -0.4s</span>
+        <span class="tag tag-emerald">Chốt Đanh Gọn</span>
       </div>
-      <div class="beats-grid">
 
+      <!-- TABS CHỌN PHƯƠNG ÁN -->
+      <div class="opt-tabs">
+        <button class="opt-tab-btn active" onclick="switchOpt(1)">🔘 Phương Án 1: Trực Diện Chốt (Frontal Talking Head)</button>
+        <button class="opt-tab-btn" onclick="switchOpt(2)">🔘 Phương Án 2: Đang Thao Tác Ngước Đầu Lên Chốt (Action-to-Camera)</button>
+      </div>
+
+      <!-- OPTION 1 CONTENT -->
+      <div class="beats-grid opt-content active" id="opt1-grid">
+        
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg', 'Khung Hình 5.1: Cận trực diện (Frontal Close-Up)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
-            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <span class="beat-time-tag">25.0s - 26.8s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="5.1">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.1A</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="5.1A">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 5.1</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận trực diện (Frontal Close-Up)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.1A</span><span class="tag tag-emerald">5.1A • Trực diện</span></div>
             <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt</td></tr>
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt (Center)</td></tr>
               <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld vững chắc</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Center Framing 1-1</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt trung tâm khóa ống kính</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhìn thẳng người xem nói câu chốt.</div>
           </div>
         </div>
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg', 'Khung Hình 5.2: Cận cảnh truyền cảm hứng (Conviction Shot)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết / Cao trào (Main Action)</span>
-            <span class="beat-time-tag">26.8s - 28.8s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg" alt="5.2">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.2A</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg" alt="5.2A">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 5.2</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Cận cảnh truyền cảm hứng (Conviction Shot)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.2A</span><span class="tag tag-emerald">5.2A • Quyết tâm</span></div>
             <table class="specs-table">
               <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện hất nhẹ 5°</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Punch-in nhẹ 10%</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt và sản phẩm cùng tỏa sáng niềm tin</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Punch-in nhẹ 10% dồn lực</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt chiếm trọn khung hình</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nói đanh thép: '...cho khách tự nhìn!'.</div>
           </div>
         </div>
-
         <div class="beat-card">
-          <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg', 'Khung Hình 5.3: Trung cận kết thúc (Outro Frame)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
-            <span class="beat-badge-top badge-out">🔄 Cuối cảnh / Mồi chuyển (Out-point Lead)</span>
-            <span class="beat-time-tag">28.8s - 30.0s</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg" alt="5.3">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.3A</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg" alt="5.3A">
           </div>
           <div class="beat-content">
-            <div class="beat-header">
-              <span class="beat-id-title">Khung Hình 5.3</span>
-              <span class="tag tag-cyan" style="font-size: 10px;">Trung cận kết thúc (Outro Frame)</span>
-            </div>
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.3A</span><span class="tag tag-emerald">5.3A • Kết thúc</span></div>
             <table class="specs-table">
               <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang tầm mắt</td></tr>
               <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tĩnh giữ frame 0.5s</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Chừa 1/3 dưới cho Brand Tag & Cam kết chất lượng</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Nụ cười nhẹ tự tin gật đầu</td></tr>
             </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.</div>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khẳng định chất lượng hàng thật.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 2 CONTENT -->
+      <div class="beats-grid opt-content" id="opt2-grid">
+        
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.1B</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_opt2_beat1.jpg" alt="5.1B">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.1B</span><span class="tag tag-emerald">5.1B • Đang xem mẫu</span></div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 45° từ trên xuống</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Cầm sản phẩm kiểm tra từng đường may</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tập trung nâng niu sản phẩm</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Bắt đầu như 1 cú B-Roll kiểm tra hàng.</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.2B</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_opt2_beat2.jpg" alt="5.2B">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.2B</span><span class="tag tag-emerald">5.2B • Ngước đầu</span></div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Tilt-up từ sản phẩm lên mặt</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Dừng tay, ngước đầu nhìn máy</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh mắt khóa vào ống kính</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cú ngước đầu bất ngờ tạo sự chân thực.</div>
+          </div>
+        </div>
+        <div class="beat-card">
+          <div class="beat-img-container">
+            <span class="beat-badge-top badge-in">🔰 5.3B</span>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_opt2_beat3.jpg" alt="5.3B">
+          </div>
+          <div class="beat-content">
+            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.3B</span><span class="tag tag-emerald">5.3B • Nhìn thẳng chốt</span></div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt</td></tr>
+              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Ngồi thẳng lưng, gật đầu chắc nịch</td></tr>
+              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt sáng rõ, quyết đoán</td></tr>
+            </table>
+            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chốt hạ đanh gọn trước khi hết video.</div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- TIMELINE FILMSTRIP -->
-    <section class="timeline-wrapper" id="filmstrip-view">
-      <h2 style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #fff;">🎞️ Dải Timeline Phân Cảnh (15 Khung Hình Liên Tiếp • 0s ➔ 30s)</h2>
-      <div class="filmstrip">
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg', 'Cảnh 1.1 (0.0s - 1.0s)', 'Bàn tay nâng niu chạm vào từng đường nét sắc sảo của bao bì sản phẩm.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat1.jpg" alt="1.1">
-          <div class="strip-meta"><div class="strip-title">Cảnh 1.1</div><div class="strip-ts">0.0s - 1.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg', 'Cảnh 1.2 (1.0s - 2.2s)', 'Hành động xoay nhẹ sản phẩm làm nổi bật chất lượng hoàn thiện tỉ mỉ.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat2.jpg" alt="1.2">
-          <div class="strip-meta"><div class="strip-title">Cảnh 1.2</div><div class="strip-ts">1.0s - 2.2s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg', 'Cảnh 1.3 (2.2s - 3.0s)', 'Rút tay lại và tựa người ra sau ghế ở Cảnh 2.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene1_beat3.jpg" alt="1.3">
-          <div class="strip-meta"><div class="strip-title">Cảnh 1.3</div><div class="strip-ts">2.2s - 3.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg', 'Cảnh 2.1 (3.0s - 4.5s)', 'Nét mặt trĩu nặng khi nhớ lại những lần bị khách chê đắt so với hàng dạt.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat1.jpg" alt="2.1">
-          <div class="strip-meta"><div class="strip-title">Cảnh 2.1</div><div class="strip-ts">3.0s - 4.5s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg', 'Cảnh 2.2 (4.5s - 6.0s)', 'Khắc họa cảm giác nghẹn đắng khi công sức chăm chút bị đánh đồng với hàng xả.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat2.jpg" alt="2.2">
-          <div class="strip-meta"><div class="strip-title">Cảnh 2.2</div><div class="strip-ts">4.5s - 6.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg', 'Cảnh 2.3 (6.0s - 7.0s)', 'Phóng to màn hình tin nhắn khách ở Cảnh 3.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene2_beat3.jpg" alt="2.3">
-          <div class="strip-meta"><div class="strip-title">Cảnh 2.3</div><div class="strip-ts">6.0s - 7.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg', 'Cảnh 3.1 (7.0s - 9.5s)', 'Sự im lặng của khách hàng sau khi nhận báo giá là nỗi ám ảnh của người làm đồ kỹ.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat1.jpg" alt="3.1">
-          <div class="strip-meta"><div class="strip-title">Cảnh 3.1</div><div class="strip-ts">7.0s - 9.5s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg', 'Cảnh 3.2 (9.5s - 12.5s)', 'Khẳng định lập trường đạo đức: Thà bán ít chứ dứt khoát không làm hàng kém chất lượng.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat2.jpg" alt="3.2">
-          <div class="strip-meta"><div class="strip-title">Cảnh 3.2</div><div class="strip-ts">9.5s - 12.5s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg', 'Cảnh 3.3 (12.5s - 15.0s)', 'Ngẩng đầu nhìn lên bài giảng về cách quay video quy trình Cảnh 4.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene3_beat3.jpg" alt="3.3">
-          <div class="strip-meta"><div class="strip-title">Cảnh 3.3</div><div class="strip-ts">12.5s - 15.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg', 'Cảnh 4.1 (15.0s - 18.0s)', 'Hiểu ra nút thắt: Phải kể câu chuyện công đoạn sản xuất thay vì chỉ gửi bảng giá trơ trọi.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat1.jpg" alt="4.1">
-          <div class="strip-meta"><div class="strip-title">Cảnh 4.1</div><div class="strip-ts">15.0s - 18.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg', 'Cảnh 4.2 (18.0s - 22.0s)', 'Khi khách nhìn thấy từng công đoạn nhặt hạt, kiểm định, họ sẽ tự hiểu vì sao giá xứng đáng.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat2.jpg" alt="4.2">
-          <div class="strip-meta"><div class="strip-title">Cảnh 4.2</div><div class="strip-ts">18.0s - 22.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg', 'Cảnh 4.3 (22.0s - 25.0s)', 'Cầm sản phẩm tự tin chuẩn bị bước vào cảnh kết thúc ở Cảnh 5.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene4_beat3.jpg" alt="4.3">
-          <div class="strip-meta"><div class="strip-title">Cảnh 4.3</div><div class="strip-ts">22.0s - 25.0s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg', 'Cảnh 5.1 (25.0s - 26.8s)', 'Nhìn thẳng vào ống kính với nụ cười tự hào và ánh mắt đầy sự tự tin.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat1.jpg" alt="5.1">
-          <div class="strip-meta"><div class="strip-title">Cảnh 5.1</div><div class="strip-ts">25.0s - 26.8s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg', 'Cảnh 5.2 (26.8s - 28.8s)', 'Khẳng định: 'Tôi chọn quay lại từng công đoạn thật để khách tự nhìn thấy giá trị'.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat2.jpg" alt="5.2">
-          <div class="strip-meta"><div class="strip-title">Cảnh 5.2</div><div class="strip-ts">26.8s - 28.8s</div></div>
-        </div>
-
-        <div class="strip-frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg', 'Cảnh 5.3 (28.8s - 30.0s)', 'Nụ cười rạng rỡ, cái gật đầu chân thành khép lại video đầy thuyết phục.')">
-          <img class="strip-frame-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia/assets/frames/scene5_beat3.jpg" alt="5.3">
-          <div class="strip-meta"><div class="strip-title">Cảnh 5.3</div><div class="strip-ts">28.8s - 30.0s</div></div>
-        </div>
-
-      </div>
-    </section>
-  </div>
-
-  <!-- Lightbox Modal -->
-  <div class="lightbox" id="lightboxModal" onclick="closeLightbox(event)">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <button class="lightbox-close" onclick="closeLightboxDirect()">&times;</button>
-      <div class="lightbox-img-box">
-        <img id="lightboxImg" src="" alt="Enlarged Frame">
-      </div>
-      <div class="lightbox-details">
-        <span class="tag tag-cyan" id="lightboxTag">Frame Preview 9:16</span>
-        <h3 id="lightboxTitle" style="font-size: 18px; font-weight: 800; color: #fff;">Title</h3>
-        <p id="lightboxDesc" style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">Description</p>
-        <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-subtle); font-size: 11px; color: var(--text-muted);">
-          Bấm ESC hoặc nhấp ra ngoài để đóng xem ảnh.
-        </div>
-      </div>
-    </div>
   </div>
 
   <script>
-    function openLightbox(imgSrc, title, desc) {
-      document.getElementById('lightboxImg').src = imgSrc;
-      document.getElementById('lightboxTitle').innerText = title;
-      document.getElementById('lightboxDesc').innerText = desc;
-      document.getElementById('lightboxModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
+    function switchOpt(optNum) {
+      const btns = document.querySelectorAll('.opt-tab-btn');
+      const grids = document.querySelectorAll('.opt-content');
+      
+      btns.forEach((b, i) => {
+        if (i === optNum - 1) b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      
+      grids.forEach((g, i) => {
+        if (i === optNum - 1) g.classList.add('active');
+        else g.classList.remove('active');
+      });
     }
-
-    function closeLightbox(e) {
-      if (e.target.id === 'lightboxModal') closeLightboxDirect();
-    }
-
-    function closeLightboxDirect() {
-      document.getElementById('lightboxModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightboxDirect();
-    });
   </script>
 </body>
 </html>
