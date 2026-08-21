@@ -34,12 +34,59 @@ def run_cmd(cmd, cwd=REPO_DIR, timeout=120):
     except subprocess.TimeoutExpired:
         return -1, "", "Command timed out"
 
-def sanitize_slug(text):
-    clean = re.sub(r'[^\w\s-]', '', text.lower())
-    return re.sub(r'[-\s]+', '_', clean).strip('-_')[:40]
+def fetch_online_content_silently(text_or_url):
+    """
+    Tự động đọc nội dung kịch bản từ link online 100% ngầm (Headless / Direct HTTP):
+    - Google Docs: Chuyển đổi tự động sang export TXT
+    - Google Sheets: Chuyển đổi tự động sang export CSV
+    - GitHub Raw / Pastebin / Web text / fedu.vn / Notion public
+    - Tuyệt đối không cần mở trình duyệt tương tác, không yêu cầu người dùng cấp quyền.
+    """
+    text_or_url = text_or_url.strip()
+    urls = re.findall(r'https?://[^\s]+', text_or_url)
+    if not urls:
+        return text_or_url
+        
+    url = urls[0]
+    print(f"[FETCHER] Phát hiện link kịch bản online: {url}")
+    
+    # 1. Google Docs Auto-Export TXT
+    m_doc = re.search(r'docs\.google\.com/document/d/([a-zA-Z0-9_-]+)', url)
+    if m_doc:
+        doc_id = m_doc.group(1)
+        export_url = f"https://docs.google.com/document/d/{doc_id}/export?format=txt"
+        code, out, _ = run_cmd(f'curl -sL "{export_url}"')
+        if code == 0 and len(out) > 20:
+            print(f"[FETCHER] Đã tải thành công kịch bản từ Google Docs ({len(out)} ký tự)")
+            return out
+            
+    # 2. Google Sheets Auto-Export CSV/TSV
+    m_sheet = re.search(r'docs\.google\.com/spreadsheets/d/([a-zA-Z0-9_-]+)', url)
+    if m_sheet:
+        sheet_id = m_sheet.group(1)
+        export_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=tsv"
+        code, out, _ = run_cmd(f'curl -sL "{export_url}"')
+        if code == 0 and len(out) > 20:
+            print(f"[FETCHER] Đã tải thành công kịch bản từ Google Sheets ({len(out)} ký tự)")
+            return out
+            
+    # 3. Direct Raw / Markdown / TXT / Web URL qua curl
+    code, out, _ = run_cmd(f'curl -sL -A "Mozilla/5.0" "{url}"')
+    if code == 0 and out:
+        # Nếu là HTML, lọc sạch script/style và lấy text
+        if "<html" in out.lower() or "<body" in out.lower():
+            clean = re.sub(r'<script[\s\S]*?</script>', '', out, flags=re.IGNORECASE)
+            clean = re.sub(r'<style[\s\S]*?</style>', '', clean, flags=re.IGNORECASE)
+            clean = re.sub(r'<[^>]+>', '\n', clean)
+            clean = re.sub(r'\n\s*\n', '\n', clean)
+            return clean.strip()
+        return out
+        
+    return text_or_url
 
 def parse_script_scenes(script_text):
     """Băm nhỏ kịch bản text thành danh sách các cảnh (Scenes)."""
+    script_text = fetch_online_content_silently(script_text)
     scenes = []
     # Tách theo các khối Cảnh 1, Cảnh 2...
     blocks = re.split(r'(?=Cảnh\s+\d+)', script_text.strip(), flags=re.IGNORECASE)
