@@ -16,6 +16,32 @@ REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
 # -------------------------------------------------------------
 storyboards = [
     {
+        "id": "kb_nguyet_store_hp",
+        "slug": "kich_ban_nguyet_store_hai_phong",
+        "file_name": "kich_ban_nguyet_store_hai_phong.html",
+        "title": "Kịch Bản Thực Chiến: Nguyệt Store Hải Phòng (5 Video B-Roll Theo Beat)",
+        "category": "Bán Lẻ Công Nghệ & Điện Thoại Cũ",
+        "badge_color": "#06b6d4",
+        "target_audience": "Cửa hàng điện thoại tại Hải Phòng, bán iPhone/iPad/Watch Like New",
+        "duration": "18 - 22 Giây / Video",
+        "scenes_count": 5,
+        "beats_count": 16,
+        "rhythm": "1.5s / Beat (Kick/Snare + ASMR)",
+        "thumb_url": "assets/kb1_c1.jpg",
+        "summary": "Bộ 5 kịch bản video bán lẻ công nghệ ít thoại, cắt theo nhịp beat nhạc và ASMR vật lý (Ốc zin, True Tone, 3uTools, Thu cũ đổi mới, Vạch khuyết điểm trừ 1 triệu, Đóng gói hỏa tốc Hải Phòng).",
+        "hook_dialogue": "15 Pro Max Like New Có Zin Như Lời Đồn?",
+        "cta_dialogue": "Bảo hành lỗi 1 đổi 1 tận nơi Hải Phòng • Nhận hàng check zin mới trả tiền.",
+        "mini_frames": [
+            "assets/kb1_c1.jpg",
+            "assets/kb1_c2.jpg",
+            "assets/kb2_c2.jpg",
+            "assets/kb3_c2.jpg",
+            "assets/kb4_c2.jpg"
+        ],
+        "created_at": "22/08/2026",
+        "source": "Học Viên Nguyệt • Hải Phòng"
+    },
+    {
         "id": "kb01_master",
         "slug": "tu_dot_tien_den_tu_tin_xuat_hien",
         "file_name": "tu_dot_tien_den_tu_tin_xuat_hien.html",
