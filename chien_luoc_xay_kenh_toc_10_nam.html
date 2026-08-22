@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chiến Lược Toàn Cảnh & Bảng Phân Cảnh Xây Kênh TikTok Salon Tóc 10 Năm (Hải Phòng)</title>
+  <title>Chiến Lược Toàn Cảnh & Visual Storyboard Xây Kênh TikTok Salon Tóc 10 Năm (Hải Phòng)</title>
   <style>
     :root {
       --bg: #0B0F19;
@@ -37,7 +37,7 @@
       line-height: 1.6;
     }
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     header {
@@ -122,8 +122,17 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
-    @media (max-width: 860px) {
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 550px) {
+      .grid-4 { grid-template-columns: 1fr; }
     }
 
     .box-item {
@@ -163,61 +172,110 @@
       color: #FCE7F3;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-    th, td {
-      padding: 12px 14px;
-      text-align: left;
-      border: 1px solid var(--card-border);
-    }
-    th {
-      background-color: var(--table-header);
-      color: var(--accent);
-      font-weight: 600;
-    }
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-    tr:hover {
-      background-color: var(--table-hover);
-    }
-
-    .img-ref-container {
-      display: flex;
-      gap: 20px;
+    .img-card {
       background: #0F172A;
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 18px;
-      align-items: center;
-      margin-top: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
-    .img-ref-container img {
-      max-width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-      border: 2px solid var(--card-border);
+    .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-bottom: 1px solid var(--card-border);
     }
-    .img-ref-desc {
+    .img-card-body {
+      padding: 14px;
       flex: 1;
+    }
+    .img-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .img-card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* STORYBOARD SHOT CARD */
+    .shot-card {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .shot-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      color: var(--highlight);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255,255,255,0.2);
+      z-index: 2;
+    }
+    .shot-card img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .shot-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .shot-time {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .shot-action {
+      font-size: 13px;
+      color: #F1F5F9;
+      line-height: 1.4;
+    }
+    .shot-typo {
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFF;
+      text-align: center;
+      margin-top: 4px;
     }
 
     .pill-step {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: var(--accent);
       color: #000;
       font-weight: 800;
-      font-size: 13px;
-      margin-right: 8px;
+      font-size: 12px;
+      margin-right: 6px;
     }
 
     .quote-box {
@@ -248,19 +306,6 @@
       color: var(--success);
       font-weight: bold;
     }
-
-    .typo-tag {
-      background: #000;
-      color: #FFF;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-weight: 800;
-      font-size: 13px;
-      display: inline-block;
-      margin: 2px 0;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
   </style>
 </head>
 <body>
@@ -270,11 +315,11 @@
     <div class="tag-group">
       <span class="badge badge-primary">Chiến Lược Video TikTok</span>
       <span class="badge badge-gold">Thợ 10 Năm Hải Phòng</span>
-      <span class="badge badge-purple">Định Dạng 15s Chuyển Đổi Cao</span>
-      <span class="badge badge-success">No-Voice / Fast-Paced</span>
+      <span class="badge badge-purple">100% Visual Minh Họa Đồng Bộ</span>
+      <span class="badge badge-success">No-Voice / Fast-Paced 15s</span>
     </div>
-    <h1>TOÀN CẢNH CHIẾN LƯỢC XÂY KÊNH & BẢNG PHÂN CẢNH STUDIO (15s)</h1>
-    <p class="subtitle">Bóc tách toàn diện: Phong cách, Đóng gói sản phẩm, Đòn bẩy tâm lý Mẫu Xinh (Halo Effect), Setup Studio tối giản và 2 Mẫu kịch bản 15s Zoom-cut chuẩn TikTok.</p>
+    <h1>TOÀN CẢNH CHIẾN LƯỢC XÂY KÊNH & BẢNG PHÂN CẢNH STUDIO ĐỒNG BỘ 100%</h1>
+    <p class="subtitle">Tất cả các hạng mục đều được thiết kế và sinh hình ảnh đồng bộ từ nhân vật mẫu tham chiếu: Setup Studio, Phân tích Đòn bẩy Mẫu Xinh, và 2 Bộ Kịch Bản 15s Zoom-cut chuẩn TikTok.</p>
   </header>
 
   <!-- DANH SÁCH CÔNG VIỆC -->
@@ -282,10 +327,10 @@
     <div class="section-title">📋 BẢNG CHECKLIST QUẢN TRỊ CÔNG VIỆC THỰC THI</div>
     <ul class="checklist">
       <li><span class="check-icon">✓</span> <strong>Mục 1:</strong> Xác lập Định vị Phong cách & Output Đóng gói Sản phẩm (Khai thác lõi 10 năm kinh nghiệm).</li>
-      <li><span class="check-icon">✓</span> <strong>Mục 2:</strong> Giải mã Thông điệp ngầm & Bóc trần Đòn bẩy tâm lý "MẪU XINH" (Halo Effect & Beauty Projection).</li>
-      <li><span class="check-icon">✓</span> <strong>Mục 3:</strong> Hướng dẫn Setup Studio tối giản, thực chiến ngay tại Salon (Đèn, Ghế, Background, Quạt gió).</li>
-      <li><span class="check-icon">✓</span> <strong>Mục 4:</strong> Phân tích Ảnh tham chiếu mới nhất & Các động tác kích thích thị giác (Tactile Triggers).</li>
-      <li><span class="check-icon">✓</span> <strong>Mục 5:</strong> Tối ưu 2 Kịch bản 15 Giây Tiêu Chuẩn (Không thoại - Chỉ Zoom-cut + Khớp nhạc + Chữ ngắn - Dễ làm trong 1 phút sau khi làm tóc cho khách).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 2:</strong> Giải mã Tâm lý học & Sinh nhân vật Mẫu Nữ Đồng Bộ 100% (Halo Effect & Beauty Projection).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 3:</strong> Minh họa Trực quan Setup Studio Tối Giản tại Salon (Ghế xoay, Hệ thống Đèn Key + Rim Light, Đạo cụ gió).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 4:</strong> Visual Storyboard Kịch Bản 1 (15s - Mặt Tròn $\rightarrow$ V-Line / Layer & Sóng Lơi - 4 Khung hình 9:16).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 5:</strong> Visual Storyboard Kịch Bản 2 (15s - Chất Tóc Bóng Mượt Ánh Gương / Duỗi Phục Hồi - 4 Khung hình 9:16).</li>
     </ul>
   </div>
 
@@ -299,7 +344,7 @@
         <p><strong>Clean Luxury / Tiêu Chuẩn Salon Cao Cấp:</strong></p>
         <ul style="margin-left: 18px; margin-top: 8px; color: var(--text-muted); font-size: 14px;">
           <li>Không ồn ào, không diễn tiểu phẩm drama nhảm, không giật tít sốc.</li>
-          <li>Hình ảnh sạch sẽ, hiện đại, tone màu ấm/xám sang trọng, bắt sáng mượt mà.</li>
+          <li>Hình ảnh sạch sẽ, hiện đại, tone xám xi măng/be sang trọng, bắt sáng tóc mượt mà.</li>
           <li>Nhạc nền: Trend Acoustic nhẹ nhàng, Beat thời trang, Lofi hoặc nhạc khớp tiếng kéo/đánh bass.</li>
         </ul>
       </div>
@@ -320,43 +365,39 @@
     </div>
   </div>
 
-  <!-- PHẦN 2: TÂM LÝ HỌC & ĐÒN BẨY MẪU XINH -->
+  <!-- PHẦN 2: TÂM LÝ HỌC & MẪU NỮ THAM CHIẾU ĐỒNG BỘ -->
   <div class="section-card">
-    <div class="section-title">🧠 2. NỖI SỢ CỦA PHỤ NỮ & ĐÒN BẨY TÂM LÝ "MẪU XINH" (HALO EFFECT)</div>
+    <div class="section-title">🧠 2. ĐÒN BẨY TÂM LÝ "MẪU XINH" & HÌNH TƯỢNG ĐỒNG BỘ</div>
     
-    <div class="alert-box alert-pink">
-      <strong>⚠️ Nỗi sợ bản năng lớn nhất của chị em khi đi làm tóc:</strong>
-      <ol style="margin-left: 20px; margin-top: 6px; font-size: 14px;">
-        <li><strong>Sợ BỊ PHÁ TÓC:</strong> Thợ cắt ngắn cụt lủn, làm mất dáng tóc quen thuộc phải nuôi lại cả năm.</li>
-        <li><strong>Sợ BỊ GIÀ:</strong> Uốn xoăn tít biến thành "bà thím".</li>
-        <li><strong>Sợ BỊ "TREO ĐẦU DÊ BÁN THỊT CHÓ":</strong> Ở tiệm sấy lô đẹp ảo ma, về nhà gội đầu xong thành "tổ quạ".</li>
-      </ol>
-    </div>
-
-    <div class="box-item" style="margin-top: 14px;">
-      <h3>⚡ Bóc trần Đòn bẩy tâm lý: "MẪU XINH, TRẺ, ĂN MẶC ĐẸP"</h3>
-      <p style="font-size: 14px; margin-bottom: 10px; color: #E2E8F0;">
-        Anh đã quan sát cực kỳ chuẩn xác: <strong>Yếu tố "Mẫu xinh, dáng đẹp, trang phục có gu" chính là 60% động cơ kích thích mua hàng!</strong>
-      </p>
-      
-      <div class="grid-2" style="margin-top: 12px;">
-        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px;">
-          <strong style="color: var(--accent);">1. Hiệu ứng Hào quang (Halo Effect):</strong>
-          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-            Khi người xem thấy một cô gái xinh đẹp, tươi tắn, mặc đồ sành điệu ngồi trên ghế salon, não bộ tự động gán nhãn: <em>"Tiệm này đẳng cấp, thợ này có gu thẩm mỹ cao, làm tóc cho toàn người đẹp."</em>
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <div class="alert-box alert-pink">
+          <strong>⚠️ Nỗi sợ lớn nhất của chị em:</strong> Sợ bị phá tóc, sợ bị già, sợ về nhà sấy không được như tiệm.
+        </div>
+        <div class="box-item">
+          <h3>⚡ Bóc trần Đòn bẩy tâm lý: "MẪU XINH, ĂN MẶC CÓ GU"</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+            Yếu tố <strong>Mẫu xinh + Quần áo sang</strong> tạo ra 2 đòn tâm lý cực mạnh:
+          </p>
+          <p style="font-size: 13px; color: #E2E8F0; margin-bottom: 6px;">
+            🔹 <strong>Hiệu ứng Hào quang (Halo Effect):</strong> Người xem tự động gán nhãn salon đẳng cấp, thợ có gu thẩm mỹ cao.
+          </p>
+          <p style="font-size: 13px; color: #E2E8F0;">
+            🔹 <strong>Đồng hóa bản thân (Beauty Projection):</strong> Phụ nữ vô thức tin rằng: <em>"Cắt ở đây mình cũng sẽ xinh đẹp và cuốn hút như cô ấy."</em>
           </p>
         </div>
-        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px;">
-          <strong style="color: var(--pink);">2. Tâm lý Đồng hóa bản thân (Beauty Fantasy Projection):</strong>
-          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-            Phụ nữ khi xem video không chỉ nhìn sợi tóc, họ nhìn <strong>"Hình ảnh lý tưởng của chính họ"</strong>. Họ vô thức tin rằng: <em>"Nếu mình cắt kiểu này ở đây, mình cũng sẽ toát ra thần thái xinh đẹp và cuốn hút như cô ấy."</em>
-          </p>
+        <div class="quote-box">
+          💡 <strong>Tuyển chọn tại tiệm:</strong> Chọn 2-3 khách nữ có nét mặt thanh tú mỗi tuần, tặng ưu đãi voucher để quay clip 1 phút sau khi làm tóc xong.
         </div>
       </div>
 
-      <div class="quote-box" style="margin-top: 14px;">
-        💡 <strong>Kinh nghiệm tuyển chọn mẫu quay cho tiệm Hải Phòng:</strong> 
-        Trong 10-20 khách làm tóc mỗi tuần, hãy chọn ra <strong>2-3 bạn nữ có gương mặt ưa nhìn, da sáng, nụ cười duyên</strong>. Tặng voucher giảm giá 20-30% hoặc tặng chai tinh dầu dưỡng để xin phép quay clip 1-2 phút sau khi làm xong!
+      <!-- ẢNH MẪU ĐỒNG BỘ -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/04_hero_model.jpg" alt="Mẫu Nữ Tham Chiếu Đồng Bộ" style="aspect-ratio: 9/16; max-height: 480px;" />
+        <div class="img-card-body">
+          <div class="img-card-title">Mẫu Nữ Đồng Bộ Chuẩn Clean-Girl (Generated Reference)</div>
+          <div class="img-card-desc">Gương mặt rạng rỡ, makeup tự nhiên, áo cúp ngực sang trọng, mái tóc dài layer bồng bềnh chuẩn form salon cao cấp.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -366,172 +407,171 @@
     <div class="section-title">🎬 3. SETUP GÓC QUAY STUDIO TỐI GIẢN TẠI SALON (1 GÓC DUY NHẤT)</div>
     
     <div class="grid-3">
-      <div class="box-item">
-        <h3>🪑 1. Ghế & Background</h3>
-        <ul style="font-size: 13px; color: var(--text-muted); margin-left: 16px;">
-          <li><strong>01 Ghế cắt xoay:</strong> Da màu xám khói, be hoặc đen tối giản, tay vịn kim loại sáng bóng.</li>
-          <li><strong>Phông nền:</strong> Tường sơn màu xám xi măng, xám tro hoặc be trơn. Tuyệt đối dọn sạch dây điện, chổi, khăn lau.</li>
-        </ul>
+      <!-- ẢNH 1: GHẾ & BACKGROUND -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/01_studio_chair.jpg" alt="Ghế & Phông Nền Studio" />
+        <div class="img-card-body">
+          <div class="img-card-title">🪑 1. Ghế Xoay & Phông Nền Tối Giản</div>
+          <div class="img-card-desc">Ghế da xám khói/kem hiện đại, chân inox sáng bóng. Tường xám xi măng trơn, dọn sạch 100% đồ đạc lộn xộn phía sau.</div>
+        </div>
       </div>
 
-      <div class="box-item">
-        <h3>💡 2. Hệ thống Ánh Sáng</h3>
-        <ul style="font-size: 13px; color: var(--text-muted); margin-left: 16px;">
-          <li><strong>Key Light (Đèn trước):</strong> 01 Softbox bát giác 90cm đặt trước mặt 45° để da mẫu mịn màng, mắt có catchlight.</li>
-          <li><strong>Backlight (Đèn ven sau):</strong> 01 Đèn chiếu từ sau gáy lên tóc giúp <em>sợi tóc óng ả, tách khỏi nền tối</em>.</li>
-        </ul>
+      <!-- ẢNH 2: ÁNH SÁNG -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/02_studio_lighting.jpg" alt="Hệ Thống Ánh Sáng" />
+        <div class="img-card-body">
+          <div class="img-card-title">💡 2. Hệ Thống 2 Nguồn Sáng Chuẩn</div>
+          <div class="img-card-desc"><strong>Key Light:</strong> Softbox 90cm đặt trước 45° làm mịn da.<br><strong>Rim Light:</strong> Đèn chiếu từ sau gáy làm <em>sợi tóc óng ả tách nền</em>.</div>
+        </div>
       </div>
 
-      <div class="box-item">
-        <h3>💨 3. Đạo cụ Visual</h3>
-        <ul style="font-size: 13px; color: var(--text-muted); margin-left: 16px;">
-          <li><strong>01 Quạt gió mini / Máy sấy gió thoảng:</strong> Thổi nhẹ từ dưới lên hoặc ngang để tóc bay lả lướt tự nhiên.</li>
-          <li><strong>Điện thoại:</strong> iPhone quay chế độ 4K 60fps hoặc Cinematic Mode.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHẦN 4: PHÂN TÍCH ẢNH THAM CHIẾU -->
-  <div class="section-card">
-    <div class="section-title">📸 4. PHÂN TÍCH ẢNH THAM CHIẾU MỚI NHẤT & CÁC HÀNH ĐỘNG GÂY CHÚ Ý</div>
-    
-    <div class="img-ref-container">
-      <img src="assets/reference/mau_toc_tham_chieu.png" alt="Ảnh mẫu tóc tham chiếu" />
-      <div class="img-ref-desc">
-        <span class="badge badge-gold">Ảnh Chụp Màn Hình Mới Nhất</span>
-        <h3 style="color: #FFF; margin: 8px 0;">Mẫu tóc Suôn Mượt - Bay Tự Nhiên (Clean-Girl Aesthetic)</h3>
-        
-        <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-          <p>🔹 <strong>Bố cục:</strong> Góc máy tĩnh chính diện (Front Medium Close-up), nhân vật ngồi giữa khung hình 9:16.</p>
-          <p>🔹 <strong>Visual Triggers (Hành động gây chú ý cực mạnh):</strong></p>
-          <ul style="margin-left: 20px; margin-top: 4px;">
-            <li><strong>Lắc đầu nhẹ / Tóc bay:</strong> Sợi tóc tách rời bay nhẹ tạo cảm giác suôn mềm, không bết dính.</li>
-            <li><strong>Biểu cảm mãn nguyện:</strong> Mắt nhắm nhẹ mỉm cười tự tin &rarr; Truyền năng lượng tích cực, khiến người xem cảm thấy mái tóc mang lại hạnh phúc.</li>
-            <li><strong>Trang phục & Phụ kiện:</strong> Áo cúp ngực họa tiết sang trọng, vòng tay bạc tinh tế &rarr; Tôn trọn bờ vai và chiều dài mái tóc suôn mượt.</li>
-          </ul>
+      <!-- ẢNH 3: ĐẠO CỤ -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/03_studio_prop.jpg" alt="Đạo Cụ Gió" />
+        <div class="img-card-body">
+          <div class="img-card-title">💨 3. Đạo Cụ Gió & Dụng Cụ Sấy</div>
+          <div class="img-card-desc">Máy sấy gió thoang thoảng hoặc quạt mini để thổi nhẹ lọn tóc bay lướt bồng bềnh tự nhiên khi quay Slow-mo.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PHẦN 5: 2 KỊCH BẢN 15S CHUẨN HÓA KHÔNG CẦN THOẠI -->
+  <!-- PHẦN 4: KỊCH BẢN 1 (15S) -->
   <div class="section-card">
-    <div class="section-title">⚡ 5. HAI MẪU KỊCH BẢN 15 GIÂY TIÊU CHUẨN (NO-VOICE / ZOOM-CUT / CHỮ CHỐT BOOKING)</div>
-    
-    <div class="alert-box alert-warning">
-      <strong>📌 Nguyên tắc thực hiện siêu nhanh cho chủ tiệm:</strong> 
-      Chỉ mất đúng <strong>60 giây sau khi sấy tóc xong cho khách</strong> để quay 4 đúp ngắn bằng iPhone. Về chỉ cần ghép 4 đúp theo nhịp nhạc, chèn 3 dòng chữ là xong 1 video viral!
-    </div>
-
-    <!-- MẪU 1 -->
-    <div class="box-item" style="margin-bottom: 24px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <h3 style="color: var(--accent);"><span class="pill-step">1</span> MẪU 1: "THĂNG HẠNG NHAN SẮC MẶT TRÒN &rarr; V-LINE" (15 Giây)</h3>
-        <span class="badge badge-primary">Mục tiêu: Kéo khách cắt Layer + Uốn</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+      <div class="section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+        ⚡ 4. KỊCH BẢN 1: "THĂNG HẠNG NHAN SẮC MẶT TRÒN &rarr; V-LINE" (15 Giây)
       </div>
-      
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 12%;">Thời gian</th>
-            <th style="width: 20%;">Cỡ cảnh & Động tác máy</th>
-            <th style="width: 38%;">Hành động nhân vật & Visual Trigger</th>
-            <th style="width: 30%;">Chữ hiển thị (Typography)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>00 - 03s</strong></td>
-            <td><strong>Medium Shot</strong> (Zoom-in nhanh)</td>
-            <td>Mẫu ngồi thẳng, tóc rơi trước ngực, nhìn thẳng vào camera rồi chớp mắt mỉm cười duyên.</td>
-            <td><span class="typo-tag">MẶT TRÒN CẮT GÌ CHO SANG?</span><br><small style="color:var(--highlight)">Font Bold - Nền đen viền trắng</small></td>
-          </tr>
-          <tr>
-            <td><strong>03 - 07s</strong></td>
-            <td><strong>Close-up 45°</strong> (Zoom-cut)</td>
-            <td>Thợ tóc đưa 2 bàn tay luồn từ gáy nâng bổng lọn tóc lên rồi buông tay để tóc nảy sóng rơi xuống.</td>
-            <td><span class="typo-tag">LAYER BAY THON GỌN GƯƠNG MẶT</span></td>
-          </tr>
-          <tr>
-            <td><strong>07 - 11s</strong></td>
-            <td><strong>Cận cảnh sợi tóc</strong> (Slow-mo 60fps)</td>
-            <td>Mẫu nghiêng đầu sang trái/phải, ngón tay vén nhẹ lọn tóc mái bay ôm lấy gò má. Quạt gió thổi tóc bay nhẹ.</td>
-            <td><span class="typo-tag">UỐN SÓNG LƯƠI SẤY TAY 100%</span></td>
-          </tr>
-          <tr>
-            <td><strong>11 - 15s</strong></td>
-            <td><strong>Medium Close-up</strong> (Khớp beat kết)</td>
-            <td>Mẫu cười rạng rỡ, tay vuốt đuôi tóc. Camera giật nhẹ theo beat nhạc cuối.</td>
-            <td><span class="typo-tag" style="background: #E11D48;">📍 SALON HẢI PHÒNG - INBOX ĐẶT LỊCH</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <span class="badge badge-primary">Mục tiêu: Đẩy mạnh Cắt Layer + Uốn Sóng Lơi</span>
     </div>
 
-    <!-- MẪU 2 -->
-    <div class="box-item">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <h3 style="color: var(--success);"><span class="pill-step" style="background:var(--success)">2</span> MẪU 2: "CHẤT TÓC BÓNG MƯỢT ÁNH GƯƠNG / HỒI SINH TÓC" (15 Giây)</h3>
-        <span class="badge badge-success">Mục tiêu: Kéo khách Duỗi / Phục hồi / Nhuộm</span>
+    <div class="alert-box alert-info">
+      <strong>🎬 Cấu trúc quay:</strong> 4 Shot Zoom-cut theo beat nhạc | Không cần thu âm thoại | Quay trong đúng 60 giây sau khi sấy tóc.
+    </div>
+
+    <div class="grid-4">
+      <!-- SHOT 1 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 1 (00-03s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot1_front.jpg" alt="Shot 1 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 00 - 03s | Medium Shot</div>
+          <div class="shot-action">Mẫu ngồi thẳng, tóc buông trước ngực, nhìn camera cười duyên nhẹ nhàng.</div>
+          <div class="shot-typo">MẶT TRÒN CẮT GÌ CHO SANG?</div>
+        </div>
       </div>
-      
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 12%;">Thời gian</th>
-            <th style="width: 20%;">Cỡ cảnh & Động tác máy</th>
-            <th style="width: 38%;">Hành động nhân vật & Visual Trigger</th>
-            <th style="width: 30%;">Chữ hiển thị (Typography)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>00 - 03s</strong></td>
-            <td><strong>Cận cảnh lưng/vai</strong> (Tilt-down)</td>
-            <td>Thợ dùng lược răng thưa chải 1 đường từ đỉnh đầu xuống ngọn, lược lướt êm ru không một sợi rối.</td>
-            <td><span class="typo-tag">TỪNG BỊ TÓC CHÁY KHÔ XƠ?</span></td>
-          </tr>
-          <tr>
-            <td><strong>03 - 07s</strong></td>
-            <td><strong>Góc chính diện</strong> (Zoom-cut)</td>
-            <td>Mẫu lắc nhẹ 2 vai sang 2 bên, toàn bộ mái tóc suôn mượt đung đưa óng ánh dưới ánh đèn studio.</td>
-            <td><span class="typo-tag">PHỤC HỒI ĐA TẦNG ÁNH GƯƠNG</span></td>
-          </tr>
-          <tr>
-            <td><strong>07 - 11s</strong></td>
-            <td><strong>Cận cảnh bàn tay</strong></td>
-            <td>Mẫu đưa bàn tay vuốt ngược từ sau ra trước, các ngón tay lướt qua sợi tóc bóng khỏe.</td>
-            <td><span class="typo-tag">MỀM MƯỢT NHƯ TƠ LỤA</span></td>
-          </tr>
-          <tr>
-            <td><strong>11 - 15s</strong></td>
-            <td><strong>Medium Shot</strong> (Full thần thái)</td>
-            <td>Mẫu nở nụ cười tự tin, xoay nhẹ người 30 độ nhìn vào gương.</td>
-            <td><span class="typo-tag" style="background: #0284C7;">✨ TỰ TIN XUỐNG PHỐ - GHÉ TIỆM NGAY</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
+      <!-- SHOT 2 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 2 (03-07s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot2_hands.jpg" alt="Shot 2 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 03 - 07s | Close-up 45°</div>
+          <div class="shot-action">Thợ luồn tay nâng bổng lọn tóc lên rồi buông tay để tóc nảy sóng rơi xuống.</div>
+          <div class="shot-typo">LAYER BAY THON GỌN MẶT</div>
+        </div>
+      </div>
+
+      <!-- SHOT 3 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 3 (07-11s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot3_profile.jpg" alt="Shot 3 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 07 - 11s | Profile Slow-mo</div>
+          <div class="shot-action">Mẫu nghiêng đầu, ngón tay vén nhẹ lọn tóc ôm gò má. Quạt mini thổi tóc bay nhẹ.</div>
+          <div class="shot-typo">UỐN SÓNG LƯƠI SẤY TAY 100%</div>
+        </div>
+      </div>
+
+      <!-- SHOT 4 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 4 (11-15s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot4_reveal.jpg" alt="Shot 4 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 11 - 15s | Medium Close-up</div>
+          <div class="shot-action">Mẫu cười rạng rỡ, tay vuốt đuôi tóc. Camera giật nhẹ theo beat nhạc kết thúc.</div>
+          <div class="shot-typo" style="background: #E11D48;">📍 SALON HẢI PHÒNG - INBOX</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- PHẦN 6: HƯỚNG DẪN QUY TRÌNH HÀNG NGÀY CHO THỢ -->
+  <!-- PHẦN 5: KỊCH BẢN 2 (15S) -->
   <div class="section-card">
-    <div class="section-title">🚀 6. QUY TRÌNH SẢN XUẤT 3 BƯỚC "LÀM XONG LÀ CÓ CLIP"</div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+      <div class="section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+        ✨ 5. KỊCH BẢN 2: "CHẤT TÓC BÓNG MƯỢT ÁNH GƯƠNG" (15 Giây)
+      </div>
+      <span class="badge badge-success">Mục tiêu: Đẩy mạnh Duỗi / Nhuộm / Phục Hồi</span>
+    </div>
+
+    <div class="alert-box alert-warning">
+      <strong>🎬 Cấu trúc quay:</strong> Đánh mạnh vào thị giác xúc giác (Tactile ASMR) | Chứng minh tóc bóng khỏe, không rối, không khô xơ.
+    </div>
+
+    <div class="grid-4">
+      <!-- SHOT 1 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 1 (00-03s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot1_comb.jpg" alt="Shot 1 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 00 - 03s | Cận Cảnh Chải Lược</div>
+          <div class="shot-action">Lược răng thưa chải 1 đường từ đỉnh đầu xuống ngọn tóc suôn mượt êm ru.</div>
+          <div class="shot-typo">TỪNG BỊ TÓC CHÁY KHÔ XƠ?</div>
+        </div>
+      </div>
+
+      <!-- SHOT 2 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 2 (03-07s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot2_shake.jpg" alt="Shot 2 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 03 - 07s | Lắc Tóc Bay Nhẹ</div>
+          <div class="shot-action">Mẫu nhắm mắt mỉm cười lắc nhẹ vai, mái tóc suôn óng ả bay lượn bắt sáng lấp lánh.</div>
+          <div class="shot-typo">PHỤC HỒI ĐA TẦNG ÁNH GƯƠNG</div>
+        </div>
+      </div>
+
+      <!-- SHOT 3 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 3 (07-11s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot3_touch.jpg" alt="Shot 3 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 07 - 11s | Extreme Close-up</div>
+          <div class="shot-action">Bàn tay mẫu vuốt trượt qua các sợi tóc bóng mượt như lụa, không gợn xơ rối.</div>
+          <div class="shot-typo">MỀM MƯỢT NHƯ TƠ LỤA</div>
+        </div>
+      </div>
+
+      <!-- SHOT 4 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 4 (11-15s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot4_glow.jpg" alt="Shot 4 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 11 - 15s | Soi Gương Thần Thái</div>
+          <div class="shot-action">Mẫu quay 30° nhìn vào gương LED mỉm cười tự tin, toát lên vẻ đẹp sang trọng.</div>
+          <div class="shot-typo" style="background: #0284C7;">✨ TỰ TIN XUỐNG PHỐ - GHÉ TIỆM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 6: QUY TRÌNH HÀNG NGÀY -->
+  <div class="section-card">
+    <div class="section-title">🚀 6. QUY TRÌNH SẢN XUẤT 3 BƯỚC "LÀM XONG LÀ CÓ CLIP" CHO CHỦ TIỆM</div>
     
     <div class="grid-3">
       <div class="box-item">
-        <h3>1️⃣ Bước 1: Chọn Khách & Xin Phép (30s)</h3>
+        <h3>1️⃣ Bước 1: Chọn Khách Xinh (30s)</h3>
         <p style="font-size: 13px; color: var(--text-muted);">Khách nữ xinh xắn làm tóc xong ưng ý &rarr; Mời sang "Ghế Studio": <em>"Em ơi tóc xinh quá, anh xin 1 phút quay clip ngắn lưu kỷ niệm nhé!"</em></p>
       </div>
       <div class="box-item">
         <h3>2️⃣ Bước 2: Bấm Máy 4 Shot (60s)</h3>
-        <p style="font-size: 13px; color: var(--text-muted);">Bật đèn studio + quạt mini. Quay 4 đúp: 1 đúp chính diện, 1 đúp luồn tay, 1 đúp mẫu lắc tóc, 1 đúp mẫu cười vuốt tóc.</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Bật đèn studio + quạt mini. Đặt iPhone quay 4 đúp: 1 đúp chính diện, 1 đúp luồn tay, 1 đúp mẫu lắc tóc, 1 đúp mẫu cười vuốt tóc.</p>
       </div>
       <div class="box-item">
         <h3>3️⃣ Bước 3: Dựng CapCut Siêu Tốc (3 phút)</h3>
-        <p style="font-size: 13px; color: var(--text-muted);">Nhập 4 clip vào CapCut, chọn nhạc trend TikTok, cắt mỗi đoạn 3-4s đúng nhịp trống, gõ 3 dòng text mẫu ở trên &rarr; Xuất video!</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Nhập 4 clip vào CapCut, chọn nhạc trend TikTok, cắt mỗi đoạn 3-4s đúng nhịp trống, gõ 3 dòng text mẫu ở trên &rarr; Xuất video đăng ngay!</p>
       </div>
     </div>
   </div>
