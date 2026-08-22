@@ -198,12 +198,12 @@ for sc in scenes:
 # BƯỚC 4: RENDER FILE HTML CHO KỊCH BẢN 3 & ĐẨY LÊN GITHUB PAGES
 print("\n[BƯỚC 4] Render HTML cho Kịch Bản 3 và đồng bộ lên GitHub Pages...")
 
-kb3_json_path = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh/kb03_data.json"
+kb3_json_path = "/Users/vietmac/Documents/CODE/offline02/kb03_data.json"
 with open(kb3_json_path, "w", encoding="utf-8") as f:
     json.dump(kb3_data, f, ensure_ascii=False, indent=2)
 
 # Build HTML file
-kb3_html_file = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh/kich_ban_03_chung_lai_sau_tuoi_30.html"
+kb3_html_file = "/Users/vietmac/Documents/CODE/offline02/kich_ban_03_chung_lai_sau_tuoi_30.html"
 
 # Render HTML using Python
 data = kb3_data
@@ -482,7 +482,7 @@ with open(kb3_html_file, 'w', encoding='utf-8') as f:
 print(f"✅ Đã tạo file HTML Kịch Bản 3 thành công: {kb3_html_file}")
 
 # Git commit & push
-repo_dir = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+repo_dir = "/Users/vietmac/Documents/CODE/offline02"
 subprocess.run("git add .", shell=True, cwd=repo_dir, check=True)
 subprocess.run('git commit -m "feat: Xuat ban Storyboard Kich Ban 03 tu URL online"', shell=True, cwd=repo_dir, check=True)
 subprocess.run("git push origin main", shell=True, cwd=repo_dir, check=True)
@@ -491,8 +491,8 @@ print("✅ Đã push thành công lên GitHub Pages!")
 # BƯỚC 5: GỬI TIN NHẮN THÔNG BÁO VỀ TELEGRAM (@nova0410_bot)
 print("\n[BƯỚC 5] Đang gửi tin nhắn thông báo kết quả thực tế qua Telegram API...")
 
-kb3_github_url = "https://vietndj.github.io/Bang-Phan-Canh/kich_ban_03_chung_lai_sau_tuoi_30.html"
-fedu_url = "https://fedu.vn/Bang-Phan-Canh/kich_ban_03_chung_lai_sau_tuoi_30.html"
+kb3_github_url = "https://vietndj.github.io/offline02/kich_ban_03_chung_lai_sau_tuoi_30.html"
+fedu_url = "https://fedu.vn/offline02/kich_ban_03_chung_lai_sau_tuoi_30.html"
 
 tele_msg = (
     f"🎬 <b>[MÔ PHỎNG THỰC CHIẾN] BẢNG PHÂN CẢNH TỪ LINK ONLINE HOÀN TẤT</b>\n"

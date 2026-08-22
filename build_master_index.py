@@ -9,12 +9,36 @@ import os
 import json
 from datetime import datetime
 
-REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
 
 # -------------------------------------------------------------
 # 1. DANH SÁCH BẢNG PHÂN CẢNH 9:16 (VISUAL STORYBOARDS) - 100% ẢNH ĐỘC LẬP
 # -------------------------------------------------------------
 storyboards = [
+    {
+        "id": "poster_brand_studio",
+        "slug": "nguyet",
+        "file_name": "nguyet.html",
+        "title": "Hệ Thống Tự Động Hóa Poster Video Chuẩn Thương Hiệu & Mega Prompt",
+        "category": "Design & AI Studio",
+        "badge_color": "#00f0ff",
+        "target_audience": "Nhà sáng tạo nội dung, Diễn giả, Video Editor muốn tạo Thumbnail 9:16 chuẩn thương hiệu",
+        "duration": "Tự Động Hóa 3 Giây / 4K UHD",
+        "scenes_count": 5,
+        "beats_count": 3,
+        "rhythm": "Mega Prompt 2 Bước Tương Tác",
+        "thumb_url": "assets/nguyet/vietmac_tech_poster_final.jpg",
+        "summary": "Quy trình trích xuất Golden Frame, tách nền AI U2Net, viền trắng sticker 32px, nền Cyber Studio Obsidian chống lem nhem và thẻ Hook tương phản cao.",
+        "hook_dialogue": "TẠO VIDEO BẰNG AI / X10 TỐC ĐỘ DỰNG PHIM",
+        "cta_dialogue": "Copy Mega Prompt 1-Click & Tự động chạy với Python.",
+        "mini_frames": [
+            "assets/nguyet/frame_goc_22s.jpg",
+            "assets/nguyet/cand_cutout_22.0s.png",
+            "assets/nguyet/vietmac_tech_poster_final.jpg"
+        ],
+        "created_at": "22/08/2026",
+        "source": "VietMac AI Studio"
+    },
     {
         "id": "kb_salon_toc_10nam",
         "slug": "chien_luoc_xay_kenh_toc_10_nam",

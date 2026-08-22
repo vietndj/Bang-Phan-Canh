@@ -8,7 +8,7 @@ Trình bày cách làm, kết quả thực tế, mô phỏng hướng dẫn và 
 import os
 import shutil
 
-REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
 R2_BASE = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/nguyet/assets"
 
 MEGA_PROMPT = """Bạn là Giám Đốc Nghệ Thuật (Art Director) & Chuyên Gia Thiết Kế Thumbnail Video AI hàng đầu thế giới.
@@ -152,7 +152,7 @@ html_content = f"""<!DOCTYPE html>
       <a href="#mega-prompt" class="px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs sm:text-sm flex items-center gap-1.5 transition shadow-lg shadow-cyan-500/30">
         <i data-lucide="copy" class="w-4 h-4"></i> Copy Mega Prompt
       </a>
-      <a href="https://vietndj.github.io/Bang-Phan-Canh/" class="px-3 py-1.5 rounded-lg glass-card hover:bg-slate-800 text-slate-300 text-xs sm:text-sm flex items-center gap-1.5 transition">
+      <a href="https://vietndj.github.io/offline02/" class="px-3 py-1.5 rounded-lg glass-card hover:bg-slate-800 text-slate-300 text-xs sm:text-sm flex items-center gap-1.5 transition">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Kho Kịch Bản
       </a>
     </div>

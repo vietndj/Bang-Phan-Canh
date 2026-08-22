@@ -10,7 +10,7 @@ import json
 import subprocess
 from datetime import datetime
 
-REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
 R2_MEDIA_BASE = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien"
 
 # DỮ LIỆU ĐẦY ĐỦ 9 KỊCH BẢN THỰC CHIẾN
@@ -1336,8 +1336,8 @@ def build_master_index(all_storyboards):
       <div class="header-title">🎬 AI Storyboard Studio 9:16</div>
     </div>
     <div class="header-controls">
-      <a href="https://fedu.vn/Bang-Phan-Canh/" class="header-link" target="_blank">🌐 Cổng fedu.vn</a>
-      <a href="https://github.com/vietndj/Bang-Phan-Canh" class="header-link" target="_blank">🐙 GitHub Repo</a>
+      <a href="https://fedu.vn/offline02/" class="header-link" target="_blank">🌐 Cổng fedu.vn</a>
+      <a href="https://github.com/vietndj/offline02" class="header-link" target="_blank">🐙 GitHub Repo</a>
       <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/9_kich_ban_thuc_chien.html" class="header-link" target="_blank">📋 9 Kịch Bản Gốc</a>
     </div>
   </header>

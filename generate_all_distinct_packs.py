@@ -13,7 +13,7 @@ import shutil
 import subprocess
 from PIL import Image
 
-REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
 AVA_DIR = "/Users/vietmac/Documents/CODE/Quản gia/assets/ava"
 ARTIFACTS_DIR = "/Users/vietmac/.gemini/antigravity/brain/dc3c9799-a37e-44f5-9f42-77df760cf23b"
 

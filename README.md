@@ -9,7 +9,7 @@ Hệ thống tự động hóa chuyển đổi **Kịch bản nói (Voiceover + 
 - 🤖 **Tích hợp Nova Telegram Bot:** Nhận kịch bản + ảnh từ Telegram, tự động xử lý và trả về link GitHub Pages trực tuyến.
 
 ## 🚀 Live Demo
-- **Bảng phân cảnh online:** https://vietndj.github.io/Bang-Phan-Canh/
+- **Bảng phân cảnh online:** https://vietndj.github.io/offline02/
 - **Cloudflare R2 Media Base:** https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/
 
 ---

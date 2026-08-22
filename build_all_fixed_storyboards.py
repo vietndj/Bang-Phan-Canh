@@ -1,7 +1,7 @@
 import os
 import json
 
-TEMPLATE_FILE = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh/kich_ban_03_chung_lai_sau_tuoi_30.html"
+TEMPLATE_FILE = "/Users/vietmac/Documents/CODE/offline02/kich_ban_03_chung_lai_sau_tuoi_30.html"
 
 # -------------------------------------------------------------
 # 1. DATA FOR KB01: TỪ ĐỐT TIỀN QUẢNG CÁO ĐẾN TỰ TIN XUẤT HIỆN
@@ -860,6 +860,6 @@ def render_storyboard_html(data, output_filepath):
     print(f"✅ Đã tạo thành công: {output_filepath}")
 
 # Render file KB01 và KB02
-render_storyboard_html(kb01_data, "/Users/vietmac/Documents/CODE/Bang-Phan-Canh/tu_dot_tien_den_tu_tin_xuat_hien.html")
-render_storyboard_html(kb02_data, "/Users/vietmac/Documents/CODE/Bang-Phan-Canh/tien_mat_bang_va_cua_hang_vang_khach.html")
+render_storyboard_html(kb01_data, "/Users/vietmac/Documents/CODE/offline02/tu_dot_tien_den_tu_tin_xuat_hien.html")
+render_storyboard_html(kb02_data, "/Users/vietmac/Documents/CODE/offline02/tien_mat_bang_va_cua_hang_vang_khach.html")
 

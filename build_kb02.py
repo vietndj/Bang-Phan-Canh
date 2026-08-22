@@ -318,7 +318,7 @@ data = {
 }
 
 # Save JSON data
-with open('/Users/vietmac/Documents/CODE/Bang-Phan-Canh/storyboard_data.json', 'w', encoding='utf-8') as f:
+with open('/Users/vietmac/Documents/CODE/offline02/storyboard_data.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
 html_code = f"""<!DOCTYPE html>
@@ -1364,7 +1364,7 @@ html_code += f"""
 </html>
 """
 
-with open('/Users/vietmac/Documents/CODE/Bang-Phan-Canh/index.html', 'w', encoding='utf-8') as f:
+with open('/Users/vietmac/Documents/CODE/offline02/index.html', 'w', encoding='utf-8') as f:
     f.write(html_code)
 
 print("Generated clean index.html in Bang-Phan-Canh repo successfully!")

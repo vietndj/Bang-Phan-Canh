@@ -859,7 +859,7 @@ HTML_CONTENT = """<!DOCTYPE html>
 </html>
 """
 
-with open("/Users/vietmac/Documents/CODE/Bang-Phan-Canh/kich_ban_nguyet_store_hai_phong.html", "w", encoding="utf-8") as f:
+with open("/Users/vietmac/Documents/CODE/offline02/kich_ban_nguyet_store_hai_phong.html", "w", encoding="utf-8") as f:
     f.write(HTML_CONTENT)
 
-print("Generated /Users/vietmac/Documents/CODE/Bang-Phan-Canh/kich_ban_nguyet_store_hai_phong.html successfully!")
+print("Generated /Users/vietmac/Documents/CODE/offline02/kich_ban_nguyet_store_hai_phong.html successfully!")

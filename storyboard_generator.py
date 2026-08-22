@@ -7,7 +7,7 @@ HỆ THỐNG TỰ ĐỘNG HÓA TẠO BẢNG PHÂN CẢNH (AI STORYBOARD STUDIO G
 Đầu ra: 
   - Upload ảnh lên Cloudflare R2 CDN
   - Tạo trang HTML Studio tương tác Mobile-First (Có khối tin nhắn gốc, Không có AI Prompt)
-  - Đồng bộ và xuất bản tự động lên GitHub Pages (vietndj/Bang-Phan-Canh)
+  - Đồng bộ và xuất bản tự động lên GitHub Pages (vietndj/offline02)
   - Trả về JSON chứa URL công khai để gửi về Telegram / Antigravity Chat
 """
 
@@ -21,11 +21,11 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
-REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
 R2_REMOTE_BASE = "r2:vietndjmedia/storyboards"
 R2_PUBLIC_BASE = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards"
-GITHUB_PAGES_URL = "https://vietndj.github.io/Bang-Phan-Canh/"
-FEDU_PAGES_URL = "https://fedu.vn/Bang-Phan-Canh/"
+GITHUB_PAGES_URL = "https://vietndj.github.io/offline02/"
+FEDU_PAGES_URL = "https://fedu.vn/offline02/"
 
 def run_cmd(cmd, cwd=REPO_DIR, timeout=120):
     try:
