@@ -1,4 +1,68 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Tự động sinh trang HTML Studio tinh gọn cho HỌC VIÊN: nguyet.html và nguyệt.html
+Tiêu đề: Tạo Thumbnail Từ Ảnh Chụp Video
+Giao diện độc lập, ngắn gọn, 3 bước thực hiện, nút copy Mega Prompt, ví dụ trực quan.
+"""
+
+import os
+
+REPO_DIR = "/Users/vietmac/Documents/CODE/offline02"
+R2_BASE = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/nguyet/assets"
+
+MEGA_PROMPT = """Bạn là Giám Đốc Nghệ Thuật (Art Director) & Chuyên Gia Thiết Kế Thumbnail Video AI hàng đầu thế giới.
+
+Nhiệm vụ của bạn là tạo ra các ảnh Poster / Thumbnail Video ngắn dọc (tỉ lệ 9:16) chuẩn nhận diện thương hiệu công nghệ cao cấp theo quy trình 2 bước tương tác:
+
+═══════════════════════════════════════════════════════════════
+BƯỚC 1: HỎI THÔNG TIN ĐẦU VÀO TỪ NGƯỜI DÙNG (CHƯA SINH ẢNH NGAY)
+═══════════════════════════════════════════════════════════════
+Khi tôi gửi prompt này, bạn HÃY TẠM DỪNG và phản hồi lại bằng một lời chào ngắn gọn kèm bảng hỏi thu thập 3 thông tin:
+
+1. ẢNH LOGO & TÊN THƯƠNG HIỆU:
+   - Hãy tải lên ảnh Logo PNG tròn (hoặc cho biết chữ cái/biểu tượng đại diện, ví dụ: 'VM', 'AI', 'NOVA').
+   - Tên thương hiệu chính (Brand Title) & Câu Slogan phụ bên dưới.
+
+2. NỘI DUNG TEXT TO (HOOK BANNER 2 DÒNG):
+   - Dòng 1 (Từ khóa chính màu Vàng Neon, font siêu dày như SVN-Integral CF Heavy): ví dụ "TẠO VIDEO BẰNG AI"
+   - Dòng 2 (Nội dung bổ trợ màu Trắng Tinh, font đậm nét): ví dụ "X10 TỐC ĐỘ DỰNG PHIM"
+
+3. ẢNH DIỄN GIẢ / FRAME CHỤP TỪ VIDEO:
+   - Hãy đính kèm bức ảnh chân dung hoặc ảnh cap màn hình từ video của bạn.
+
+═══════════════════════════════════════════════════════════════
+BƯỚC 2: TIẾN HÀNH THIẾT KẾ POSTER CÔNG NGHỆ CHUYÊN NGHIỆP
+═══════════════════════════════════════════════════════════════
+Ngay khi tôi cung cấp đủ 3 thông tin trên, bạn sẽ tự động thiết kế bức ảnh với quy chuẩn mỹ thuật cao cấp sau:
+
+1. CHỦ THỂ (SUBJECT):
+   - Tách sạch 100% nền phía sau người, giữ trọn chi tiết tóc, ngón tay và biểu cảm.
+   - Thêm đường viền sticker màu trắng tinh khiết (White Sticker Outline) dày dặn, mịn màng bao quanh toàn bộ cơ thể.
+   - Thêm hiệu ứng đổ bóng mờ Cyber Drop Shadow màu xanh đen mờ ảo phía sau để tạo chiều sâu 3D nổi khối.
+   - Đặt người lùi xuống nửa dưới khung hình để tạo khoảng trống thoáng đãng phía trên.
+
+2. NỀN CÔNG NGHỆ (CYBER TECH BACKGROUND):
+   - Tone màu chủ đạo: Deep Obsidian Navy (#04060A đến #090D1A) không gian sâu sang trọng, tuyệt đối không lem nhem hay bệt màu.
+   - Hiệu ứng ánh sáng tỏa Radial Glow màu Cyan Neon & Sapphire Blue phía sau logo và sau lưng chủ thể.
+   - Họa tiết Dot Matrix tinh xảo và các đường Line Framing công nghệ tinh tế ở các góc.
+
+3. HEADER THƯƠNG HIỆU (PHÍA TRÊN CÙNG):
+   - Logo tròn với viền kép Cyan Neon phát sáng nhẹ đặt chính giữa trên cùng.
+   - Dòng Tên Thương Hiệu in hoa nét cực đậm, vuông vức, màu Trắng sáng (#FFFFFF).
+   - Dòng Slogan công nghệ màu Xanh Sky (#38BDF8) đặt ngay dưới tên thương hiệu.
+
+4. HOOK BANNER 2 DÒNG (NGANG NGỰC):
+   - Khung thẻ Card Cyber góc bo tròn với nền màu tối đặc (Solid Opaque Dark Slate), viền Cyan phát sáng tinh tế che kín phụ đề cũ.
+   - Dòng 1: Chữ in hoa màu Vàng Neon (#FFDE00), KIỂU CHỮ CỰC DÀY, VUÔNG VỨC, SẮC NÉT, LỰC MẠNH (Phong cách font SVN-Integral CF Heavy / Ultra-Bold Condensed) tạo điểm hút mắt lập tức.
+   - Dòng 2: Chữ in hoa màu Trắng Tinh (#FFFFFF), font chữ đậm nét và dễ đọc.
+
+5. FOOTER:
+   - Thanh thông tin mạng xã hội mờ dần ở đáy ảnh gồm avatar logo, tên kênh, audio tag và hashtag.
+
+Hãy xuất ảnh poster 9:16 có độ phân giải cao nhất, màu sắc tương phản sắc nét và bố cục vững chắc."""
+
+html_content = f"""<!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -13,16 +77,16 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    tailwind.config = {
+    tailwind.config = {{
       darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
+      theme: {{
+        extend: {{
+          fontFamily: {{
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            cyber: {
+          }},
+          colors: {{
+            cyber: {{
               950: '#04060a',
               900: '#070a13',
               850: '#0b0f1d',
@@ -31,36 +95,36 @@
               neon: '#00f0ff',
               gold: '#ffde00',
               blue: '#38bdf8',
-            }
-          }
-        }
-      }
-    }
+            }}
+          }}
+        }}
+      }}
+    }}
   </script>
   <style>
-    body {
+    body {{
       background-color: #04060a;
       color: #e2e8f0;
       font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .glow-cyan {
+    }}
+    .glow-cyan {{
       box-shadow: 0 0 35px -8px rgba(0, 240, 255, 0.3);
-    }
-    .glass-card {
+    }}
+    .glass-card {{
       background: rgba(11, 15, 29, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-header {
+    }}
+    .glass-header {{
       background: rgba(7, 10, 19, 0.9);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0, 240, 255, 0.15);
-    }
-    pre code {
+    }}
+    pre code {{
       font-family: 'JetBrains Mono', monospace;
-    }
+    }}
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-black">
@@ -164,7 +228,7 @@
         <!-- Card 1 -->
         <div class="glass-card rounded-xl p-3 space-y-2 text-center">
           <div class="aspect-[9/16] rounded-lg overflow-hidden bg-black/60 border border-slate-800">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/nguyet/assets/frame_goc_22s.jpg" alt="Ảnh Gốc" class="w-full h-full object-cover" loading="lazy">
+            <img src="{R2_BASE}/frame_goc_22s.jpg" alt="Ảnh Gốc" class="w-full h-full object-cover" loading="lazy">
           </div>
           <div>
             <span class="text-[10px] font-bold text-slate-400 uppercase">1. Ảnh Gốc Video</span>
@@ -175,7 +239,7 @@
         <!-- Card 2 -->
         <div class="glass-card rounded-xl p-3 space-y-2 text-center border-cyan-900/40">
           <div class="aspect-[9/16] rounded-lg overflow-hidden bg-slate-950 border border-cyan-900/50 p-2 flex items-center justify-center">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/nguyet/assets/cand_cutout_22.0s.png" alt="Tách Nền" class="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]" loading="lazy">
+            <img src="{R2_BASE}/cand_cutout_22.0s.png" alt="Tách Nền" class="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]" loading="lazy">
           </div>
           <div>
             <span class="text-[10px] font-bold text-cyan-400 uppercase">2. Tách Nền & Viền Trắng</span>
@@ -186,7 +250,7 @@
         <!-- Card 3 -->
         <div class="glass-card rounded-xl p-3 space-y-2 text-center border-yellow-500/40 glow-cyan">
           <div class="aspect-[9/16] rounded-lg overflow-hidden bg-black border border-yellow-500/40">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/nguyet/assets/vietmac_tech_poster_final.jpg" alt="Kết Quả" class="w-full h-full object-cover" loading="lazy">
+            <img src="{R2_BASE}/vietmac_tech_poster_final.jpg" alt="Kết Quả" class="w-full h-full object-cover" loading="lazy">
           </div>
           <div>
             <span class="text-[10px] font-bold text-yellow-400 uppercase">3. Poster 4K Hoàn Thiện</span>
@@ -214,56 +278,7 @@
           <span class="text-slate-300">mega_prompt_thumbnail_gemini.txt</span>
           <span class="text-cyan-400 text-[11px]">Font SVN-Integral CF Heavy</span>
         </div>
-        <pre class="p-4 sm:p-5 text-xs text-slate-200 font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-80 scrollbar-thin scrollbar-thumb-slate-700"><code>Bạn là Giám Đốc Nghệ Thuật (Art Director) & Chuyên Gia Thiết Kế Thumbnail Video AI hàng đầu thế giới.
-
-Nhiệm vụ của bạn là tạo ra các ảnh Poster / Thumbnail Video ngắn dọc (tỉ lệ 9:16) chuẩn nhận diện thương hiệu công nghệ cao cấp theo quy trình 2 bước tương tác:
-
-═══════════════════════════════════════════════════════════════
-BƯỚC 1: HỎI THÔNG TIN ĐẦU VÀO TỪ NGƯỜI DÙNG (CHƯA SINH ẢNH NGAY)
-═══════════════════════════════════════════════════════════════
-Khi tôi gửi prompt này, bạn HÃY TẠM DỪNG và phản hồi lại bằng một lời chào ngắn gọn kèm bảng hỏi thu thập 3 thông tin:
-
-1. ẢNH LOGO & TÊN THƯƠNG HIỆU:
-   - Hãy tải lên ảnh Logo PNG tròn (hoặc cho biết chữ cái/biểu tượng đại diện, ví dụ: 'VM', 'AI', 'NOVA').
-   - Tên thương hiệu chính (Brand Title) & Câu Slogan phụ bên dưới.
-
-2. NỘI DUNG TEXT TO (HOOK BANNER 2 DÒNG):
-   - Dòng 1 (Từ khóa chính màu Vàng Neon, font siêu dày như SVN-Integral CF Heavy): ví dụ "TẠO VIDEO BẰNG AI"
-   - Dòng 2 (Nội dung bổ trợ màu Trắng Tinh, font đậm nét): ví dụ "X10 TỐC ĐỘ DỰNG PHIM"
-
-3. ẢNH DIỄN GIẢ / FRAME CHỤP TỪ VIDEO:
-   - Hãy đính kèm bức ảnh chân dung hoặc ảnh cap màn hình từ video của bạn.
-
-═══════════════════════════════════════════════════════════════
-BƯỚC 2: TIẾN HÀNH THIẾT KẾ POSTER CÔNG NGHỆ CHUYÊN NGHIỆP
-═══════════════════════════════════════════════════════════════
-Ngay khi tôi cung cấp đủ 3 thông tin trên, bạn sẽ tự động thiết kế bức ảnh với quy chuẩn mỹ thuật cao cấp sau:
-
-1. CHỦ THỂ (SUBJECT):
-   - Tách sạch 100% nền phía sau người, giữ trọn chi tiết tóc, ngón tay và biểu cảm.
-   - Thêm đường viền sticker màu trắng tinh khiết (White Sticker Outline) dày dặn, mịn màng bao quanh toàn bộ cơ thể.
-   - Thêm hiệu ứng đổ bóng mờ Cyber Drop Shadow màu xanh đen mờ ảo phía sau để tạo chiều sâu 3D nổi khối.
-   - Đặt người lùi xuống nửa dưới khung hình để tạo khoảng trống thoáng đãng phía trên.
-
-2. NỀN CÔNG NGHỆ (CYBER TECH BACKGROUND):
-   - Tone màu chủ đạo: Deep Obsidian Navy (#04060A đến #090D1A) không gian sâu sang trọng, tuyệt đối không lem nhem hay bệt màu.
-   - Hiệu ứng ánh sáng tỏa Radial Glow màu Cyan Neon & Sapphire Blue phía sau logo và sau lưng chủ thể.
-   - Họa tiết Dot Matrix tinh xảo và các đường Line Framing công nghệ tinh tế ở các góc.
-
-3. HEADER THƯƠNG HIỆU (PHÍA TRÊN CÙNG):
-   - Logo tròn với viền kép Cyan Neon phát sáng nhẹ đặt chính giữa trên cùng.
-   - Dòng Tên Thương Hiệu in hoa nét cực đậm, vuông vức, màu Trắng sáng (#FFFFFF).
-   - Dòng Slogan công nghệ màu Xanh Sky (#38BDF8) đặt ngay dưới tên thương hiệu.
-
-4. HOOK BANNER 2 DÒNG (NGANG NGỰC):
-   - Khung thẻ Card Cyber góc bo tròn với nền màu tối đặc (Solid Opaque Dark Slate), viền Cyan phát sáng tinh tế che kín phụ đề cũ.
-   - Dòng 1: Chữ in hoa màu Vàng Neon (#FFDE00), KIỂU CHỮ CỰC DÀY, VUÔNG VỨC, SẮC NÉT, LỰC MẠNH (Phong cách font SVN-Integral CF Heavy / Ultra-Bold Condensed) tạo điểm hút mắt lập tức.
-   - Dòng 2: Chữ in hoa màu Trắng Tinh (#FFFFFF), font chữ đậm nét và dễ đọc.
-
-5. FOOTER:
-   - Thanh thông tin mạng xã hội mờ dần ở đáy ảnh gồm avatar logo, tên kênh, audio tag và hashtag.
-
-Hãy xuất ảnh poster 9:16 có độ phân giải cao nhất, màu sắc tương phản sắc nét và bố cục vững chắc.</code></pre>
+        <pre class="p-4 sm:p-5 text-xs text-slate-200 font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-80 scrollbar-thin scrollbar-thumb-slate-700"><code>{MEGA_PROMPT}</code></pre>
       </div>
     </section>
 
@@ -278,58 +293,9 @@ Hãy xuất ảnh poster 9:16 có độ phân giải cao nhất, màu sắc tư�
   <script>
     lucide.createIcons();
 
-    function copyMegaPrompt() {
-      const promptText = `Bạn là Giám Đốc Nghệ Thuật (Art Director) & Chuyên Gia Thiết Kế Thumbnail Video AI hàng đầu thế giới.
-
-Nhiệm vụ của bạn là tạo ra các ảnh Poster / Thumbnail Video ngắn dọc (tỉ lệ 9:16) chuẩn nhận diện thương hiệu công nghệ cao cấp theo quy trình 2 bước tương tác:
-
-═══════════════════════════════════════════════════════════════
-BƯỚC 1: HỎI THÔNG TIN ĐẦU VÀO TỪ NGƯỜI DÙNG (CHƯA SINH ẢNH NGAY)
-═══════════════════════════════════════════════════════════════
-Khi tôi gửi prompt này, bạn HÃY TẠM DỪNG và phản hồi lại bằng một lời chào ngắn gọn kèm bảng hỏi thu thập 3 thông tin:
-
-1. ẢNH LOGO & TÊN THƯƠNG HIỆU:
-   - Hãy tải lên ảnh Logo PNG tròn (hoặc cho biết chữ cái/biểu tượng đại diện, ví dụ: 'VM', 'AI', 'NOVA').
-   - Tên thương hiệu chính (Brand Title) & Câu Slogan phụ bên dưới.
-
-2. NỘI DUNG TEXT TO (HOOK BANNER 2 DÒNG):
-   - Dòng 1 (Từ khóa chính màu Vàng Neon, font siêu dày như SVN-Integral CF Heavy): ví dụ "TẠO VIDEO BẰNG AI"
-   - Dòng 2 (Nội dung bổ trợ màu Trắng Tinh, font đậm nét): ví dụ "X10 TỐC ĐỘ DỰNG PHIM"
-
-3. ẢNH DIỄN GIẢ / FRAME CHỤP TỪ VIDEO:
-   - Hãy đính kèm bức ảnh chân dung hoặc ảnh cap màn hình từ video của bạn.
-
-═══════════════════════════════════════════════════════════════
-BƯỚC 2: TIẾN HÀNH THIẾT KẾ POSTER CÔNG NGHỆ CHUYÊN NGHIỆP
-═══════════════════════════════════════════════════════════════
-Ngay khi tôi cung cấp đủ 3 thông tin trên, bạn sẽ tự động thiết kế bức ảnh với quy chuẩn mỹ thuật cao cấp sau:
-
-1. CHỦ THỂ (SUBJECT):
-   - Tách sạch 100% nền phía sau người, giữ trọn chi tiết tóc, ngón tay và biểu cảm.
-   - Thêm đường viền sticker màu trắng tinh khiết (White Sticker Outline) dày dặn, mịn màng bao quanh toàn bộ cơ thể.
-   - Thêm hiệu ứng đổ bóng mờ Cyber Drop Shadow màu xanh đen mờ ảo phía sau để tạo chiều sâu 3D nổi khối.
-   - Đặt người lùi xuống nửa dưới khung hình để tạo khoảng trống thoáng đãng phía trên.
-
-2. NỀN CÔNG NGHỆ (CYBER TECH BACKGROUND):
-   - Tone màu chủ đạo: Deep Obsidian Navy (#04060A đến #090D1A) không gian sâu sang trọng, tuyệt đối không lem nhem hay bệt màu.
-   - Hiệu ứng ánh sáng tỏa Radial Glow màu Cyan Neon & Sapphire Blue phía sau logo và sau lưng chủ thể.
-   - Họa tiết Dot Matrix tinh xảo và các đường Line Framing công nghệ tinh tế ở các góc.
-
-3. HEADER THƯƠNG HIỆU (PHÍA TRÊN CÙNG):
-   - Logo tròn với viền kép Cyan Neon phát sáng nhẹ đặt chính giữa trên cùng.
-   - Dòng Tên Thương Hiệu in hoa nét cực đậm, vuông vức, màu Trắng sáng (#FFFFFF).
-   - Dòng Slogan công nghệ màu Xanh Sky (#38BDF8) đặt ngay dưới tên thương hiệu.
-
-4. HOOK BANNER 2 DÒNG (NGANG NGỰC):
-   - Khung thẻ Card Cyber góc bo tròn với nền màu tối đặc (Solid Opaque Dark Slate), viền Cyan phát sáng tinh tế che kín phụ đề cũ.
-   - Dòng 1: Chữ in hoa màu Vàng Neon (#FFDE00), KIỂU CHỮ CỰC DÀY, VUÔNG VỨC, SẮC NÉT, LỰC MẠNH (Phong cách font SVN-Integral CF Heavy / Ultra-Bold Condensed) tạo điểm hút mắt lập tức.
-   - Dòng 2: Chữ in hoa màu Trắng Tinh (#FFFFFF), font chữ đậm nét và dễ đọc.
-
-5. FOOTER:
-   - Thanh thông tin mạng xã hội mờ dần ở đáy ảnh gồm avatar logo, tên kênh, audio tag và hashtag.
-
-Hãy xuất ảnh poster 9:16 có độ phân giải cao nhất, màu sắc tương phản sắc nét và bố cục vững chắc.`;
-      navigator.clipboard.writeText(promptText).then(() => {
+    function copyMegaPrompt() {{
+      const promptText = `{MEGA_PROMPT}`;
+      navigator.clipboard.writeText(promptText).then(() => {{
         const btnText = document.getElementById('copyBtnText');
         const originalText = btnText.innerText;
         btnText.innerText = 'Đã Sao Chép Thành Công!';
@@ -337,15 +303,29 @@ Hãy xuất ảnh poster 9:16 có độ phân giải cao nhất, màu sắc tư�
         btn.classList.remove('from-cyan-500', 'to-blue-600');
         btn.classList.add('from-emerald-500', 'to-green-600');
         
-        setTimeout(() => {
+        setTimeout(() => {{
           btnText.innerText = originalText;
           btn.classList.remove('from-emerald-500', 'to-green-600');
           btn.classList.add('from-cyan-500', 'to-blue-600');
-        }, 2500);
-      }).catch(err => {
+        }}, 2500);
+      }}).catch(err => {{
         alert('Lỗi sao chép: ' + err);
-      });
-    }
+      }});
+    }}
   </script>
 </body>
 </html>
+"""
+
+# Save to nguyet.html and nguyệt.html
+nguyet_path = os.path.join(REPO_DIR, "nguyet.html")
+nguyet_unicode_path = os.path.join(REPO_DIR, "nguyệt.html")
+
+with open(nguyet_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+with open(nguyet_unicode_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print(f"Đã cập nhật giao diện học viên tinh gọn cho: {nguyet_path}")
+print(f"Đã cập nhật giao diện học viên tinh gọn cho: {nguyet_unicode_path}")
