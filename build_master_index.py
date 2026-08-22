@@ -16,6 +16,33 @@ REPO_DIR = "/Users/vietmac/Documents/CODE/Bang-Phan-Canh"
 # -------------------------------------------------------------
 storyboards = [
     {
+        "id": "kb_salon_toc_10nam",
+        "slug": "chien_luoc_xay_kenh_toc_10_nam",
+        "file_name": "chien_luoc_xay_kenh_toc_10_nam.html",
+        "title": "Kịch Bản Thực Chiến: Salon Tóc 10 Năm Hải Phòng (Video 15s No-Voice)",
+        "category": "Salon Tóc & Làm Đẹp",
+        "badge_color": "#ec4899",
+        "target_audience": "Chủ salon tóc, thợ tóc lâu năm muốn xây kênh TikTok kéo khách VIP",
+        "duration": "15 Giây / Video",
+        "scenes_count": 4,
+        "beats_count": 8,
+        "rhythm": "Zoom-cut theo Beat Nhạc (Không Cần Thoại)",
+        "thumb_url": "assets/frames_toc_10nam/04_hero_model.jpg",
+        "summary": "Chiến lược Quiet Luxury khai thác tay nghề 10 năm, đòn bẩy tâm lý Mẫu Xinh (Halo Effect), setup góc quay salon nhỏ gọn (iPhone + Nanlite vàng ấm + quạt mini) và 2 kịch bản 15s chuyển đổi cao.",
+        "hook_dialogue": "Mặt Tròn Cắt Gì Cho Sang? / Từng Bị Tóc Cháy Khô Xơ?",
+        "cta_dialogue": "Salon Hải Phòng - Inbox Đặt Lịch Ngay.",
+        "mini_frames": [
+            "assets/frames_toc_10nam/kb1_shot1_front.jpg",
+            "assets/frames_toc_10nam/kb1_shot2_hands.jpg",
+            "assets/frames_toc_10nam/kb1_shot3_profile.jpg",
+            "assets/frames_toc_10nam/kb2_shot2_shake.jpg",
+            "assets/frames_toc_10nam/kb2_shot4_glow.jpg"
+        ],
+        "created_at": "22/08/2026",
+        "source": "Học Viên Salon Tóc • Hải Phòng"
+    },
+
+    {
         "id": "kb_nguyet_store_hp",
         "slug": "kich_ban_nguyet_store_hai_phong",
         "file_name": "kich_ban_nguyet_store_hai_phong.html",
